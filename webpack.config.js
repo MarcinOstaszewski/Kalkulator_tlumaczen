@@ -1,0 +1,20 @@
+module.exports = {
+    entry: ['whatwg-fetch', "./js/zadanie00.jsx"],
+    output: {
+        filename: "./js/out.js"
+    },
+    devtool: 'eval-source-map',
+    watch: true,
+    module: {
+        loaders: [{
+
+            test: /\.jsx$/,
+            exclude: /node_modules/,
+            loader: 'babel-loader',
+
+            query: {
+                presets: ['es2015', 'stage-2', 'react']
+            }
+        }]
+    }
+}
