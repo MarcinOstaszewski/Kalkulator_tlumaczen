@@ -1,21 +1,4 @@
-Skip to content
-This repository
-Search
-Pull requests
-Issues
-Marketplace
-Explore
-@MarcinOstaszewski
-Sign out
-Watch 1
-Star 0 Fork 0 agatablue / ToDo - React
-Code Issues 0 Pull requests 0 Projects 0 Wiki Insights
-Branch: master Find file Copy pathToDo - React / package.json
-950647 b 5 hours ago
-@agatablue agatablue add images in React
-1 contributor
-RawBlameHistory
-54 lines(53 sloc) 1.55 KB {
+{
     "name": "todo",
     "version": "1.0.0",
     "description": "",
@@ -67,16 +50,4 @@ RawBlameHistory
         "react-dom": "^15.4.0",
         "react-router": "^3.0.3"
     }
-}©
-2017 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-API
-Training
-Shop
-Blog
-About
+}

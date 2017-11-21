@@ -108,11 +108,11 @@ MAIN CALCULATOR
         }
         .calculator-text {
             font-size: 1.25rem;
-            padding: 7px 0px;
+            padding: 8px 0px;
         }
         .calculator-textarea {
             width: 100%;
-            height: 130px;
+            height: 115px;
             resize: none;
             outline: none;
         }
@@ -124,7 +124,7 @@ MAIN CALCULATOR
             }
         }
         .language-select {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             width: 95%;
             height: 32px;
             margin-top: 5px;
@@ -159,15 +159,16 @@ MAIN CALCULATOR
             color: #fff;
             background-color: rgba(13, 3, 72, 0.25);
             .pricing-table-row-header {
-                display: flex;
-                align-content: center;
+                // display: flex;
+                align-items: center;
                 height: 75px;
                 .pricing-table-headers {
-                    height: 100%;
+                    height: 75px;
                     font-size: 2.5rem;
                     font-weight: 300;
-                    align-content: center;
+                    // align-items: center;
                     border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
                 }
             }
             .pricing-table-row-transl {
@@ -176,36 +177,39 @@ MAIN CALCULATOR
                 align-content: center;
                 height: 100%;
                 .pricing-table-transl-cell {
-                    height: 100%;
+                    height: 75px;
                     font-weight: 300;
                     font-size: 1.5rem;
                     align-content: center;
                     border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
                 }
             }
             .pricing-table-row-redact-lang {
                 display: flex;
                 align-content: center;
-                height: 100%;
+                // height: 75px;
                 .pricing-table-redact-cell {
-                    height: 100%;
+                    height: 75px;
                     align-content: center;
                     font-weight: 300;
                     font-size: 1.5rem;
                     border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
                 }
             }
             .pricing-table-row-redact-merit {
                 display: flex;
                 background-color: rgba(13, 3, 72, 0.3);
                 align-content: center;
-                height: 100%;
+                // height: 100%;
                 .pricing-table-merit-cell {
-                    height: 100%;
+                    height: 75px;
                     font-weight: 300;
                     font-size: 1.5rem;
-                    align-content: center;
+                    align-items: center;
                     border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
                 }
             }
         }
@@ -243,6 +247,10 @@ MAIN CALCULATOR
                     font-weight: 300;
                     text-align: center;
                     border-right: 1px solid rgb(255, 255, 255);
+                    padding: 15px 0px;
+                }
+                .chosen-title {
+                    padding: 30px 0px;
                 }
             }
             .medium-text {
@@ -271,7 +279,7 @@ MAIN CALCULATOR
             }
             .order-button {
                 width: 100%;
-                height: 75px;
+                height: 50px;
                 background-color: rgba(13, 3, 72, 0.75);
                 color: rgb(255, 255, 255);
                 font-size: 2rem;
@@ -279,7 +287,8 @@ MAIN CALCULATOR
                 justify-content: center;
                 align-items: center;
                 border-radius: 10px;
-                margin-top: 25px;
+                margin: 25px 0px;
+                padding: 10px 0px;
             }
         }
     }
