@@ -7,9 +7,13 @@ body {
 }
 
 
-/*-----------------------------------------
-MAIN SECTION             
------------------------------------------*/
+/*---------------------------------------*/
+
+
+/*     MAIN SECTION                      */
+
+
+/*---------------------------------------*/
 
 .section-main {
     position: relative;
@@ -80,13 +84,44 @@ MAIN SECTION
                 }
             }
         }
+        .main-info {
+            padding-top: 120px;
+            .main-header {
+                text-align: right;
+                color: rgba(13, 3, 72, 0.7);
+                font-size: 2.5rem;
+                width: 100%;
+                border-bottom: 2px solid rgba(13, 3, 72, 0.7);
+            }
+            .main-description {
+                .main-description-paragraph {
+                    text-align: left;
+                    color: rgba(13, 3, 72, 0.7);
+                    font-size: 1.75rem;
+                    line-height: 2rem;
+                }
+                .main-description-button {
+                    text-align: center;
+                    color: #fff;
+                    background-color: rgba(13, 3, 72, 0.7);
+                    border-radius: 5px;
+                    margin: 10px 0px;
+                    padding: 5px;
+                    border: none;
+                }
+            }
+        }
     }
 }
 
 
-/*-----------------------------------------
-MAIN CALCULATOR             
------------------------------------------*/
+/*-----------------------------------------*/
+
+
+/*          SECTION CALCULATOR             */
+
+
+/*-----------------------------------------*/
 
 .section-calculator {
     position: relative;
@@ -165,8 +200,7 @@ MAIN CALCULATOR
                 .pricing-table-headers {
                     height: 75px;
                     font-size: 2.5rem;
-                    font-weight: 300;
-                    // align-items: center;
+                    font-weight: 300; // align-items: center;
                     border-right: 1px solid rgb(255, 255, 255);
                     padding: 10px 0px;
                 }
@@ -187,8 +221,7 @@ MAIN CALCULATOR
             }
             .pricing-table-row-redact-lang {
                 display: flex;
-                align-content: center;
-                // height: 75px;
+                align-content: center; // height: 75px;
                 .pricing-table-redact-cell {
                     height: 75px;
                     align-content: center;
@@ -201,8 +234,7 @@ MAIN CALCULATOR
             .pricing-table-row-redact-merit {
                 display: flex;
                 background-color: rgba(13, 3, 72, 0.3);
-                align-content: center;
-                // height: 100%;
+                align-content: center; // height: 100%;
                 .pricing-table-merit-cell {
                     height: 75px;
                     font-weight: 300;
@@ -290,6 +322,132 @@ MAIN CALCULATOR
                 margin: 25px 0px;
                 padding: 10px 0px;
             }
+        }
+    }
+}
+
+// -----------------------------
+//  SECTION ABOUT US
+// -----------------------------
+.section-about-us {
+    background-color: rgba(13, 3, 72, 0.7);
+    color: #fff;
+    padding-bottom: 25px; // height: 260px;
+    .section-about-us-header {
+        .section-about-us-header-text {
+            margin: 20px 0px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .section-about-us-main-text {
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    }
+    .about-us-image {
+        height: 160px;
+        width: 100%;
+        box-shadow: 1px 1px 2px 1px #fff;
+    }
+} // -----------------------------
+//  SECTION CREDENTIALS
+// -----------------------------
+.section-credentials {
+    background-color: #fff;
+    color: rgb(13, 3, 72); // height: 260px;
+    margin: 15px 0px;
+    .section-credentials-header {
+        .section-credentials-header-text {
+            color: rgb(13, 3, 72);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid rgb(13, 3, 72);
+        }
+    }
+    .section-credentials-main-text {
+        .quote {
+            color: rgb(13, 3, 72);
+            font-size: 1.25rem;
+            font-weight: 300;
+            text-align: center;
+        }
+        .company {
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// -----------------------------
+//  SECTION OUR PARTNERS
+// -----------------------------
+.section-partners {
+    background-color: #fff;
+    color: rgb(13, 3, 72);
+    height: 260px;
+    .section-partners-header {
+        .section-partners-header-text {
+            margin: 20px 0px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid rgb(13, 3, 72);
+        }
+    }
+    .section-partners-main-text {
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    }
+    .partners-image {
+        height: 160px;
+        width: 100%;
+        box-shadow: 1px 1px 2px 1px #fff;
+    }
+}
+
+// -----------------------------
+//  SECTION CONTACT
+// -----------------------------
+.section-contact {
+    background-color: rgba(13, 3, 72, 0.7);
+    color: #fff;
+    padding: 25px 0px;
+    // margin: 15px 0px;
+    .section-contact-header {
+        // margin: 25px 0px;
+        .section-contact-header-text {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .section-contact-main-text {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: left;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .company {
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: right;
+            margin-bottom: 20px;
         }
     }
 }
