@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 </ul>
                                             </div>
                                             <div className="menu-calc">
-                                                WYCENA ON-LINE
+                                                <a href="#section-calculator">WYCENA ON-LINE</a>
                                             </div>
                                         </div>
                                     </div>
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="row">
                                             <div className="col-lg-12">
                                                 <div className="calculator-title-box">
-                                                    <a name="section-calculator">WYCENA ON-LINE</a>
+                                                    <a name="section-calculator"><h2>WYCENA ON-LINE</h2></a>
                                                 </div>
                                                 <div className="calculator-text">
                                                     Wklej tekst do tłumaczenia
@@ -517,7 +517,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div className="row">
                                     <div className="col-lg-4">
                                         <div className="section-about-us-header">
-                                            <h2 className="section-about-us-header-text" ><a name="section-about-us">O NAS</a></h2>
+                                            <h2 className="section-about-us-header-text" ><a name="section-about-us"><h2>O NAS</h2></a></h2>
                                         </div>
                                     </div>
                                 </div>
@@ -552,7 +552,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <div className="col-lg-4">
                                         <div className="section-credentials-header">
                                             <h2 className="section-credentials-header-text">
-                                                <a name="section-credentials">REFERENCJE</a>
+                                                <a name="section-credentials"><h2>REFERENCJE</h2></a>
                                             </h2 > 
                                         </div>
                                     </div>
@@ -585,7 +585,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <div className="col-lg-4">
                                         <div className="section-partners-header">
                                             <h2 className="section-partners-header-text">
-                                                <a name="section-partners">ZAUFALI NAM</a>
+                                                <a name="section-partners"><h2>ZAUFALI NAM</h2></a>
                                             </h2 > 
                                         </div> 
                                     </div>
@@ -621,7 +621,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     <div className="col-lg-4">
                                         <div className="section-contact-header">
                                             <h2 className="section-contact-header-text">
-                                                <a name="section-contact">KONTAKT</a>
+                                                <a name="section-contact"><h2>KONTAKT</h2></a>
                                             </h2 > 
                                         </div> 
                                     </div>
@@ -674,7 +674,6 @@ document.addEventListener('DOMContentLoaded', function () {
             )
         }
     } 
-    
 
     class App extends React.Component {
         render() {
