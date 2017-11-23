@@ -90,16 +90,16 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="menu-list">
                                             <ul>
                                                 <li>
-                                                    <a href="#">O NAS</a>
+                                                    <a href="#section-about-us">O NAS</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">REFERENCJE</a>
+                                                    <a href="#section-credentials">REFERENCJE</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">ZAUFALI NAM</a>
+                                                    <a href="#section-partners">ZAUFALI NAM</a>
                                                 </li>
                                                 <li>
-                                                    <a href="#">KONTAKT</a>
+                                                    <a href="#section-contact">KONTAKT</a>
                                                 </li>
                                             </ul>
                                         </div>
@@ -145,7 +145,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div className="input-area">
                                 <div className="row">
                                     <div className="col-lg-12">
-                                        <div className="calculator-title-box">WYCENA ON-LINE</div>
+                                        <div className="calculator-title-box"><a name="section-calculator">WYCENA ON-LINE</a></div>
                                         <div className="calculator-text">Wklej tekst do tłumaczenia</div>
                                             < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
                                         <div className="calculator-text-length">
@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="section-about-us-header">
-                                <h2 className="section-about-us-header-text">O NAS</h2>
+                                <h2 className="section-about-us-header-text" ><a name="section-about-us">O NAS</a></h2>
                             </div>
                         </div>
 
@@ -438,7 +438,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="row">
                                             <div className="col-lg-4">
                                                 <div className="section-credentials-header">
-                                                    <h2 className="section-credentials-header-text">REFERENCJE</h2 > 
+                                                    <h2 className="section-credentials-header-text"><a name="section-credentials">REFERENCJE</a></h2 > 
                                                     </div>
                                                 < /div>
                                             </div > 
@@ -468,7 +468,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="col-lg-4">
                                             <div className="section-partners-header">
                                                 <h2 className="section-partners-header-text">
-                                                    ZAUFALI NAM
+                                                    <a name="section-partners">ZAUFALI NAM</a>
                                                 </h2 > 
                                             </div> 
                                         < /div>
@@ -501,7 +501,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div className="row">
                                 <div className="col-lg-4">
                                     <div className="section-contact-header">
-                                        <h2 className="section-contact-header-text">KONTAKT</h2 > 
+                                        <h2 className="section-contact-header-text"><a name="section-contact">KONTAKT</a></h2 > 
                                         </div> 
                                     < /div>
                                 </div > 
@@ -519,18 +519,20 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <div className="section-contact-main-text">
                                     <ul>
                                         <li>
-                                            <a className="contact-links" href="#">O NAS</a > </li> 
-                                            < li > <a className="contact-links" href="#">REFERENCJE</a> < /li>
+                                            <a className="contact-links" href="#section-about-us">O NAS</a> </li> 
+                                            < li > <a className="contact-links" href="#section-credentials">REFERENCJE</a> < /li>
                                         <li>
-                                            <a className="contact-links" href="#">ZAUFALI NAM</a > </li> 
-                                            < li > <a className="contact-links" href="#">KONTAKT</a> < /li>
+                                            <a className="contact-links" href="#section-partners">ZAUFALI NAM</a> </li> 
+                                            < li > <a className="contact-links" href="#section-contact">KONTAKT</a> < /li>
 
                                     </ul > 
                                 </div> 
                             < /div>
                             <div className="col-lg-3">
                                 <div className="section-contact-main-text">
-                                    <p className="pricing">WYCENA ON-LINE</p > </div> < /div>
+                                    <p className="pricing"><a className="contact-links" href="#section-calculator">WYCENA ON-LINE</a></p > 
+                                </div> 
+                            < /div>
                             <div className="col-lg-3">
                                 <div className="section-contact-main-text">
                                     <p className="copy">copyrights TransLingus</p > <p className="copy">code and design</p> < p className = "copy" > by MarcinOstaszewski < /p>
