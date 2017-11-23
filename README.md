@@ -12,11 +12,11 @@ Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może 
 
 
 ### TO DO 
-linki z main-menu SCROLLUJĄ do danej sekcji
++ linki z main-menu SCROLLUJĄ do danej sekcji
 
-linki z footer-menu scrollują do danej sekcji
++ linki z footer-menu scrollują do danej sekcji
 
-przycisk WIĘCEJ z obrazka HERO scrolluje do danej sekcji
++ przycisk WIĘCEJ z obrazka HERO scrolluje do danej sekcji
 
 radio-button do wyboru Z języka lub NA język
 
@@ -29,4 +29,3 @@ wybranie usługi rozwija formularz i wkleja wybraną usługę+cenę+termin w tab
 walidacja kolejnych okienek formularza
 
 funkcja onSubmit na formularzu
-

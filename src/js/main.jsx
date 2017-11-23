@@ -35,6 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 meritPrice : 2,
                 urgentPrice : 1.5,
                 expressPrice : 2,
+                chosenService : '',
+                inVisible : 'not-visible',
+                realisationTimeMin : 24,
+                realisationTimeMax : 48,
             }
         }
         
@@ -49,6 +53,8 @@ document.addEventListener('DOMContentLoaded', function () {
             this.setState({
                 [event.target.name]: event.target.value,
                 textAreaPages : (Math.floor(event.target.value.length / 1800) < 1) ? 1 : Number((event.target.value.length / 1800).toFixed(1)),
+                realisationTimeMin : (Math.ceil(this.state.textAreaPages / 6 ) * 24),
+                realisationTimeMax : (Math.ceil(this.state.textAreaPages / 6 ) * 24 + 24),
             })
         }
         
@@ -57,8 +63,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         handleCellClick = (event) => {
+            console.log(event.target.id);
+            this.setState({
+                chosenService : event.target.id,
+                inVisible : ''
+            });
+            return "tralata";
+        }
+
+        translationDirection = (event) => {
+            console.log("Tranlacji kierunek wybrany");
             console.log(event.target);
-            // return "tralata";
+        }
+        realisationTime = (event) => {
+            this.setState({
+                realisationTimeMin : (Math.ceil(this.state.textAreaPages / 6 ) * 24),
+                realisationTimeMax : (Math.ceil(this.state.textAreaPages / 6 ) * 24 + 24),
+            })
         }
 
         render() {
@@ -71,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
             let transExpressPrice = Math.floor(translationPrice * this.state.expressPrice);
             let redactExpressPrice = Math.floor(redactionPrice * this.state.expressPrice);
             let meritExpressPrice = Math.floor(meritoryPrice * this.state.expressPrice);
+
+            // let realisationTime = (Math.ceil(this.state.textAreaPages / 6 ) * 24);
 
             return (
                 <div>
@@ -128,7 +151,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 <br/>Nasze doświadczenie
                                                     <br/>to gwarancja
                                                         <br/>Twojego zadowolenia</p>
-                                                        <button className="main-description-button">WIĘCEJ</button>
+                                                        <button className="main-description-button"><a href="#section-about-us" >WIĘCEJ</a></button>
                                                     </div>
                                                 </div>
                                             </div>
@@ -138,53 +161,52 @@ document.addEventListener('DOMContentLoaded', function () {
                             </section>
 
 
-            < section className = "section-calculator" > <div className="container">
+        < section className = "section-calculator" > 
+            <div className="container">
                 <div className="calculator">
                     <div className="row">
                         <div className="col-lg-4">
                             <div className="input-area">
                                 <div className="row">
                                     <div className="col-lg-12">
-                                        <div className="calculator-title-box"><a name="section-calculator">WYCENA ON-LINE</a></div>
-                                        <div className="calculator-text">Wklej tekst do tłumaczenia</div>
-                                            < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
+                                        <div className="calculator-title-box">
+                                            <a name="section-calculator">WYCENA ON-LINE</a>
+                                        </div>
+                                        <div className="calculator-text">
+                                            Wklej tekst do tłumaczenia
+                                        </div>
+                                        < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
                                         <div className="calculator-text-length">
                                             Długość tekstu: <strong className="calculator-monospace">{this.state.textArea.length} znaków <br/>
                                                  to w zaokrągleniu {this.state.textAreaPages} str. </strong><span class="minimum-text">(min. 1 str.)</span>
-                                            
                                         </div>
                                     </div>
                                 </div>
+
+
+
                                 <div className="row">
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-12">
                                         <div className="language-select">
-                                            <div className="calculator-from-language">
-                                                Z języka:
-                                            </div>
-                                            <select className="language from">
-                                                <option value=" niemiecki ">niemiecki</option>
-                                                <option value="polski ">polski</option>
-                                                <option value="rosyjski ">rosyjski</option>
-                                                <option value="urundi ">urundi</option>
-                                            </select>
+                                            <form action="this.translationDirection">
+                                                <input type="radio" name="from-polish" value="from-polish" />Z polskiego na: 
+                                                <input type="radio" name="to-polish" value="to-polish" />Na polski z: 
+                                            </form>
                                         </div>
                                     </div>
-                                    <div className="col-lg-6 ">
-                                        <div className="language-select">
-                                            <div className="calculator-to-language ">
-                                                Na język:
-                                            </div>
-                                            <select className="language to ">
-                                                <option value="polski ">polski</option>
-                                                <option value="niemiecki ">niemiecki</option>
-                                                <option value="rosyjski ">rosyjski</option>
-                                                <option value="urundi ">urundi</option>
-                                            </select>
-                                        </div>
+                                    <div className="col-lg-12">
+                                        <select className="chosen-language">
+                                            <option value="angielski">angielski</option>
+                                            <option value="francuski">francuski</option>
+                                            <option value="niemiecki ">niemiecki</option>
+                                            <option value="rosyjski ">rosyjski</option>
+                                            <option value="wloski">włoski</option>
+                                        </select>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                            
                         <div className="col-lg-8 ">
                             <div className="pricing-table ">
                                 <div className="row">
@@ -198,19 +220,19 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="col-lg-3">
                                             <div className="pricing-table-headers">
                                                 Zwykły<br/>
-                                                <span className="realisation-time">{ Math.ceil(this.state.textAreaPages / 6 ) * 24 } - { Math.ceil(this.state.textAreaPages / 6 ) * 24 + 48 } godz.</span>
+                                                <span className="realisation-time">{ this.state.realisationTimeMin } - { this.state.realisationTimeMax + 24} godz.</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
                                             <div className="pricing-table-headers">
                                                 Pilny<br/>
-                                                <span className="realisation-time">{ Math.ceil(this.state.textAreaPages / 6 ) * 24 } - { Math.ceil(this.state.textAreaPages / 6 ) * 24 + 24 } godz.</span>
+                                                <span className="realisation-time">{this.state.realisationTimeMin } - { this.state.realisationTimeMax } godz.</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
                                             <div className="pricing-table-headers">
                                                 Ekspres<br/>
-                                                <span className="realisation-time">{ Math.ceil(this.state.textAreaPages / 6 ) * 24 } godz. </span>
+                                                <span className="realisation-time">maks. { this.state.realisationTimeMin } godz. </span>
                                             </div>
                                         </div>
                                     </div>
@@ -221,21 +243,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <div className="pricing-table-transl-cell">Tłumaczenie zwykłe</div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-transl-cell hover" onClick={this.handleCellClick}>
+                                            <div className="pricing-table-transl-cell hover" id="translBasic" onClick={this.handleCellClick}>
                                                 <span className="price-net" id="tr-1-net">{translationPrice} zł netto</span>
 
                                                 <span className="price-with-vat" id="tr-1-br">{this.calculateVat(translationPrice)} zł z VAT</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-transl-cell hover">
+                                            <div className="pricing-table-transl-cell hover" id="translUrgent" onClick={this.handleCellClick}>
                                                 <span className="price-net" id="tr-2-net">{transUrgentPrice} zł netto</span>
 
                                                 <span className="price-with-vat" id="tr-2-br">{this.calculateVat(transUrgentPrice)} zł z VAT</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-transl-cell hover">
+                                            <div className="pricing-table-transl-cell hover" id="translExpress" onClick={this.handleCellClick}>
                                                 <span className="price-net">{transExpressPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(transExpressPrice)} zł z VAT</span>
@@ -249,21 +271,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <div className="pricing-table-redact-cell">+ redakcja językowa</div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-redact-cell hover">
+                                            <div className="pricing-table-redact-cell hover" id="redactBasic" onClick={this.handleCellClick}>
                                                 <span className="price-net">{redactionPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(redactionPrice)} zł z VAT</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-redact-cell hover">
+                                            <div className="pricing-table-redact-cell hover" id="redactUrgent" onClick={this.handleCellClick}>
                                                 <span className="price-net">{redactUrgentPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(redactUrgentPrice)} zł z VAT</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-redact-cell hover">
+                                            <div className="pricing-table-redact-cell hover" id="redactExpress" onClick={this.handleCellClick}>
                                                 <span className="price-net">{redactExpressPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(redactExpressPrice)} zł z VAT</span>
@@ -277,21 +299,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <div className="pricing-table-merit-cell">+ redakcja merytoryczna</div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-merit-cell hover">
+                                            <div className="pricing-table-merit-cell hover" id="meritBasic" onClick={this.handleCellClick}>
                                                 <span className="price-net">{meritoryPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(meritoryPrice)} zł z VAT</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-merit-cell hover">
+                                            <div className="pricing-table-merit-cell hover" id="meritUrgent" onClick={this.handleCellClick} onClick={this.handleCellClick}>
                                                 <span className="price-net">{meritUrgentPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(meritUrgentPrice)} zł z VAT</span>
                                             </div>
                                         </div>
                                         <div className="col-lg-3">
-                                            <div className="pricing-table-merit-cell hover">
+                                            <div className="pricing-table-merit-cell hover" id="meritExpress" onClick={this.handleCellClick}>
                                                 <span className="price-net">{meritExpressPrice} zł netto</span>
 
                                                 <span className="price-with-vat">{this.calculateVat(meritExpressPrice)} zł z VAT</span>
@@ -301,97 +323,98 @@ document.addEventListener('DOMContentLoaded', function () {
                                 </div>
                             </div>
 
-
-                            <div className="chosen-table">
-                                <div className="row">
-                                    <div className="col-lg-12">
-                                        <div className="text-explanation">
-                                            Wpisz swój adres email, podaj dane Twojej firmy
-                                            <br/>
-                                            i wciśnij ZAMAWIAM,
-                                            <br/>
-                                            aby otrzymać maila z gotową fakturą pro-forma.
-                                        </div>
-                                    </div>
-                                    <div className="col-lg-12">
-                                        <div className="row chosen">
-                                            <div className="col-lg-3">
-                                                <div className="chosen-title">TWÓJ WYBÓR:</div>
-                                            </div>
-                                            <div className="col-lg-3">
-                                                <div className="chosen-service">
-                                                    <span className="medium-text">tłumaczenie językowe
-                                                        <br/>z redakcją językową</span>
-                                                </div>
-                                            </div>
-                                            <div className="col-lg-3">
-                                                <div className="chosen-time">
-                                                    <span className="small-italic">czas realizacji</span>
-                                                    <br/>24-48 godzin</div>
-                                            </div>
-                                            <div className="col-lg-3">
-                                                <div className="chosen-price">158 zł netto
-                                                    <br/>
-                                                    <span className="price-with-vat">207 zł z VAT</span>
-                                                </div>
+                            <div className={this.state.inVisible}>
+                                <div className="chosen-table">
+                                    <div className="row">
+                                        <div className="col-lg-12">
+                                            <div className="text-explanation">
+                                                Wpisz swój adres email, podaj dane Twojej firmy
+                                                <br/>
+                                                i wciśnij ZAMAWIAM,
+                                                <br/>
+                                                aby otrzymać maila z gotową fakturą pro-forma.
                                             </div>
                                         </div>
-                                    </div>
-                                    <div className="col-lg-12">
-                                        <form
-                                            className="company-data"
-                                            action="file:///home/marcin/Pulpit/CodersLab/ZajeciaModuly/Biuro_tlumaczen/mock_ups/default-action">
-                                            <label className="company-data-label" for="email">Podaj swój email</label>
-                                            <input
-                                                className="company-data-input"
-                                                name="email"
-                                                type="text"
-                                                onChange = { this.handleChange }
-                                                value = { this.state.email } />
-                                            <label className="company-data-label" for="company">Podaj nazwę firmy</label>
-                                            <input
-                                                className="company-data-input"
-                                                name="company"
-                                                type="text"
-                                                onChange = { this.handleChange }
-                                                value = { this.state.company } />
-                                            <label className="company-data-label" for="NIP">Podaj NIP firmy</label>
-                                            <input
-                                                className="company-data-input"
-                                                name="nip"
-                                                type="number"
-                                                onChange = { this.handleChange }
-                                                value = { this.state.nip } />
-                                            <label className="company-data-label" for="street">Podaj nazwę ulicy</label>
-                                            <input
-                                                className="company-data-input"
-                                                name="street"
-                                                type="text"
-                                                onChange = { this.handleChange }
-                                                value = {this.state.street } />
-                                            <label className="company-data-label" for="number">Podaj numer domu</label>
-                                            <input
-                                                className="company-data-input"
-                                                name="number"
-                                                type="number"
-                                                onChange = {this.handleChange } 
-                                                value = { this.state.number } />
-                                            <label className="company-data-label" for="locale">Podaj numer lokalu</label>
-                                            <input
-                                                className="company-data-input"
-                                                name="locale"
-                                                type="number"
-                                                onChange = {this.handleChange }
-                                                value = { this.state.locale }/>
-                                        </form>
-                                    </div>
-                                    <div className="col-lg-12">
-                                        <div className="order-button">
-                                            ZAMAWIAM
+                                        <div className="col-lg-12">
+                                            <div className="row chosen">
+                                                <div className="col-lg-3">
+                                                    <div className="chosen-title">TWÓJ WYBÓR:</div>
+                                                </div>
+                                                <div className="col-lg-3">
+                                                    <div className="chosen-service">
+                                                        <span className="medium-text">tłumaczenie językowe
+                                                            <br/>z redakcją językową</span>
+                                                    </div>
+                                                </div>
+                                                <div className="col-lg-3">
+                                                    <div className="chosen-time">
+                                                        <span className="small-italic">czas realizacji</span>
+                                                        <br/>{ this.state.realisationTimeMin } - { this.state.realisationTimeMax } godz.</div>
+                                                </div>
+                                                <div className="col-lg-3">
+                                                    <div className="chosen-price">{translationPrice} zł netto
+                                                        <br/>
+                                                        <span className="price-with-vat">{this.calculateVat(translationPrice)} zł z VAT</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-12">
+                                            <form
+                                                className="company-data"
+                                                action="file:///home/marcin/Pulpit/CodersLab/ZajeciaModuly/Biuro_tlumaczen/mock_ups/default-action">
+                                                <label className="company-data-label" for="email">Podaj swój email</label>
+                                                <input
+                                                    className="company-data-input"
+                                                    name="email"
+                                                    type="text"
+                                                    onChange = { this.handleChange }
+                                                    value = { this.state.email } />
+                                                <label className="company-data-label" for="company">Podaj nazwę firmy</label>
+                                                <input
+                                                    className="company-data-input"
+                                                    name="company"
+                                                    type="text"
+                                                    onChange = { this.handleChange }
+                                                    value = { this.state.company } />
+                                                <label className="company-data-label" for="NIP">Podaj NIP firmy</label>
+                                                <input
+                                                    className="company-data-input"
+                                                    name="nip"
+                                                    type="number"
+                                                    onChange = { this.handleChange }
+                                                    value = { this.state.nip } />
+                                                <label className="company-data-label" for="street">Podaj nazwę ulicy</label>
+                                                <input
+                                                    className="company-data-input"
+                                                    name="street"
+                                                    type="text"
+                                                    onChange = { this.handleChange }
+                                                    value = {this.state.street } />
+                                                <label className="company-data-label" for="number">Podaj numer domu</label>
+                                                <input
+                                                    className="company-data-input"
+                                                    name="number"
+                                                    type="number"
+                                                    onChange = {this.handleChange } 
+                                                    value = { this.state.number } />
+                                                <label className="company-data-label" for="locale">Podaj numer lokalu</label>
+                                                <input
+                                                    className="company-data-input"
+                                                    name="locale"
+                                                    type="number"
+                                                    onChange = {this.handleChange }
+                                                    value = { this.state.locale }/>
+                                            </form>
+                                        </div>
+                                        <div className="col-lg-12">
+                                            <div className="order-button">
+                                                ZAMAWIAM
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            < /div>
                         </div>
                     </div>
                 </div>
