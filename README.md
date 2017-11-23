@@ -18,7 +18,7 @@ Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może 
 
 + przycisk WIĘCEJ z obrazka HERO scrolluje do danej sekcji
 
-radio-button do wyboru Z języka lub NA język
++ select do wyboru Z języka lub NA język
 
 lista 16 jezyków do wyboru w 3-4 grupach cenowych
 
