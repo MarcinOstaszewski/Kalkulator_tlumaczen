@@ -35,14 +35,16 @@ document.addEventListener('DOMContentLoaded', function () {
                 meritPrice : 2,
                 urgentPrice : 1.5,
                 expressPrice : 2,
-                chosenLanguage: '',
+                chosenLanguage: 'angielski',
                 languageGroup: 0,
                 chosenService : '',
+                chosenServiceDescripion : '',
+                chosenTimeMinMax : '',
                 inVisible : 'not-visible',
                 realisationTimeMin : 24,
                 realisationTimeMax : 48,
                 chosenServicePrice : 0,
-                translationDirection : 'to-pol',
+                translationDirection : 'from-pol',
                 suffix : '',
             }
         }
@@ -59,13 +61,16 @@ document.addEventListener('DOMContentLoaded', function () {
         setTranslationDirection = (event) => {
             this.setState({
                 translationDirection : event.target.value,
-            });
+                suffix : (this.state.translationDirection == 'to-pol') ? '' : 'ego'
+            });   // suffix jest ustawiany odwrotnie niż powinien, bo zmiana działa 'z opóźnieniem' ;)
         }
 
         handleLanguageChange = (event) => {
             this.setState({
                 chosenLanguage : event.target.value.slice(2),
-                languageGroup : event.target.value.slice(0,1)
+                languageGroup : event.target.value.slice(0,1),
+                inVisible : 'not-visible',
+
             })
         }
 
@@ -74,36 +79,57 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         handleCellClick = (event) => {
-            console.log(event.currentTarget.id);
-            let tempPrice = 0;
-            
+            // console.log(event.currentTarget.id);
+            let tempPrice, tempMinTime, tempMaxTime, tempServiceDescr;
+            let tj = "tłumaczenie na "+ this.state.chosenLanguage;
+            let rj = " z redakcją językową ";
+            let rm = "i merytoryczną";
+
             switch (event.currentTarget.id) {
                 case "translBasic" : 
                     tempPrice = this.translationPrice;
+                    tempMinTime = this.state.realisationTimeMin+" - "+(this.state.realisationTimeMax+24);
+                    tempServiceDescr = tj;
                     break;
                 case "translUrgent" :
                     tempPrice = this.transUrgentPrice;
+                    tempMinTime = this.state.realisationTimeMin+" - "+this.state.realisationTimeMax;
+                    tempServiceDescr = tj;
                     break;
                 case "translExpress" : 
                     tempPrice = this.transExpressPrice;
+                    tempMinTime = this.state.realisationTimeMin;
+                    tempServiceDescr = tj;
                     break;
                 case "redactBasic" :
                     tempPrice = this.redactionPrice;
+                    tempMinTime = this.state.realisationTimeMin+" - "+(this.state.realisationTimeMax+24);
+                    tempServiceDescr = tj + rj;
                     break;
                 case "redactUrgent" :
                     tempPrice = this.redactUrgentPrice;
+                    tempMinTime = this.state.realisationTimeMin+" - "+this.state.realisationTimeMax;
+                    tempServiceDescr = tj + rj;
                     break;
                 case "redactExpress" : 
                     tempPrice = this.redactExpressPrice;
+                    tempMinTime = this.state.realisationTimeMin;
+                    tempServiceDescr = tj + rj;
                     break;
                 case "meritBasic" :
                     tempPrice = this.meritoryPrice;
+                    tempMinTime = this.state.realisationTimeMin+" - "+(this.state.realisationTimeMax+24);
+                    tempServiceDescr = tj + rj + rm;
                     break;
                 case "meritUrgent" :
                     tempPrice = this.meritUrgentPrice;
+                    tempMinTime = this.state.realisationTimeMin+" - "+this.state.realisationTimeMax;
+                    tempServiceDescr = tj + rj + rm;
                     break;
                 case "meritExpress" : 
                     tempPrice = this.meritExpressPrice;
+                    tempMinTime = this.state.realisationTimeMin;
+                    tempServiceDescr = tj + rj + rm;
                     break;
                 default: 
             }
@@ -111,8 +137,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 chosenService : event.currentTarget.id,
                 inVisible : '',
                 chosenServicePrice : tempPrice,
+                chosenTimeMinMax : tempMinTime,
+                chosenServiceDescripion : tempServiceDescr,
             });
-            return this.state.chosenService;
+            return console.log(event.currentTarget);
         }
 
         realisationTime = (event) => {
@@ -131,6 +159,10 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         render() {
+            
+            // console.log(this.state.translationDirection);
+            console.log(this.state.chosenLanguage);
+
             this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice);
             this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice);
             this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice);
@@ -226,8 +258,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
                                                 <div className="calculator-text-length">
                                                     Długość tekstu: <strong className="calculator-monospace">{this.state.textArea.length} znaków <br/>
-                                                        to w zaokrągleniu {this.state.textAreaPages} str. </strong><span class="minimum-text">(min. 1 str.)</span>
-                                                </div>
+                                                    to w zaokrągleniu {this.state.textAreaPages} str. </strong><span class="minimum-text">(min. 1 str.)</span>
+                                                </div> 
                                             </div>
                                         </div>
 
@@ -246,12 +278,12 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <div className="col-lg-12">
                                                 <select className="chosen-language" onChange={this.handleLanguageChange} value={this.state.select}>
                                                     <option value="1.angielski">angielski{this.state.suffix}</option>
-                                                    <option value="3.chinski">chiński</option>
-                                                    <option value="1.francuski">francuski</option>
-                                                    <option value="1.niemiecki ">niemiecki</option>
-                                                    <option value="2.rosyjski ">rosyjski</option>
-                                                    <option value="2.hiszpanski">hiszpański</option>
-                                                    <option value="2.wloski">włoski</option>
+                                                    <option value="3.chinski">chiński{this.state.suffix}</option>
+                                                    <option value="1.francuski">francuski{this.state.suffix}</option>
+                                                    <option value="1.niemiecki ">niemiecki{this.state.suffix}</option>
+                                                    <option value="2.rosyjski ">rosyjski{this.state.suffix}</option>
+                                                    <option value="2.hiszpanski">hiszpański{this.state.suffix}</option>
+                                                    <option value="2.wloski">włoski{this.state.suffix}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -367,10 +399,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3">
-                                                    <div className="pricing-table-merit-cell hover" id="meritExpress" onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.meritExpressPrice} zł netto</span>
+                                                    <div className="pricing-table-merit-cell hover" id="meritExpress" onClick={ this.handleCellClick }>
+                                                        <span className="price-net">{ this.meritExpressPrice } zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.meritExpressPrice)} zł z VAT</span>
+                                                        <span className="price-with-vat">{ this.calculateVat(this.meritExpressPrice) } zł z VAT</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -378,7 +410,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                     </div>
                                 </div>
                             </div>
-                            <div className={this.state.inVisible}>
+                            <div className={ this.state.inVisible }>
                                 <div className="chosen-table">
                                     <div className="row">
                                         <div className="col-lg-12">
@@ -388,14 +420,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="chosen-service">
-                                                        <span className="medium-text">tłumaczenie językowe
-                                                            <br/>z redakcją językową</span>
+                                                        <span className="medium-text">{ this.state.chosenServiceDescripion } </span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="chosen-time">
                                                         <span className="small-italic">czas realizacji</span>
-                                                        <br/>{ this.state.realisationTimeMin } - { this.state.realisationTimeMax } godz.</div>
+                                                        <br/>{ this.state.chosenTimeMinMax } godz.</div>
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="chosen-price">{this.state.chosenServicePrice} zł netto

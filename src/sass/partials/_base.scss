@@ -1,0 +1,488 @@
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    min-width: 600px;
+    font-weight: 300;
+    color: #fff; // color: rgb(13, 3, 72);
+}
+
+
+/*---------------------------------------*/
+
+
+/*     MAIN SECTION                      */
+
+
+/*---------------------------------------*/
+
+.section-main {
+    position: relative;
+    width: 100%;
+    height: 624px;
+    display: block;
+    .hero {
+        background-image: url(../img/126_opt.jpg);
+        height: 100%;
+        background-size: cover;
+        .main-nav {
+            position: absolute;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            width: 100%;
+            height: 75px;
+            top: 20px;
+            flex-direction: row;
+            background-color: rgba(13, 3, 72, 0.7);
+            color: rgb(255, 255, 255);
+            .main-logo {
+                height: 75px;
+                display: flex;
+                flex-direction: row;
+                font-size: 2rem;
+                line-height: 1.5rem;
+                align-items: center;
+            }
+            .main-menu {
+                font-size: 1rem;
+                display: flex;
+                justify-content: space-between;
+                .menu-list {
+                    flex-direction: row;
+                    ul {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        li {
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            display: inline-block;
+                            height: 75px;
+                            padding: 20px 0px;
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.25);
+                            }
+                            a {
+                                display: inline-block;
+                                font-size: 1rem;
+                                color: rgb(255, 255, 255);
+                                line-height: 1rem;
+                                padding: 10px 20px;
+                                text-decoration: none;
+                                border-right: 1px solid white;
+                            }
+                        }
+                    }
+                }
+                .menu-calc {
+                    display: flex;
+                    justify-content: right;
+                    align-items: center;
+                    font-size: 1.5rem;
+                    flex-direction: row;
+                }
+            }
+        }
+        .main-info {
+            padding-top: 120px;
+            .main-header {
+                text-align: right;
+                color: rgba(13, 3, 72, 0.7);
+                font-size: 2.5rem;
+                width: 100%;
+                border-bottom: 2px solid rgba(13, 3, 72, 0.7);
+            }
+            .main-description {
+                .main-description-paragraph {
+                    text-align: left;
+                    color: rgba(13, 3, 72, 0.7);
+                    font-size: 1.75rem;
+                    line-height: 2rem;
+                }
+                .main-description-button {
+                    text-align: center;
+                    color: #fff;
+                    background-color: rgba(13, 3, 72, 0.7);
+                    border-radius: 5px;
+                    margin: 10px 0px;
+                    padding: 5px 10px;
+                    border: none;
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+/*-----------------------------------------*/
+
+
+/*          SECTION CALCULATOR             */
+
+
+/*-----------------------------------------*/
+
+.section-calculator {
+    position: relative;
+    display: flex;
+    width: 100%;
+    margin: 37px 0px;
+    color: rgb(13, 3, 72);
+    .calculator {
+        .calculator-title-box {
+            display: flex;
+            width: 100%;
+            height: 35px;
+            color: rgb(255, 255, 255);
+            font-size: 1.5rem;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(13, 3, 72);
+            border-radius: 10px;
+        }
+        .calculator-text {
+            font-size: 1.25rem;
+            padding: 10px 0px;
+        }
+        .calculator-textarea {
+            width: 100%;
+            height: 75px;
+            resize: none;
+            outline: none;
+        }
+        .calculator-text-length {
+            font-size: 1.25rem;
+            padding: 10px 0px;
+            line-height: 1.5rem;
+            .calculator-monospace {
+                font-weight: 500;
+            }
+            span {
+                font-size: 0.75rem;
+            }
+        }
+        .chosen-language {
+            font-size: 1.2rem;
+            width: 100%;
+            height: 32px;
+            margin-top: 5px;
+            color: #fff;
+            background-color: rgb(13, 3, 72);
+            text-align: left;
+            border-radius: 5px;
+            // padding: 0px 0px;
+            .calculator-from-language,
+            .calculator-to-language {
+                font-size: 1.25rem;
+                padding: 5px 0px;
+            }
+            select.language {
+                width: 100%;
+                margin-top: 20px;
+                display: block;
+                form {
+                    width: 100%;
+                    display: flex;
+                    justify-content: space-between;
+                    input {
+                        padding: 0px 10px;
+                    }
+                }
+                .option {
+                    white-space: pre;
+                    min-height: 1.2em;
+                    padding: 0px 5px 1px;
+                }
+            }
+        } /// -----------------------------------
+        /// PRICING TABLE
+        /// -----------------------------------
+        .pricing-table {
+            font-size: 2rem;
+            font-weight: 300;
+            text-align: center;
+            margin-left: 5px;
+            color: #fff;
+            background-color: rgba(13, 3, 72, 0.35);
+            .pricing-table-row-header {
+                // display: flex;
+                align-items: center;
+                height: 75px;
+                .pricing-table-headers {
+                    height: 75px;
+                    font-size: 2.25rem;
+                    line-height: 1.7rem;
+                    font-weight: 300;
+                    border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
+                    .realisation-time {
+                        font-size: 1rem;
+                    }
+                }
+            }
+            .pricing-table-row-transl {
+                display: flex;
+                background-color: rgba(13, 3, 72, 0.3);
+                align-content: center;
+                height: 100%;
+                .pricing-table-transl-cell {
+                    height: 75px;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    align-content: center;
+                    border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
+                }
+            }
+            .pricing-table-row-redact-lang {
+                display: flex;
+                align-content: center; // height: 75px;
+                .pricing-table-redact-cell {
+                    height: 75px;
+                    align-content: center;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
+                }
+            }
+            .pricing-table-row-redact-merit {
+                display: flex;
+                background-color: rgba(13, 3, 72, 0.3);
+                align-content: center; // height: 100%;
+                .pricing-table-merit-cell {
+                    height: 75px;
+                    font-weight: 300;
+                    font-size: 1.5rem;
+                    align-items: center;
+                    border-right: 1px solid rgb(255, 255, 255);
+                    padding: 10px 0px;
+                }
+            }
+        }
+        .hover {
+            &:hover {
+                background-color: rgba(13, 3, 72, 0.75);
+                font-size: 4rem;
+            }
+        }
+        .price-net {
+            font-size: 1.5rem;
+            font-weight: 500;
+            width: 100%;
+            display: block;
+        }
+        .price-with-vat {
+            font-size: 1rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+        .not-visible {
+            display: none;
+        }
+        .chosen-table {
+            margin-top: 15px;
+            .text-explanation {
+                font-size: 1.25rem;
+                line-height: 1.5rem;
+                margin: 10px 0px;
+            }
+            .chosen {
+                background-color: rgba(13, 3, 72, 0.75);
+                height: 85px;
+                width: 100%;
+                margin-top: 17px;
+                color: rgb(255, 255, 255);
+                display: flex;
+                border-radius: 10px;
+                .chosen-title,
+                .chosen-service,
+                .chosen-time,
+                .chosen-price {
+                    width: 100%;
+                    height: 100%;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    text-align: center;
+                    border-right: 1px solid rgb(255, 255, 255);
+                    padding: 7px 7px;
+                }
+                .chosen-service {
+                    padding-top: 7px;
+                }
+                .chosen-title {
+                    padding: 30px 0px;
+                }
+            }
+            .medium-text {
+                font-size: 1rem;
+            }
+            .small-italic {
+                font-size: 1rem;
+                font-style: italic;
+                font-weight: 300;
+            }
+            .company-data {
+                width: 100%;
+                .company-data-label {
+                    display: block;
+                    font-size: 1.5rem;
+                    width: 100%;
+                    margin: 22px 0px 3px;
+                }
+                .company-data-input {
+                    font-family: 'Roboto', Arial, sans-serif;
+                    font-size: 1.5rem;
+                    font-weight: 300;
+                    height: 42px;
+                    display: block;
+                    width: 100%;
+                    border: 1px solid rgba(13, 3, 72, 0.5);
+                }
+            }
+            .order-button {
+                width: 100%;
+                height: 50px;
+                background-color: rgba(13, 3, 72, 0.75);
+                color: rgb(255, 255, 255);
+                font-size: 2rem;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                border-radius: 10px;
+                margin: 25px 0px;
+                padding: 10px 0px;
+            }
+        }
+    }
+}
+
+// -----------------------------
+//  SECTION ABOUT US
+// -----------------------------
+.section-about-us {
+    background-color: rgba(13, 3, 72, 0.7);
+    color: #fff;
+    padding-bottom: 25px; // height: 260px;
+    .section-about-us-header {
+        .section-about-us-header-text {
+            margin: 20px 0px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .section-about-us-main-text {
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    }
+    .about-us-image {
+        height: 160px;
+        width: 100%;
+    }
+} // -----------------------------
+//  SECTION CREDENTIALS
+// -----------------------------
+.section-credentials {
+    background-color: #fff;
+    color: rgb(13, 3, 72); // height: 260px;
+    margin: 15px 0px;
+    .section-credentials-header {
+        .section-credentials-header-text {
+            color: rgb(13, 3, 72);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid rgb(13, 3, 72);
+        }
+    }
+    .section-credentials-main-text {
+        .quote {
+            color: rgb(13, 3, 72);
+            font-size: 1.25rem;
+            font-weight: 300;
+            text-align: center;
+        }
+        .company {
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: right;
+            margin: 10px 0 20px 0;
+        }
+    }
+}
+
+// -----------------------------
+//  SECTION OUR PARTNERS
+// -----------------------------
+.section-partners {
+    background-color: #fff;
+    color: rgb(13, 3, 72);
+    height: 260px;
+    .section-partners-header {
+        .section-partners-header-text {
+            margin: 20px 0px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid rgb(13, 3, 72);
+        }
+    }
+    .section-partners-main-text {
+        p {
+            font-size: 1.25rem;
+            font-weight: 300;
+        }
+    }
+    .partners-image {
+        height: 160px;
+        width: 100%;
+        box-shadow: 1px 1px 2px 1px #fff;
+    }
+}
+
+// -----------------------------
+//  SECTION CONTACT
+// -----------------------------
+.section-contact {
+    background-color: rgba(13, 3, 72, 0.7);
+    color: #fff;
+    padding: 25px 0px;
+    // margin: 15px 0px;
+    .section-contact-header {
+        // margin: 25px 0px;
+        .section-contact-header-text {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            font-weight: 300;
+            width: 100%;
+            border-bottom: 1px solid #fff;
+        }
+    }
+    .section-contact-main-text {
+        color: #fff;
+        font-size: 1rem;
+        font-weight: 300;
+        text-align: left;
+        a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .company {
+            font-weight: 500;
+            font-size: 1rem;
+            text-align: right;
+            margin-bottom: 20px;
+        }
+    }
+}
