@@ -30,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 textArea : '',
                 pagePrice : 46,
                 textAreaPages : 1,
-                vat : 1.22,
+                vat : 1.23,
                 redactPrice : 1.5,
                 meritPrice : 2,
                 urgentPrice : 1.5,
@@ -44,18 +44,37 @@ document.addEventListener('DOMContentLoaded', function () {
                 [event.target.name]: event.target.value
             })
         }
-
+    
         changeTextArea = (event) => {
-             this.setState({
+            this.setState({
                 [event.target.name]: event.target.value,
-                textAreaPages : Math.floor(this.state.textArea.length / 1800) + 1
+                textAreaPages : (Math.floor(event.target.value.length / 1800) < 1) ? 1 : Number((event.target.value.length / 1800).toFixed(1)),
             })
         }
         
+        calculateVat = (netPrice) => {
+            return Math.floor(netPrice * this.state.vat);
+        }
+
+        handleCellClick = (event) => {
+            console.log(event.target);
+            // return "tralata";
+        }
+
         render() {
+            let translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice);
+            let redactionPrice = Math.floor(translationPrice * this.state.redactPrice);
+            let meritoryPrice = Math.floor(translationPrice * this.state.meritPrice);
+            let transUrgentPrice = Math.floor(translationPrice * this.state.urgentPrice);
+            let redactUrgentPrice = Math.floor(redactionPrice * this.state.urgentPrice);
+            let meritUrgentPrice = Math.floor(meritoryPrice * this.state.urgentPrice);
+            let transExpressPrice = Math.floor(translationPrice * this.state.expressPrice);
+            let redactExpressPrice = Math.floor(redactionPrice * this.state.expressPrice);
+            let meritExpressPrice = Math.floor(meritoryPrice * this.state.expressPrice);
+
             return (
                 <div>
-                    < section className = "section-main" > 
+                < section className = "section-main" > 
                     <div className="hero">
                         <div className="main-nav">
                             <div className="container">
@@ -119,370 +138,409 @@ document.addEventListener('DOMContentLoaded', function () {
                             </section>
 
 
-< section className = "section-calculator" > <div className="container">
-    <div className="calculator">
-        <div className="row">
-            <div className="col-lg-4">
-                <div className="input-area">
+            < section className = "section-calculator" > <div className="container">
+                <div className="calculator">
                     <div className="row">
-                        <div className="col-lg-12">
-                            <div className="calculator-title-box">WYCENA ON-LINE</div>
-                            <div className="calculator-text">Wklej tekst do tłumaczenia</div>
-< textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
-                            <div className="calculator-text-length">
-                                Długość tekstu: <strong className="calculator-monospace">
-                                    {this.state.textArea.length} znaków = {this.state.textAreaPages} s.
-                                </strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="col-lg-6">
-                            <div className="language-select">
-                                <div className="calculator-from-language">
-                                    Z języka:
-                                </div>
-                                <select className="language from">
-                                    <option value=" niemiecki ">niemiecki</option>
-                                    <option value="polski ">polski</option>
-                                    <option value="rosyjski ">rosyjski</option>
-                                    <option value="urundi ">urundi</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div className="col-lg-6 ">
-                            <div className="language-select">
-                                <div className="calculator-to-language ">
-                                    Na język:
-                                </div>
-                                <select className="language to ">
-                                    <option value="polski ">polski</option>
-                                    <option value="niemiecki ">niemiecki</option>
-                                    <option value="rosyjski ">rosyjski</option>
-                                    <option value="urundi ">urundi</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="col-lg-8 ">
-                <div className="pricing-table ">
-                    <div className="row">
-                        <div className="pricing-table-row-header">
-                            <div className="col-lg-3">
-                                <div className="pricing-table-headers">Termin:</div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-headers">Zwykły</div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-headers">Pilny</div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-headers">Ekspres</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="pricing-table-row-transl">
-                            <div className="col-lg-3">
-                                <div className="pricing-table-transl-cell">Tłumaczenie</div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-transl-cell">
-                                    <span className="price-net" id="tr-1-net">{this.state.textAreaPages * this.state.pagePrice} zł netto</span>
-
-                                    <span className="price-with-vat" id="tr-1-br">{this.state.textAreaPages * this.state.pagePrice * this.state.vat} zł z VAT</span>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-transl-cell">
-                                    <span className="price-net" id="tr-2-net">158 zł netto</span>
-
-                                    <span className="price-with-vat" id="tr-2-br">207 zł z VAT</span>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-transl-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="pricing-table-row-redact-lang">
-                            <div className="col-lg-3">
-                                <div className="pricing-table-redact-cell">+ redakcja językowa</div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-redact-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-redact-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-redact-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="row">
-                        <div className="pricing-table-row-redact-merit">
-                            <div className="col-lg-3">
-                                <div className="pricing-table-merit-cell">+ redakcja merytoryczna</div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-merit-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-merit-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="pricing-table-merit-cell">
-                                    <span className="price-net">158 zł netto</span>
-
-                                    <span className="price-with-vat">207 zł z VAT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="chosen-table">
-                    <div className="row">
-                        <div className="col-lg-12">
-                            <div className="text-explanation">
-                                Wpisz swój adres email, wciśnij ZAMAWIAM,
-                                <br/>
-                                następnie podaj dane Twojej firmy,
-                                <br/>
-                                aby otrzymać gotową fakturę pro-forma.
-                            </div>
-                        </div>
-                        <div className="col-lg-12">
-
-                            <div className="row chosen">
-                                <div className="col-lg-3">
-                                    <div className="chosen-title">WYBIERAM</div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="chosen-service">
-                                        <span className="medium-text">tłumaczenie językowe
-                                            <br/>z redakcją językową</span>
+                        <div className="col-lg-4">
+                            <div className="input-area">
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <div className="calculator-title-box">WYCENA ON-LINE</div>
+                                        <div className="calculator-text">Wklej tekst do tłumaczenia</div>
+                                            < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
+                                        <div className="calculator-text-length">
+                                            Długość tekstu: <strong className="calculator-monospace">{this.state.textArea.length} znaków <br/>
+                                                 to w zaokrągleniu {this.state.textAreaPages} str. </strong><span class="minimum-text">(min. 1 str.)</span>
+                                            
+                                        </div>
                                     </div>
                                 </div>
-                                <div className="col-lg-3">
-                                    <div className="chosen-time">
-                                        <span className="small-italic">czas realizacji</span>
-                                        <br/>24-48 godzin</div>
-                                </div>
-                                <div className="col-lg-3">
-                                    <div className="chosen-price">158 zł netto
-                                        <br/>
-                                        <span className="price-with-vat">207 zł z VAT</span>
+                                <div className="row">
+                                    <div className="col-lg-6">
+                                        <div className="language-select">
+                                            <div className="calculator-from-language">
+                                                Z języka:
+                                            </div>
+                                            <select className="language from">
+                                                <option value=" niemiecki ">niemiecki</option>
+                                                <option value="polski ">polski</option>
+                                                <option value="rosyjski ">rosyjski</option>
+                                                <option value="urundi ">urundi</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-6 ">
+                                        <div className="language-select">
+                                            <div className="calculator-to-language ">
+                                                Na język:
+                                            </div>
+                                            <select className="language to ">
+                                                <option value="polski ">polski</option>
+                                                <option value="niemiecki ">niemiecki</option>
+                                                <option value="rosyjski ">rosyjski</option>
+                                                <option value="urundi ">urundi</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-12">
-                            <form
-                                className="company-data"
-                                action="file:///home/marcin/Pulpit/CodersLab/ZajeciaModuly/Biuro_tlumaczen/mock_ups/default-action">
-                                <label className="company-data-label" for="email">Podaj swój email</label>
-                                <input
-                                    className="company-data-input"
-                                    name="email"
-                                    type="text"
-                                    onChange = { this.handleChange }
-                                    value = { this.state.email } />
-                                <label className="company-data-label" for="company">Podaj nazwę firmy</label>
-                                <input
-                                    className="company-data-input"
-                                    name="company"
-                                    type="text"
-                                    onChange = { this.handleChange }
-                                    value = { this.state.company } />
-                                <label className="company-data-label" for="NIP">Podaj NIP firmy</label>
-                                <input
-                                    className="company-data-input"
-                                    name="nip"
-                                    type="number"
-                                    onChange = { this.handleChange }
-                                    value = { this.state.nip } />
-                                <label className="company-data-label" for="street">Podaj nazwę ulicy</label>
-                                <input
-                                    className="company-data-input"
-                                    name="street"
-                                    type="text"
-                                    onChange = { this.handleChange }
-                                    value = {this.state.street } />
-                                <label className="company-data-label" for="number">Podaj numer domu</label>
-                                <input
-                                    className="company-data-input"
-                                    name="number"
-                                    type="number"
-                                    onChange = {this.handleChange } 
-                                    value = { this.state.number } />
-                                <label className="company-data-label" for="locale">Podaj numer lokalu</label>
-                                <input
-                                    className="company-data-input"
-                                    name="locale"
-                                    type="number"
-                                    onChange = {this.handleChange }
-                                    value = { this.state.locale }/>
-                            </form>
-                        </div>
-                        <div className="col-lg-12">
-                            <div className="order-button">
-                                ZAMAWIAM
+                        <div className="col-lg-8 ">
+                            <div className="pricing-table ">
+                                <div className="row">
+                                    <div className="pricing-table-row-header">
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-headers">
+                                                Termin:<br/>
+                                                <span className="realisation-time">czas realizacji</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-headers">
+                                                Zwykły<br/>
+                                                <span className="realisation-time">{ Math.ceil(this.state.textAreaPages / 6 ) * 24 } - { Math.ceil(this.state.textAreaPages / 6 ) * 24 + 48 } godz.</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-headers">
+                                                Pilny<br/>
+                                                <span className="realisation-time">{ Math.ceil(this.state.textAreaPages / 6 ) * 24 } - { Math.ceil(this.state.textAreaPages / 6 ) * 24 + 24 } godz.</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-headers">
+                                                Ekspres<br/>
+                                                <span className="realisation-time">{ Math.ceil(this.state.textAreaPages / 6 ) * 24 } godz. </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="pricing-table-row-transl">
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-transl-cell">Tłumaczenie zwykłe</div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-transl-cell hover" onClick={this.handleCellClick}>
+                                                <span className="price-net" id="tr-1-net">{translationPrice} zł netto</span>
+
+                                                <span className="price-with-vat" id="tr-1-br">{this.calculateVat(translationPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-transl-cell hover">
+                                                <span className="price-net" id="tr-2-net">{transUrgentPrice} zł netto</span>
+
+                                                <span className="price-with-vat" id="tr-2-br">{this.calculateVat(transUrgentPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-transl-cell hover">
+                                                <span className="price-net">{transExpressPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(transExpressPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="pricing-table-row-redact-lang">
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-redact-cell">+ redakcja językowa</div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-redact-cell hover">
+                                                <span className="price-net">{redactionPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(redactionPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-redact-cell hover">
+                                                <span className="price-net">{redactUrgentPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(redactUrgentPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-redact-cell hover">
+                                                <span className="price-net">{redactExpressPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(redactExpressPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="pricing-table-row-redact-merit">
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-merit-cell">+ redakcja merytoryczna</div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-merit-cell hover">
+                                                <span className="price-net">{meritoryPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(meritoryPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-merit-cell hover">
+                                                <span className="price-net">{meritUrgentPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(meritUrgentPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                        <div className="col-lg-3">
+                                            <div className="pricing-table-merit-cell hover">
+                                                <span className="price-net">{meritExpressPrice} zł netto</span>
+
+                                                <span className="price-with-vat">{this.calculateVat(meritExpressPrice)} zł z VAT</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div className="chosen-table">
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <div className="text-explanation">
+                                            Wpisz swój adres email, podaj dane Twojej firmy
+                                            <br/>
+                                            i wciśnij ZAMAWIAM,
+                                            <br/>
+                                            aby otrzymać maila z gotową fakturą pro-forma.
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <div className="row chosen">
+                                            <div className="col-lg-3">
+                                                <div className="chosen-title">TWÓJ WYBÓR:</div>
+                                            </div>
+                                            <div className="col-lg-3">
+                                                <div className="chosen-service">
+                                                    <span className="medium-text">tłumaczenie językowe
+                                                        <br/>z redakcją językową</span>
+                                                </div>
+                                            </div>
+                                            <div className="col-lg-3">
+                                                <div className="chosen-time">
+                                                    <span className="small-italic">czas realizacji</span>
+                                                    <br/>24-48 godzin</div>
+                                            </div>
+                                            <div className="col-lg-3">
+                                                <div className="chosen-price">158 zł netto
+                                                    <br/>
+                                                    <span className="price-with-vat">207 zł z VAT</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <form
+                                            className="company-data"
+                                            action="file:///home/marcin/Pulpit/CodersLab/ZajeciaModuly/Biuro_tlumaczen/mock_ups/default-action">
+                                            <label className="company-data-label" for="email">Podaj swój email</label>
+                                            <input
+                                                className="company-data-input"
+                                                name="email"
+                                                type="text"
+                                                onChange = { this.handleChange }
+                                                value = { this.state.email } />
+                                            <label className="company-data-label" for="company">Podaj nazwę firmy</label>
+                                            <input
+                                                className="company-data-input"
+                                                name="company"
+                                                type="text"
+                                                onChange = { this.handleChange }
+                                                value = { this.state.company } />
+                                            <label className="company-data-label" for="NIP">Podaj NIP firmy</label>
+                                            <input
+                                                className="company-data-input"
+                                                name="nip"
+                                                type="number"
+                                                onChange = { this.handleChange }
+                                                value = { this.state.nip } />
+                                            <label className="company-data-label" for="street">Podaj nazwę ulicy</label>
+                                            <input
+                                                className="company-data-input"
+                                                name="street"
+                                                type="text"
+                                                onChange = { this.handleChange }
+                                                value = {this.state.street } />
+                                            <label className="company-data-label" for="number">Podaj numer domu</label>
+                                            <input
+                                                className="company-data-input"
+                                                name="number"
+                                                type="number"
+                                                onChange = {this.handleChange } 
+                                                value = { this.state.number } />
+                                            <label className="company-data-label" for="locale">Podaj numer lokalu</label>
+                                            <input
+                                                className="company-data-input"
+                                                name="locale"
+                                                type="number"
+                                                onChange = {this.handleChange }
+                                                value = { this.state.locale }/>
+                                        </form>
+                                    </div>
+                                    <div className="col-lg-12">
+                                        <div className="order-button">
+                                            ZAMAWIAM
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</div> < /section>
+        < /section>
 
 
 
-< section className = "section-about-us" > <div className="container">
-    <div className="row">
-        <div className="col-lg-12">
+        < section className = "section-about-us" > <div className="container">
             <div className="row">
-                <div className="col-lg-4">
-                    <div className="section-about-us-header">
-                        <h2 className="section-about-us-header-text">O NAS</h2>
+                <div className="col-lg-12">
+                    <div className="row">
+                        <div className="col-lg-4">
+                            <div className="section-about-us-header">
+                                <h2 className="section-about-us-header-text">O NAS</h2>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-
-            </div>
-        </div>
-        <div className="col-lg-8">
-            <div className="section-about-us-main-text">
-                <p>
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate
-                    quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit
-                    impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor
-                    sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat
-                    porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique
-                    deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur
-                    adipisicing Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                </p>
-            </div>
-        </div>
-        <div className="col-lg-4">
-            <img src="img/1804_opt.jpg" alt="team-hands" className="about-us-image"/>
-        </div>
-    </div>
-</div> < /section>
-
-                <section className="section-credentials">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="col-lg-4">
-                                        <div className="section-credentials-header">
-                                            <h2 className="section-credentials-header-text">REFERENCJE</h2 > </div> < /div>
-                                </div > </div> < div className = "col-lg-12" > <div className="section-credentials-main-text">
-    <p className="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-        Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque. Officia,
-        voluptate quisquam quis, fugiat porro velit itaque doloremque a at...</p>
-    <p className="company">Firmus Concretnus</p>
-    <p className="quote">At nulla quas fugit impedit! Cras sit amet consectetur
-        adipisicing elit. Quas sunt similique deserunt fugiat fuga corrupti! Lorem,
-        ipsum dolor sit amet consectetur adipisicing elit.
-    </p>
-    <p className="company">Aliud Corporationis</p>
-</div> < /div>
-                        </div > </div> < /section>
-
-                <section className="section-partners">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="col-lg-4">
-                                        <div className="section-partners-header">
-                                            <h2 className="section-partners-header-text">
-                                                ZAUFALI NAM
-                                            </h2 > </div> < /div>
-                                </div > </div> < div className = "col-lg-2" > <img src="img/FAKELOGO01.png" alt="fake-logo-1"/> < /div>
-                            <div className="col-lg-2">
-                                <img src="img/FAKELOGO02.png " alt=" fake - logo - 2 "/>
- < /div>
-                            < div className = "col-lg-2" >
-                                < img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
- < /div>
-                            <div className="col-lg-2">
-< img src = "img/FAKELOGO01.png " alt = " fake - logo - 1 " />
- < /div>
-                            < div className = "col-lg-2" >
-< img src = "img/FAKELOGO02.png " alt = " fake - logo - 2 " />
- < /div>
-                            <div className="col-lg-2">
-< img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
- < /div>
-                        < /div > </div > < /section> 
-    < section className = "section-contact" > 
-    <div className="container">
-    <div className="row">
-        <div className="col-lg-12">
-            <div className="row">
+                <div className="col-lg-8">
+                    <div className="section-about-us-main-text">
+                        <p>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate
+                            quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit
+                            impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor
+                            sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat
+                            porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique
+                            deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur
+                            adipisicing Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                        </p>
+                    </div>
+                </div>
                 <div className="col-lg-4">
-                    <div className="section-contact-header">
-                        <h2 className="section-contact-header-text">KONTAKT</h2 > </div> < /div>
-            </div > </div> < div className = "col-lg-4" > <div className="section-contact-main-text">
-    <p className="addres">TransLingus Biuro Tłumaczeń</p>
-    <p className="addres">ul. Tłumaczeniowa 23</p>
-    <p className="addres">12-345 Warszawa</p>
-    <p className="addres">NIP:234-45-56-123</p>
+                    <img src="img/1804_opt.jpg" alt="team-hands" className="about-us-image"/>
+                </div>
+            </div>
+        </div> < /section>
 
-</div> < /div>
-        <div className="col-lg-2">
-            <div className="section-contact-main-text">
-                <ul>
-                    <li>
-                        <a className="contact-links" href="#">O NAS</a > </li> < li > <a className="contact-links" href="#">REFERENCJE</a> < /li>
-                    <li>
-                        <a className="contact-links" href="#">ZAUFALI NAM</a > </li> < li > <a className="contact-links" href="#">KONTAKT</a> < /li>
-
-                </ul > </div> < /div>
-        <div className="col-lg-3">
-            <div className="section-contact-main-text">
-                <p className="pricing">WYCENA ON-LINE</p > </div> < /div>
-        <div className="col-lg-3">
-            <div className="section-contact-main-text">
-                <p className="copy">copyrights TransLingus</p > <p className="copy">code and design</p> < p className = "copy" > by MarcinOstaszewski < /p>
-            </div > </div> < /div>
-</div > < /section>
-
-
-
+                        <section className="section-credentials">
+                            <div className="container">
+                                <div className="row">
+                                    <div className="col-lg-12">
+                                        <div className="row">
+                                            <div className="col-lg-4">
+                                                <div className="section-credentials-header">
+                                                    <h2 className="section-credentials-header-text">REFERENCJE</h2 > 
+                                                    </div>
+                                                < /div>
+                                            </div > 
+                                        </div> 
+                                        < div className = "col-lg-12" >
+                                            <div className="section-credentials-main-text">
+                                        <p className="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                                            Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque. Officia,
+                                            voluptate quisquam quis, fugiat porro velit itaque doloremque a at...</p>
+                                        <p className="company">Firmus Concretnus</p>
+                                        <p className="quote">At nulla quas fugit impedit! Cras sit amet consectetur
+                                            adipisicing elit. Quas sunt similique deserunt fugiat fuga corrupti! Lorem,
+                                            ipsum dolor sit amet consectetur adipisicing elit.
+                                        </p>
+                                        <p className="company">Aliud Corporationis</p>
+                                    </div> 
+                                < /div>
+                            </div > 
                         </div>
+                    < /section>
+
+                    <section className="section-partners">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-12">
+                                    <div className="row">
+                                        <div className="col-lg-4">
+                                            <div className="section-partners-header">
+                                                <h2 className="section-partners-header-text">
+                                                    ZAUFALI NAM
+                                                </h2 > 
+                                            </div> 
+                                        < /div>
+                                    </div > 
+                                </div> 
+                            < div className = "col-lg-2" > <img src="img/FAKELOGO01.png" alt="fake-logo-1"/> 
+                        < /div>
+                        <div className="col-lg-2">
+                            <img src="img/FAKELOGO02.png " alt=" fake - logo - 2 "/>
+                        < /div>
+                        < div className = "col-lg-2" >
+                            < img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
+                        < /div>
+                        <div className="col-lg-2">
+                        < img src = "img/FAKELOGO01.png " alt = " fake - logo - 1 " />
+                        < /div>
+                        < div className = "col-lg-2" >
+                        < img src = "img/FAKELOGO02.png " alt = " fake - logo - 2 " />
+                        < /div>
+                        <div className="col-lg-2">
+                        < img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
+                        < /div>
+                    < /div > 
+                </div > 
+            < /section> 
+            < section className = "section-contact" > 
+                <div className="container">
+                    <div className="row">
+                        <div className="col-lg-12">
+                            <div className="row">
+                                <div className="col-lg-4">
+                                    <div className="section-contact-header">
+                                        <h2 className="section-contact-header-text">KONTAKT</h2 > 
+                                        </div> 
+                                    < /div>
+                                </div > 
+                            </div> 
+                        < div className = "col-lg-4" > 
+                            <div className="section-contact-main-text">
+                                <p className="addres">TransLingus Biuro Tłumaczeń</p>
+                                <p className="addres">ul. Tłumaczeniowa 23</p>
+                                <p className="addres">12-345 Warszawa</p>
+                                <p className="addres">NIP:234-45-56-123</p>
+
+                            </div> 
+                        < /div>
+                            <div className="col-lg-2">
+                                <div className="section-contact-main-text">
+                                    <ul>
+                                        <li>
+                                            <a className="contact-links" href="#">O NAS</a > </li> 
+                                            < li > <a className="contact-links" href="#">REFERENCJE</a> < /li>
+                                        <li>
+                                            <a className="contact-links" href="#">ZAUFALI NAM</a > </li> 
+                                            < li > <a className="contact-links" href="#">KONTAKT</a> < /li>
+
+                                    </ul > 
+                                </div> 
+                            < /div>
+                            <div className="col-lg-3">
+                                <div className="section-contact-main-text">
+                                    <p className="pricing">WYCENA ON-LINE</p > </div> < /div>
+                            <div className="col-lg-3">
+                                <div className="section-contact-main-text">
+                                    <p className="copy">copyrights TransLingus</p > <p className="copy">code and design</p> < p className = "copy" > by MarcinOstaszewski < /p>
+                                </div > 
+                            </div>
+                        < /div>
+                    </div >
+                < /section>
+
+            </div>
             )
         }
     } 
