@@ -10,6 +10,24 @@ import AboutUs from './aboutus.jsx';
 
 document.addEventListener('DOMContentLoaded', function () {
 
+    // class ErrorEmail extends React.Component {
+    //     constructor(props) {
+    //         super(props);
+
+    //         this.state = {
+    //             errorMessage : ''
+    //         }
+    //     }
+        
+    //     render() {
+    //         return (
+    //             <div>
+    //                 {this.state.errorMessage}
+    //             </div>
+    //         )
+    //     }
+    // }
+
     class Main extends React.Component {
         constructor(props) {
             super(props);
@@ -40,6 +58,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 street : '',
                 number : 0,
                 locale : 0,
+                mailErrorMessage : '',
+                companyErrorMessage : '',
+                nipErrorMessage : '',
+                streetErrorMessage : '',
+                numberErrorMessage : '',
+                localeErrorMessage : '',
             }
         }
         
@@ -152,8 +176,26 @@ document.addEventListener('DOMContentLoaded', function () {
         onSubmit = (e) => {
             e.preventDefault;
             console.log(this.state);
+            alert("dane wysłane -----")
         }
-
+        validateEmail = () => {
+            if (this.state.company.length < 4) this.setState({emailErrorMessage : "Email musi zawierać co najmniej 4 znaki"});
+        }
+        validateCompany = () => {
+            if (this.state.company.length < 4) this.setState({companyErrorMessage : "Nazwa firmy musi zawierać co najmniej 4 znaki"});
+        }
+        validateNip = () => {
+            if (this.state.street.length !== 10) this.setState({nipErrorMessage : "NIP musi zawierać dokładnie 10 cyfr"});
+        }
+        validateStreet = () => {
+            if (this.state.street.length < 4) this.setState({streetErrorMessage : "Nazwa ulicy musi zawierać co najmniej 4 znaki"});
+        }
+        validateNumber = () => {
+            if (this.state.street.length < 1) this.setState({streetErrorMessage : "Nazwa ulica musi zawierać co najmniej 1 znak"});
+        }
+        validateLocale = () => {
+            if (this.state.street.length < 1) this.setState({streetErrorMessage : "Nazwa ulica musi zawierać co najmniej 1 znak"});
+        }
         render() {
             
             this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
@@ -251,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
                                                 <div className="calculator-text-length">
                                                     Długość tekstu: <strong className="calculator-monospace">{this.state.textArea.length} znaków <br/>
-                                                    to w zaokrągleniu {this.state.textAreaPages} str. </strong><span class="minimum-text">(min. 1 str.)</span>
+                                                    to w zaokrągleniu {this.state.textAreaPages} str. </strong><span className="minimum-text">(min. 1 str.)</span>
                                                 </div> 
                                             </div>
                                         </div>
@@ -458,42 +500,54 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 className="company-data"
                                                 onSubmit={this.onSubmit}>
                                                 <label className="company-data-label" htmlFor="email">Podaj swój email</label>
+                                                <p className="error-message">{this.state.emailErrorMessage}</p>
                                                 <input
+                                                    onBlur={this.validateEmail}
                                                     className="company-data-input"
                                                     name="email"
                                                     type="text"
                                                     onChange = { this.handleChange }
                                                     value = { this.state.email } />
                                                 <label className="company-data-label" htmlFor="company">Podaj nazwę firmy</label>
+                                                <p className="error-message">{this.state.companyErrorMessage}</p>
                                                 <input
+                                                    onBlur={this.validateCompany}
                                                     className="company-data-input"
                                                     name="company"
                                                     type="text"
                                                     onChange = { this.handleChange }
                                                     value = { this.state.company } />
                                                 <label className="company-data-label" htmlFor="NIP">Podaj NIP firmy</label>
+                                                <p className="error-message">{this.state.nipErrorMessage}</p>
                                                 <input
+                                                    onBlur={this.validateNip}
                                                     className="company-data-input"
                                                     name="nip"
                                                     type="number"
                                                     onChange = { this.handleChange }
                                                     value = { this.state.nip } />
                                                 <label className="company-data-label" htmlFor="street">Podaj nazwę ulicy</label>
+                                                <p className="error-message">{this.state.streetErrorMessage}</p>
                                                 <input
+                                                    onBlur={this.validateStreet}
                                                     className="company-data-input"
                                                     name="street"
                                                     type="text"
                                                     onChange = { this.handleChange }
                                                     value = {this.state.street } />
                                                 <label className="company-data-label" htmlFor="number">Podaj numer domu</label>
+                                                <p className="error-message">{this.state.numberErrorMessage}</p>
                                                 <input
+                                                    onBlur={this.validateNumber}
                                                     className="company-data-input"
                                                     name="number"
                                                     type="number"
                                                     onChange = {this.handleChange } 
                                                     value = { this.state.number } />
                                                 <label className="company-data-label" htmlFor="locale">Podaj numer lokalu</label>
+                                                <p className="error-message">{this.state.localeErrorMessage}</p>
                                                 <input
+                                                    onBlur={this.validateLocale}
                                                     className="company-data-input"
                                                     name="locale"
                                                     type="number"
@@ -511,10 +565,6 @@ document.addEventListener('DOMContentLoaded', function () {
                         </div>
                     </div>
                 </section>
-
-
-
-
             </div>
             )
         }

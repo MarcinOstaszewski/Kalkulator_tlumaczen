@@ -62,7 +62,7 @@ class Contact extends React.Component {
                             <div className="section-contact-main-text">
                                 <p className="copy">copyrights TransLingus</p > 
                                 <p className="copy">code and design</p> 
-                                <p className="copy">by <a className="contact-links" href="https://github.com/MarcinOstaszewski"><span class="bold">MarcinOstaszewski</span></a></p>
+                                <p className="copy">by <a className="contact-links" href="https://github.com/MarcinOstaszewski"><span className="bold">MarcinOstaszewski</span></a></p>
                             </div> 
                         </div>
                     </div>
