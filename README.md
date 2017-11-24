@@ -20,11 +20,11 @@ Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może 
 
 + select do wyboru Z języka lub NA język
 
-lista 16 jezyków do wyboru w 3-4 grupach cenowych
++lista 16 jezyków do wyboru w 3-4 grupach cenowych
 
-wybranie języka z danej grupy wpływa na cenę usługi
++wybranie języka z danej grupy wpływa na cenę usługi
 
-wybranie usługi rozwija formularz i wkleja wybraną usługę+cenę+termin w tabelkę w "chosen row"
++wybranie usługi rozwija formularz i wkleja wybraną usługę+cenę+termin w tabelkę w "chosen row"
 
 walidacja kolejnych okienek formularza
 

@@ -1,18 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {
-    Router,
-    Route,
-    Link,
-    IndexLink,
-    IndexRoute,
-    hashHistory
-} from 'react-router';
 
 require('../sass/main.scss');
 
-import Info from './info.jsx';
-import Calculator from './calculator.jsx';
+import Contact from './contact.jsx';
+import Partners from './partners.jsx';
+import Credentials from './credentials.jsx';
+import AboutUs from './aboutus.jsx';
 
 document.addEventListener('DOMContentLoaded', function () {
 
@@ -21,31 +15,31 @@ document.addEventListener('DOMContentLoaded', function () {
             super(props);
 
             this.state = {
-                email : '',
-                company : '',
-                nip : 1,
-                street : '',
-                number : 0,
-                locale : 0,
                 textArea : '',
-                pagePrice : 46,
+                pagePrice : 36,
                 textAreaPages : 1,
                 vat : 1.23,
                 redactPrice : 1.5,
                 meritPrice : 2,
                 urgentPrice : 1.5,
                 expressPrice : 2,
+                inVisible : 'not-visible',
                 chosenLanguage: 'angielski',
-                languageGroup: 0,
+                suffix : '',
+                languageGroupMultiplier: 100,
                 chosenService : '',
                 chosenServiceDescripion : '',
                 chosenTimeMinMax : '',
-                inVisible : 'not-visible',
                 realisationTimeMin : 24,
                 realisationTimeMax : 48,
                 chosenServicePrice : 0,
-                translationDirection : 'from-pol',
-                suffix : '',
+                translationDirection : 1.2,
+                email : '',
+                company : '',
+                nip : 1,
+                street : '',
+                number : 0,
+                locale : 0,
             }
         }
         
@@ -60,15 +54,15 @@ document.addEventListener('DOMContentLoaded', function () {
         
         setTranslationDirection = (event) => {
             this.setState({
-                translationDirection : event.target.value,
-                suffix : (this.state.translationDirection == 'to-pol') ? '' : 'ego'
+                translationDirection : Number(event.target.value),
+                suffix : (this.state.translationDirection == 1) ? '' : 'ego'
             });   // suffix jest ustawiany odwrotnie niż powinien, bo zmiana działa 'z opóźnieniem' ;)
         }
 
         handleLanguageChange = (event) => {
             this.setState({
-                chosenLanguage : event.target.value.slice(2),
-                languageGroup : event.target.value.slice(0,1),
+                chosenLanguage : event.target.value.slice(4),
+                languageGroupMultiplier : Number(event.target.value.slice(0,3)),
                 inVisible : 'not-visible',
 
             })
@@ -79,7 +73,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         handleCellClick = (event) => {
-            // console.log(event.currentTarget.id);
             let tempPrice, tempMinTime, tempMaxTime, tempServiceDescr;
             let tj = "tłumaczenie na "+ this.state.chosenLanguage;
             let rj = " z redakcją językową ";
@@ -140,7 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 chosenTimeMinMax : tempMinTime,
                 chosenServiceDescripion : tempServiceDescr,
             });
-            return console.log(event.currentTarget);
+            return ;
         }
 
         realisationTime = (event) => {
@@ -151,27 +144,27 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         handleChange = (event) => {
-            console.log(event.target.value);
             this.setState({
                 [event.target.name]: event.target.value
             })
+        }
+
+        onSubmit = (e) => {
+            e.preventDefault;
             console.log(this.state);
         }
 
         render() {
             
-            // console.log(this.state.translationDirection);
-            console.log(this.state.chosenLanguage);
-
-            this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice);
-            this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice);
-            this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice);
-            this.transUrgentPrice = Math.floor(this.translationPrice * this.state.urgentPrice);
-            this.redactUrgentPrice = Math.floor(this.redactionPrice * this.state.urgentPrice);
-            this.meritUrgentPrice = Math.floor(this.meritoryPrice * this.state.urgentPrice);
-            this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice);
-            this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice);
-            this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice);
+            this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.transUrgentPrice = Math.floor(this.translationPrice * this.state.urgentPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.redactUrgentPrice = Math.floor(this.redactionPrice * this.state.urgentPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.meritUrgentPrice = Math.floor(this.meritoryPrice * this.state.urgentPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
 
             return ( 
             <div>
@@ -267,8 +260,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                             <div className="col-lg-12">
                                                 <div className="language-select">
                                                     <select className="chosen-language" onChange={this.setTranslationDirection} value={this.state.select}>
-                                                        <option  value="from-pol">Tłumaczenie z polskiego na:</option>
-                                                        <option value="to-pol">Tłumaczenie na polski z:</option>
+                                                        <option  value="1.2">Tłumaczenie z polskiego na:</option>
+                                                        <option value="1">Tłumaczenie na polski z:</option>
                                                     </select>
                                                 
                                                 </div>
@@ -277,13 +270,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="row">
                                             <div className="col-lg-12">
                                                 <select className="chosen-language" onChange={this.handleLanguageChange} value={this.state.select}>
-                                                    <option value="1.angielski">angielski{this.state.suffix}</option>
-                                                    <option value="3.chinski">chiński{this.state.suffix}</option>
-                                                    <option value="1.francuski">francuski{this.state.suffix}</option>
-                                                    <option value="1.niemiecki ">niemiecki{this.state.suffix}</option>
-                                                    <option value="2.rosyjski ">rosyjski{this.state.suffix}</option>
-                                                    <option value="2.hiszpanski">hiszpański{this.state.suffix}</option>
-                                                    <option value="2.wloski">włoski{this.state.suffix}</option>
+                                                    <option value="100.angielski">angielski{this.state.suffix}</option>
+                                                    <option value="100.francuski">francuski{this.state.suffix}</option>
+                                                    <option value="100.niemiecki ">niemiecki{this.state.suffix}</option>
+                                                    <option value="100.rosyjski ">rosyjski{this.state.suffix}</option>
+                                                    <option value="110.hiszpański">hiszpański{this.state.suffix}</option>
+                                                    <option value="110.ukraiński">ukraiński{this.state.suffix}</option>
+                                                    <option value="110.włoski">włoski{this.state.suffix}</option>
+                                                    <option value="120.białoruski">białoruski{this.state.suffix}</option >
+                                                    <option value="125.czeski">czeski{this.state.suffix}</option>
+                                                    <option value="125.duński">duński{this.state.suffix}</option>
+                                                    <option value="125.litewski">litewski{this.state.suffix}</option >
+                                                    <option value="130.łotewski">łotewski{this.state.suffix} < /option>
+                                                    <option value="135.niderlandzki">niderlandzki{this.state.suffix} < /option>
+                                                    <option value="130.norweski">norweski{this.state.suffix}</option>
+                                                    <option value="125.portugalski">portugalski{this.state.suffix}</option>
+                                                    <option value="125.szwedzki">szwedzki{this.state.suffix}</option>
+                                                    <option value="125.rumuński">rumuński{this.state.suffix}</option >
+                                                    <option value="135.węgierski">węgierski{this.state.suffix} < /option>
+                                                    <option value="140.chiński">chiński{this.state.suffix}</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -425,8 +430,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="chosen-time">
+                                                        { this.state.chosenTimeMinMax } godz.<br/>
                                                         <span className="small-italic">czas realizacji</span>
-                                                        <br/>{ this.state.chosenTimeMinMax } godz.</div>
+                                                    </div>
                                                 </div>
                                                 <div className="col-lg-3">
                                                     <div className="chosen-price">{this.state.chosenServicePrice} zł netto
@@ -450,7 +456,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         <div className="col-lg-12">
                                             <form
                                                 className="company-data"
-                                                action="file:///home/marcin/Pulpit/CodersLab/ZajeciaModuly/Biuro_tlumaczen/mock_ups/default-action">
+                                                onSubmit={this.onSubmit}>
                                                 <label className="company-data-label" htmlFor="email">Podaj swój email</label>
                                                 <input
                                                     className="company-data-input"
@@ -493,16 +499,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     type="number"
                                                     onChange = {this.handleChange }
                                                     value = { this.state.locale }/>
+                                                <button className="order-button">
+                                                    ZAMAWIAM 
+                                                </button>
                                             </form>
                                         </div>
                                     </div>
-                                    <div className="row">
-                                        <div className="col-lg-12">
-                                            <div className="order-button">
-                                                ZAMAWIAM
-                                            </div>
-                                        </div>
-                                    </div>
+                                  
                                 </div>
                             </div>
                         </div>
@@ -510,166 +513,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 </section>
 
 
-                <section className = "section-about-us" > 
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="col-lg-4">
-                                        <div className="section-about-us-header">
-                                            <h2 className="section-about-us-header-text" ><a name="section-about-us"><h2>O NAS</h2></a></h2>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="row">
-                            <div className="col-lg-8">
-                                <div className="section-about-us-main-text">
-                                    <p>
-                                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate
-                                        quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit
-                                        impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor
-                                        sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat
-                                        porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique
-                                        deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur
-                                        adipisicing Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-4">
-                                <img src="img/1804_opt.jpg" alt="team-hands" className="about-us-image"/>
-                            </div>
-                        </div>
-                    </div>
-                </section>
 
-                <section className="section-credentials">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="col-lg-4">
-                                        <div className="section-credentials-header">
-                                            <h2 className="section-credentials-header-text">
-                                                <a name="section-credentials"><h2>REFERENCJE</h2></a>
-                                            </h2 > 
-                                        </div>
-                                    </div>
-                                </div> 
-                            </div> 
-                        </div> 
-                        <div className="row">
-                            <div className = "col-lg-12" >
-                                <div className="section-credentials-main-text">
-                                    <p className="quote">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                        Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque. Officia,
-                                        voluptate quisquam quis, fugiat porro velit itaque doloremque a at...</p>
-                                    <p className="company">Firmus Concretnus</p>
-                                    <p className="quote">At nulla quas fugit impedit! Cras sit amet consectetur
-                                        adipisicing elit. Quas sunt similique deserunt fugiat fuga corrupti! Lorem,
-                                        ipsum dolor sit amet consectetur adipisicing elit.
-                                    </p>
-                                    <p className="company">Aliud Corporationis</p>
-                                </div>
-                            </div > 
-                        </div>
-                    </div>
-                </section>
 
-                <section className="section-partners">
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="col-lg-4">
-                                        <div className="section-partners-header">
-                                            <h2 className="section-partners-header-text">
-                                                <a name="section-partners"><h2>ZAUFALI NAM</h2></a>
-                                            </h2 > 
-                                        </div> 
-                                    </div>
-                                </div > 
-                            </div> 
-                            < div className = "col-lg-2" > 
-                                <img src="img/FAKELOGO01.png" alt="fake-logo-1"/> 
-                            </div>
-                            <div className="col-lg-2">
-                                <img src="img/FAKELOGO02.png " alt=" fake - logo - 2 "/>
-                            </div>
-                            < div className = "col-lg-2" >
-                                < img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
-                            </div>
-                            <div className="col-lg-2">
-                            < img src = "img/FAKELOGO01.png " alt = " fake - logo - 1 " />
-                            </div>
-                            < div className = "col-lg-2" >
-                            < img src = "img/FAKELOGO02.png " alt = " fake - logo - 2 " />
-                            </div>
-                            <div className="col-lg-2">
-                            <img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
-                            </div>
-                        </div > 
-                    </div > 
-                </section> 
-
-                <section className="section-contact" > 
-                    <div className="container">
-                        <div className="row">
-                            <div className="col-lg-12">
-                                <div className="row">
-                                    <div className="col-lg-4">
-                                        <div className="section-contact-header">
-                                            <h2 className="section-contact-header-text">
-                                                <a name="section-contact"><h2>KONTAKT</h2></a>
-                                            </h2 > 
-                                        </div> 
-                                    </div>
-                                </div > 
-                            </div> 
-                        </div> 
-                        <div className="row">
-                            <div className = "col-lg-4" > 
-                                <div className="section-contact-main-text">
-                                    <p className="addres">TransLingus Biuro Tłumaczeń</p>
-                                    <p className="addres">ul. Tłumaczeniowa 23</p>
-                                    <p className="addres">12-345 Warszawa</p>
-                                    <p className="addres">NIP:234-45-56-123</p>
-                                </div> 
-                            </div>
-                            <div className="col-lg-2">
-                                <div className="section-contact-main-text">
-                                    <ul>
-                                        <li>
-                                            <a className="contact-links" href="#section-about-us">O NAS</a> 
-                                        </li> 
-                                        <li>
-                                            <a className="contact-links" href="#section-credentials">REFERENCJE</a> 
-                                        </li>
-                                        <li>
-                                            <a className="contact-links" href="#section-partners">ZAUFALI NAM</a>
-                                            </li> 
-                                        <li>
-                                            <a className="contact-links" href="#section-contact">KONTAKT</a>
-                                        </li>
-                                    </ul> 
-                                </div> 
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="section-contact-main-text">
-                                    <p className="pricing"><a className="contact-links" href="#section-calculator">WYCENA ON-LINE</a></p > 
-                                </div> 
-                            </div>
-                            <div className="col-lg-3">
-                                <div className="section-contact-main-text">
-                                    <p className="copy">copyrights TransLingus</p > 
-                                    <p className="copy">code and design</p> 
-                                    <p className = "copy" > by MarcinOstaszewski </p>
-                                </div> 
-                            </div>
-                        </div>
-                    </div>
-                </section>
             </div>
             )
         }
@@ -680,8 +525,10 @@ document.addEventListener('DOMContentLoaded', function () {
             return (
                 <div>
                     <Main />
-                    {/* <Calculator />
-                    <Info /> */}
+                    <AboutUs />
+                    <Credentials />
+                    <Partners />
+                    <Contact />
                 </div >
             )
         }
