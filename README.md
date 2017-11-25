@@ -8,24 +8,17 @@ Strona jest wizytówką firmy, przedstawia najważniejsze informacje o niej i po
 
 Najważniejszą funkcjonalnością na stronie jest natychmiastowy kalkulator, który na podstawie długości wklejonego przez klienta tekstu i wybranego przez niego języka oblicza ceny dla 3 zakresów usług i 3 możliwych terminów realizacji zlecenia.
 
-Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może od razu wypełnienić formularz kontaktowy i otrzymać fakturę pro-forma, której opłacenie będzie oznaczało zamówienie usługi tłumaczenia wklejonego tekstu.
+Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może od razu wypełnienić formularz kontaktowy i otrzymać/pobrać wypełnioną fakturę pro-forma, której opłacenie będzie oznaczało zamówienie usługi tłumaczenia wklejonego tekstu.
 
 
 ### TO DO 
-+ linki z main-menu SCROLLUJĄ do danej sekcji
 
-+ linki z footer-menu scrollują do danej sekcji
+dodać przynne przewijanie do początku sekcji po naciśnięciu linków
 
-+ przycisk WIĘCEJ z obrazka HERO scrolluje do danej sekcji
+uzupełnić walidację okienek formularza
 
-+ select do wyboru Z języka lub NA język
+uzupełnić walidację całego formularza przed wysłaniem
 
-+lista 16 jezyków do wyboru w 3-4 grupach cenowych
+dodać tworzenie faktury na podstawie danychg dostarczonych przez klienta
 
-+wybranie języka z danej grupy wpływa na cenę usługi
-
-+wybranie usługi rozwija formularz i wkleja wybraną usługę+cenę+termin w tabelkę w "chosen row"
-
-walidacja kolejnych okienek formularza
-
-funkcja onSubmit na formularzu
+dodać możliwość pobrania lub wysyłanie faktury emailem 
