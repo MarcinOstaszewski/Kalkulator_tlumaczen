@@ -18,11 +18,11 @@ w przeglądarce: http://localhost:3002/
 
 ### TO DO 
 
-dodać przynne przewijanie do początków sekcji po naciśnięciu linków
+DONE. uzupełnić walidację okienek formularza
 
-+ uzupełnić walidację okienek formularza
+DONE. uzupełnić walidację całego formularza przed wysłaniem
 
-+ uzupełnić walidację całego formularza przed wysłaniem
+dodać płynne przewijanie do początków sekcji po naciśnięciu linków
 
 dodać tworzenie faktury na podstawie danych dostarczonych przez klienta
 
