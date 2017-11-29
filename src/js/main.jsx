@@ -10,24 +10,6 @@ import AboutUs from './aboutus.jsx';
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // class ErrorEmail extends React.Component {
-    //     constructor(props) {
-    //         super(props);
-
-    //         this.state = {
-    //             errorMessage : ''
-    //         }
-    //     }
-        
-    //     render() {
-    //         return (
-    //             <div>
-    //                 {this.state.errorMessage}
-    //             </div>
-    //         )
-    //     }
-    // }
-
     class Main extends React.Component {
         constructor(props) {
             super(props);
@@ -54,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 translationDirection : 1.2,
                 email : '',
                 company : '',
-                nip : 1,
+                nip : '',
                 street : '',
                 number : 0,
                 locale : 0,
@@ -160,7 +142,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return ;
         }
 
-        realisationTime = (event) => {
+        realisationTime = () => {
             this.setState({
                 realisationTimeMin : (Math.ceil(this.state.textAreaPages / 6 ) * 24),
                 realisationTimeMax : (Math.ceil(this.state.textAreaPages / 6 ) * 24 + 24),
@@ -173,40 +155,68 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         }
 
-        onSubmit = (e) => {
-            e.preventDefault;
-            console.log(this.state);
-            alert("dane wysłane -----")
-        }
         validateEmail = () => {
-            if (this.state.company.length < 4) this.setState({emailErrorMessage : "Email musi zawierać co najmniej 4 znaki"});
+            if (this.state.email.length < 4) {
+                this.setState({emailErrorMessage : "Email musi zawierać co najmniej 4 znaki"})}
+            else {
+                this.setState({emailErrorMessage : ""})
+            }
         }
         validateCompany = () => {
-            if (this.state.company.length < 4) this.setState({companyErrorMessage : "Nazwa firmy musi zawierać co najmniej 4 znaki"});
+            if (this.state.company.length < 4) {
+                this.setState({companyErrorMessage : "Nazwa firmy musi zawierać co najmniej 4 znaki"})
+            } else this.setState({companyErrorMessage : ""});
+                ;
         }
         validateNip = () => {
-            if (this.state.street.length !== 10) this.setState({nipErrorMessage : "NIP musi zawierać dokładnie 10 cyfr"});
+            console.log(this.state.nip.length);
+            if (this.state.nip.length !== 10) {
+                this.setState({nipErrorMessage : "NIP musi zawierać dokładnie 10 cyfr"})
+            } else this.setState({nipErrorMessage : ""});
         }
+        
         validateStreet = () => {
-            if (this.state.street.length < 4) this.setState({streetErrorMessage : "Nazwa ulicy musi zawierać co najmniej 4 znaki"});
+            if (this.state.street.length < 4) {
+                this.setState({streetErrorMessage : "Nazwa ulicy musi zawierać co najmniej 4 znaki"})
+            } else this.setState({streetErrorMessage : ""});
         }
         validateNumber = () => {
-            if (this.state.street.length < 1) this.setState({streetErrorMessage : "Nazwa ulica musi zawierać co najmniej 1 znak"});
+            if (this.state.number.length < 1 || this.state.number === 0) {
+                this.setState({numberErrorMessage : "Niepoprawny numer domu"});
+            } else this.setState({numberErrorMessage : ""});
         }
         validateLocale = () => {
-            if (this.state.street.length < 1) this.setState({streetErrorMessage : "Nazwa ulica musi zawierać co najmniej 1 znak"});
+            if (this.state.locale.length < 1 || this.state.locale === 0) {
+                this.setState({localeErrorMessage : "Niepoprawny numer lokalu"})
+            }else this.setState({localeErrorMessage : ""});
         }
+
+        onSubmit = (e) => {
+            e.preventDefault;
+            if (this.state.textArea === '') {
+                alert("nie wklejono tekstu do tłumaczenia");
+            } else 
+            if (this.state.mailErrorMessage === '' &&
+                this.state.companyErrorMessage === '' &&
+                this.state.nipErrorMessage === '' &&
+                this.state.streetErrorMessage === '' &&
+                this.state.numberErrorMessage === '' &&
+                this.state.localeErrorMessage === '') {
+                    alert("formularz wypełniony zgodnie z wymaganiami, dane mogą być wysłane");
+            }
+        }
+
         render() {
             
-            this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.transUrgentPrice = Math.floor(this.translationPrice * this.state.urgentPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.redactUrgentPrice = Math.floor(this.redactionPrice * this.state.urgentPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.meritUrgentPrice = Math.floor(this.meritoryPrice * this.state.urgentPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-            this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice  * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice );
+            this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice );
+            this.transUrgentPrice = Math.floor(this.translationPrice * this.state.urgentPrice);
+            this.redactUrgentPrice = Math.floor(this.redactionPrice * this.state.urgentPrice);
+            this.meritUrgentPrice = Math.floor(this.meritoryPrice * this.state.urgentPrice);
+            this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice);
+            this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice);
+            this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice);
 
             return ( 
             <div>
@@ -215,13 +225,13 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div className="main-nav">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-lg-3">
+                                    <div className="col-lg-2 col-md-2 col-sm-2">
                                         <div className="main-logo">
                                             TRANS
                                             <br/>LINGUS
                                         </div>
                                     </div>
-                                    <div className="col-lg-9">
+                                    <div className="col-lg-10 col-md-10 col-sm-10">
                                         <div className="main-menu">
                                             <div className="menu-list">
                                                 <ul>
@@ -250,17 +260,18 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div className="main-info">
                             <div className="container">
                                 <div className="row">
-                                    <div className="col-lg-4">
+                                    <div className="col-lg-3 col-md-3 col-sm-5">
                                         <div className="main-header">
                                             <h1>O NAS</h1>
                                         </div>
                                     </div>
-                                    <div className="col-lg-2">
+                                    <div className="col-lg-2 col-md-2 col-sm-9">
+                                        &nbsp;
                                     </div>
-                                    <div className="col-lg-6">
+                                    <div className="col-lg-6 col-md-6 col-sm-12">
                                         <div className="main-description">
                                             <p className="main-description-paragraph">Tworzymy tłumaczenia
-                                                <br/>od 12 lat!
+                                                <br/>od ponad 12 lat!
                                                 <br/>Nasze doświadczenie
                                                 <br/>to gwarancja
                                                 <br/>Twojego zadowolenia
@@ -280,26 +291,26 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div className="container">
                         <div className="calculator">
                             <div className="row">
-                                <div className="col-lg-4">
+                                <div className="col-lg-4 col-md-4 col-sm-12">
                                     <div className="input-area">
                                         <div className="row">
-                                            <div className="col-lg-12">
+                                            <div className="col-lg-12 col-md-12 col-sm-12">
                                                 <div className="calculator-title-box">
                                                     <a name="section-calculator"><h2>WYCENA ON-LINE</h2></a>
                                                 </div>
                                                 <div className="calculator-text">
                                                     Wklej tekst do tłumaczenia
                                                 </div>
-                                                < textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
+                                                <textarea className = "calculator-textarea" name = "textArea" onChange={this.changeTextArea} value={this.state.textArea}></textarea>
                                                 <div className="calculator-text-length">
                                                     Długość tekstu: <strong className="calculator-monospace">{this.state.textArea.length} znaków <br/>
-                                                    to w zaokrągleniu {this.state.textAreaPages} str. </strong><span className="minimum-text">(min. 1 str.)</span>
+                                                    po zaokrągleniu {this.state.textAreaPages} str. </strong><span className="minimum-text">(min. 1 str.)</span>
                                                 </div> 
                                             </div>
                                         </div>
 
                                         <div className="row">
-                                            <div className="col-lg-12">
+                                            <div className="col-lg-12 col-md-12 col-sm-12">
                                                 <div className="language-select">
                                                     <select className="chosen-language" onChange={this.setTranslationDirection} value={this.state.select}>
                                                         <option  value="1.2">Tłumaczenie z polskiego na:</option>
@@ -310,7 +321,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                             </div>
                                         </div>
                                         <div className="row">
-                                            <div className="col-lg-12">
+                                            <div className="col-lg-12 col-md-12 col-sm-12">
                                                 <select className="chosen-language" onChange={this.handleLanguageChange} value={this.state.select}>
                                                     <option value="100.angielski">angielski{this.state.suffix}</option>
                                                     <option value="100.francuski">francuski{this.state.suffix}</option>
@@ -319,17 +330,17 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     <option value="110.hiszpański">hiszpański{this.state.suffix}</option>
                                                     <option value="110.ukraiński">ukraiński{this.state.suffix}</option>
                                                     <option value="110.włoski">włoski{this.state.suffix}</option>
-                                                    <option value="120.białoruski">białoruski{this.state.suffix}</option >
+                                                    <option value="120.białoruski">białoruski{this.state.suffix}</option>
                                                     <option value="125.czeski">czeski{this.state.suffix}</option>
                                                     <option value="125.duński">duński{this.state.suffix}</option>
-                                                    <option value="125.litewski">litewski{this.state.suffix}</option >
-                                                    <option value="130.łotewski">łotewski{this.state.suffix} < /option>
-                                                    <option value="135.niderlandzki">niderlandzki{this.state.suffix} < /option>
+                                                    <option value="125.litewski">litewski{this.state.suffix}</option>
+                                                    <option value="130.łotewski">łotewski{this.state.suffix} </option>
+                                                    <option value="135.niderlandzki">niderlandzki{this.state.suffix} </option>
                                                     <option value="130.norweski">norweski{this.state.suffix}</option>
                                                     <option value="125.portugalski">portugalski{this.state.suffix}</option>
                                                     <option value="125.szwedzki">szwedzki{this.state.suffix}</option>
-                                                    <option value="125.rumuński">rumuński{this.state.suffix}</option >
-                                                    <option value="135.węgierski">węgierski{this.state.suffix} < /option>
+                                                    <option value="125.rumuński">rumuński{this.state.suffix}</option>
+                                                    <option value="135.węgierski">węgierski{this.state.suffix} </option>
                                                     <option value="140.chiński">chiński{this.state.suffix}</option>
                                                 </select>
                                             </div>
@@ -337,29 +348,29 @@ document.addEventListener('DOMContentLoaded', function () {
                                     </div>
                                 </div>
                                     
-                                <div className="col-lg-8 ">
+                                <div className="col-lg-8 col-md-8 col-sm-12">
                                     <div className="pricing-table ">
                                         <div className="row">
                                             <div className="pricing-table-row-header">
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Termin:<br/>
                                                         <span className="realisation-time">czas realizacji</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Zwykły<br/>
                                                         <span className="realisation-time">{ this.state.realisationTimeMin } - { this.state.realisationTimeMax + 24} godz.</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Pilny<br/>
                                                         <span className="realisation-time">{ this.state.realisationTimeMin } - { this.state.realisationTimeMax } godz.</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Ekspres<br/>
                                                         <span className="realisation-time">maks. { this.state.realisationTimeMin } godz. </span>
@@ -369,25 +380,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
                                         <div className="row">
                                             <div className="pricing-table-row-transl">
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-transl-cell">Tłumaczenie zwykłe
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-transl-cell hover" id="translBasic" onClick={this.handleCellClick}>
                                                         <span className="price-net" id="tr-1-net">{this.translationPrice} zł netto</span>
 
                                                         <span className="price-with-vat" id="tr-1-br">{this.calculateVat(this.translationPrice)} zł z VAT</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-transl-cell hover" id="translUrgent" onClick={this.handleCellClick}>
                                                         <span className="price-net" id="tr-2-net">{this.transUrgentPrice} zł netto</span>
 
                                                         <span className="price-with-vat" id="tr-2-br">{this.calculateVat(this.transUrgentPrice)} zł z VAT</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-transl-cell hover" id="translExpress" onClick={this.handleCellClick}>
                                                         <span className="price-net">{this.transExpressPrice} zł netto</span>
 
@@ -398,25 +409,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
                                         <div className="row">
                                             <div className="pricing-table-row-redact-lang">
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-redact-cell">+ redakcja językowa
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-redact-cell hover" id="redactBasic" onClick={this.handleCellClick}>
                                                         <span className="price-net">{this.redactionPrice} zł netto</span>
 
                                                         <span className="price-with-vat">{this.calculateVat(this.redactionPrice)} zł z VAT</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-redact-cell hover" id="redactUrgent" onClick={this.handleCellClick}>
                                                         <span className="price-net">{this.redactUrgentPrice} zł netto</span>
 
                                                         <span className="price-with-vat">{this.calculateVat(this.redactUrgentPrice)} zł z VAT</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-redact-cell hover" id="redactExpress" onClick={this.handleCellClick}>
                                                         <span className="price-net">{this.redactExpressPrice} zł netto</span>
 
@@ -427,25 +438,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
                                         <div className="row">
                                             <div className="pricing-table-row-redact-merit">
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-merit-cell">+ redakcja merytoryczna
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-merit-cell hover" id="meritBasic" onClick={this.handleCellClick}>
                                                         <span className="price-net">{this.meritoryPrice} zł netto</span>
 
                                                         <span className="price-with-vat">{this.calculateVat(this.meritoryPrice)} zł z VAT</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-merit-cell hover" id="meritUrgent" onClick={this.handleCellClick} onClick={this.handleCellClick}>
                                                         <span className="price-net">{this.meritUrgentPrice} zł netto</span>
 
                                                         <span className="price-with-vat">{this.calculateVat(this.meritUrgentPrice)} zł z VAT</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-merit-cell hover" id="meritExpress" onClick={ this.handleCellClick }>
                                                         <span className="price-net">{ this.meritExpressPrice } zł netto</span>
 
@@ -460,23 +471,23 @@ document.addEventListener('DOMContentLoaded', function () {
                             <div className={ this.state.inVisible }>
                                 <div className="chosen-table">
                                     <div className="row">
-                                        <div className="col-lg-12">
+                                        <div className="col-lg-12 col-md-12 col-sm-12">
                                             <div className="row chosen">
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="chosen-title">TWÓJ WYBÓR:</div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="chosen-service">
-                                                        <span className="medium-text">{ this.state.chosenServiceDescripion } </span>
+                                                        <p className="medium-text">{ this.state.chosenServiceDescripion } </p>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="chosen-time">
                                                         { this.state.chosenTimeMinMax } godz.<br/>
                                                         <span className="small-italic">czas realizacji</span>
                                                     </div>
                                                 </div>
-                                                <div className="col-lg-3">
+                                                <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="chosen-price">{this.state.chosenServicePrice} zł netto
                                                         <br/>
                                                         <span className="price-with-vat">{this.calculateVat(this.state.chosenServicePrice)} zł z VAT</span>
@@ -486,7 +497,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-lg-12">
+                                        <div className="col-lg-12 col-md-12 col-sm-12">
                                             <div className="text-explanation">
                                                 Wpisz swój adres email, podaj dane Twojej firmy
                                                 i wciśnij ZAMAWIAM,
@@ -495,22 +506,25 @@ document.addEventListener('DOMContentLoaded', function () {
                                         </div>
                                     </div>
                                     <div className="row">
-                                        <div className="col-lg-12">
+                                        <div className="col-lg-12 col-md-12 col-sm-12">
                                             <form
                                                 className="company-data"
                                                 onSubmit={this.onSubmit}>
                                                 <label className="company-data-label" htmlFor="email">Podaj swój email</label>
                                                 <p className="error-message">{this.state.emailErrorMessage}</p>
                                                 <input
+                                                    required
                                                     onBlur={this.validateEmail}
                                                     className="company-data-input"
                                                     name="email"
-                                                    type="text"
+                                                    type="email"
                                                     onChange = { this.handleChange }
-                                                    value = { this.state.email } />
+                                                    value = { this.state.email } 
+                                                    pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
                                                 <label className="company-data-label" htmlFor="company">Podaj nazwę firmy</label>
                                                 <p className="error-message">{this.state.companyErrorMessage}</p>
                                                 <input
+                                                    required
                                                     onBlur={this.validateCompany}
                                                     className="company-data-input"
                                                     name="company"
@@ -520,6 +534,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 <label className="company-data-label" htmlFor="NIP">Podaj NIP firmy</label>
                                                 <p className="error-message">{this.state.nipErrorMessage}</p>
                                                 <input
+                                                    required
                                                     onBlur={this.validateNip}
                                                     className="company-data-input"
                                                     name="nip"
@@ -529,6 +544,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 <label className="company-data-label" htmlFor="street">Podaj nazwę ulicy</label>
                                                 <p className="error-message">{this.state.streetErrorMessage}</p>
                                                 <input
+                                                    required
                                                     onBlur={this.validateStreet}
                                                     className="company-data-input"
                                                     name="street"
@@ -538,10 +554,11 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 <label className="company-data-label" htmlFor="number">Podaj numer domu</label>
                                                 <p className="error-message">{this.state.numberErrorMessage}</p>
                                                 <input
+                                                    required
                                                     onBlur={this.validateNumber}
                                                     className="company-data-input"
                                                     name="number"
-                                                    type="number"
+                                                    type="text"
                                                     onChange = {this.handleChange } 
                                                     value = { this.state.number } />
                                                 <label className="company-data-label" htmlFor="locale">Podaj numer lokalu</label>
@@ -579,7 +596,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <Credentials />
                     <Partners />
                     <Contact />
-                </div >
+                </div>
             )
         }
     }

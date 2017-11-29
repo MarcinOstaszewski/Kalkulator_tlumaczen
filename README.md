@@ -8,17 +8,29 @@ Strona jest wizytówką firmy, przedstawia najważniejsze informacje o niej i po
 
 Najważniejszą funkcjonalnością na stronie jest natychmiastowy kalkulator, który na podstawie długości wklejonego przez klienta tekstu i wybranego przez niego języka oblicza ceny dla 3 zakresów usług i 3 możliwych terminów realizacji zlecenia.
 
-Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może od razu wypełnienić formularz kontaktowy i otrzymać/pobrać wypełnioną fakturę pro-forma, której opłacenie będzie oznaczało zamówienie usługi tłumaczenia wklejonego tekstu.
+Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może od razu wypełnienić formularz kontaktowy i otrzymać fakturę pro-forma, której opłacenie będzie oznaczało zamówienie usługi tłumaczenia wklejonego tekstu.  
+(projekt w fazie rozwoju)
 
+### Uruchamianie 
+
+w konsoli:      nmp run start
+w przeglądarce: http://localhost:3002/
 
 ### TO DO 
 
-dodać przynne przewijanie do początku sekcji po naciśnięciu linków
+dodać przynne przewijanie do początków sekcji po naciśnięciu linków
 
-uzupełnić walidację okienek formularza
++ uzupełnić walidację okienek formularza
 
-uzupełnić walidację całego formularza przed wysłaniem
++ uzupełnić walidację całego formularza przed wysłaniem
 
-dodać tworzenie faktury na podstawie danychg dostarczonych przez klienta
+dodać tworzenie faktury na podstawie danych dostarczonych przez klienta
 
-dodać możliwość pobrania lub wysyłanie faktury emailem 
+dodać możliwość pobrania lub wysyłania faktury emailem 
+
+funkcja onSubmit na formularzu: 
+    /sprawdza walidację okienek
+    /tworzy fakturę na podstawie danych
+    /wysyła fakturę na podany email
+
+

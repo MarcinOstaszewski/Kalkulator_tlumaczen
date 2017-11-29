@@ -10,12 +10,13 @@ class AboutUs extends React.Component {
     }
     render() {
         return ( 
-            <section className = "section-about-us" > 
+            <div>
+            <section className="section-about-us" > 
                 <div className="container">
                     <div className="row">
-                        <div className="col-lg-12">
+                        <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="row">
-                                <div className="col-lg-4">
+                                <div className="col-lg-4 col-md-4 col-sm-12">
                                     <div className="section-about-us-header">
                                         <h2 className="section-about-us-header-text" ><a name="section-about-us"><h2>O NAS</h2></a></h2>
                                     </div>
@@ -24,7 +25,7 @@ class AboutUs extends React.Component {
                         </div>
                     </div>
                     <div className="row">
-                        <div className="col-lg-8">
+                        <div className="col-lg-6 col-md-6 col-sm-12">
                             <div className="section-about-us-main-text">
                                 <p>
                                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate
@@ -37,12 +38,17 @@ class AboutUs extends React.Component {
                                 </p>
                             </div>
                         </div>
-                        <div className="col-lg-4">
-                            <img src="img/1804_opt.jpg" alt="team-hands" className="about-us-image"/>
+                        <div className="col-lg-1 col-md-1 col-sm-12">
+                        </div>
+                        <div className="col-lg-5 col-md-5 col-sm-12">
+                            <div className="about-us-image-div">
+                                {/* <img src="img/1804_opt.jpg" alt="team-hands" className="about-us-image"/> */}
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
+        </div>
         )
     }
 }
