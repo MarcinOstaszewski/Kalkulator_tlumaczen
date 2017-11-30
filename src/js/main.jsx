@@ -46,9 +46,24 @@ document.addEventListener('DOMContentLoaded', function () {
                 streetErrorMessage : '',
                 numberErrorMessage : '',
                 localeErrorMessage : '',
+                displayMobileMenuList : 0,
             }
         }
-        
+
+        showMobileMenuList = () => {
+            if(this.state.displayMobileMenuList === 0){
+                document.getElementById('menu-list').classList.add("visible");
+                this.setState({
+                    displayMobileMenuList : 1
+                })
+            } else {
+                document.getElementById('menu-list').classList.remove("visible");
+                this.setState({
+                    displayMobileMenuList : 0
+                })
+            }
+        }
+
         changeTextArea = (event) => {
             this.setState({
                 [event.target.name]: event.target.value,
@@ -208,6 +223,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         render() {
             
+            console.log(this.menuList);
             this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice  * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
             this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice );
             this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice );
@@ -233,7 +249,8 @@ document.addEventListener('DOMContentLoaded', function () {
                                     </div>
                                     <div className="col-lg-10 col-md-10 col-sm-10">
                                         <div className="main-menu">
-                                            <div className="menu-list">
+                                            <div className="burger" onClick={this.showMobileMenuList}></div>
+                                            <div className="menu-list" id="menu-list">
                                                 <ul>
                                                     <li>
                                                         <a href="#section-about-us">O NAS</a>
@@ -250,7 +267,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 </ul>
                                             </div>
                                             <div className="menu-calc">
-                                                <a href="#section-calculator">WYCENA ON-LINE</a>
+                                                <a href="#section-calculator">WYCENA<br/>ON-LINE</a>
                                             </div>
                                         </div>
                                     </div>

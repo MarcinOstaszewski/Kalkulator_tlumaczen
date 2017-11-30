@@ -9,6 +9,14 @@ body {
 /*     MAIN SECTION                      */
 /*---------------------------------------*/
 
+%bfr_aftr {
+    position: absolute;
+    content: '';
+    height: 2px;
+    width: 47px;
+    background-color: #fff;
+}
+
 .section-main {
     position: relative;
     width: 100%;
@@ -20,7 +28,6 @@ body {
         background-size: cover;
         .main-nav {
             position: absolute;
-            display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
             width: 100%;
@@ -37,16 +44,47 @@ body {
                 line-height: 1.5rem;
                 align-items: center;
             }
+            
             .main-menu {
-                font-size: 1rem;
-                display: flex;
-                justify-content: space-between;
+                justify-content: flex-end;
+                position: relative;
+                @media (max-width: 759px) {
+                    justify-content: flex-end;
+                }
+                .burger {
+                    display: inline-block;
+                    height: 41px;
+                    width: 47px;
+                    margin: 17px;
+                    float: left;
+                    position: relative;
+                    border-top: 2px solid #fff;
+                    border-bottom: 2px solid #fff;
+                    @media (min-width: 760px) {
+                        display: none;
+                    }
+                    &:before {
+                        @extend %bfr_aftr;
+                        top: 11px;
+                    }
+                    &:after {
+                        @extend %bfr_aftr;
+                        bottom: 11px;
+                    }
+                }
                 .menu-list {
-                    flex-direction: row;
-                    ul {
+                    display: none;
+                    @media (min-width: 760px) {
+                        flex-direction: row;
                         display: flex;
+                        font-size: 1rem;
+                        // justify-content: space-between;
+                        padding-right: 20px;
+                    }
+                    ul {
                         justify-content: space-between;
                         align-items: center;
+                        padding-rigth: 20px;
                         li {
                             flex-direction: row;
                             align-items: center;
@@ -63,22 +101,55 @@ body {
                                 font-size: 1rem;
                                 color: rgb(255, 255, 255);
                                 line-height: 1rem;
-                                padding: 10px 20px;
+                                padding: 10px 15px;
                                 text-decoration: none;
                                 border-right: 1px solid white;
                             }
                         }
                     }
                 }
-                .menu-calc {
+                .visible {
+                    position: absolute;
+                    top: 75px;
+                    right: 125px;
                     display: flex;
-                    justify-content: right;
-                    align-items: center;
+                    ul {
+                        flex-direction: column;
+                        align-items: left;
+                        background-color: rgba(13, 3, 72, 0.7);
+                        li {
+                            flex-direction: row;
+                            align-items: center;
+                            justify-content: space-between;
+                            display: inline-block;
+                            height: 40px;
+                            padding: 0px;
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.25);
+                                cursor: pointer;
+                            }
+                            a {
+                                display: inline-block;
+                                font-size: 1rem;
+                                color: rgb(255, 255, 255);
+                                line-height: 1rem;
+                                padding: 12px 10px;
+                                text-decoration: none;
+                                border: none;
+                                width:125px;
+                            }
+                        }
+                    }
+                }
+                .menu-calc {
+                    height: 75px;
+                    display: flex;
                     font-size: 1.5rem;
-                    flex-direction: row;
                     a {
                         text-decoration: none;
                         color: #fff;
+                        text-align: center;
+                        padding-left: 15px;
                     }
                 }
             }
