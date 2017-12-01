@@ -12,9 +12,10 @@ body {
 %bfr_aftr {
     position: absolute;
     content: '';
-    height: 2px;
+    height: 7px;
     width: 47px;
-    background-color: #fff;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 1);
 }
 
 .section-main {
@@ -53,23 +54,23 @@ body {
                 }
                 .burger {
                     display: inline-block;
-                    height: 41px;
+                    padding: 0px 0px;
+                    height: 7px;
+                    border-radius: 7px;
                     width: 47px;
-                    margin: 17px;
-                    float: left;
+                    margin: 34px 10px;
                     position: relative;
-                    border-top: 2px solid #fff;
-                    border-bottom: 2px solid #fff;
+                    background-color: rgba(255, 255, 255, 1);
                     @media (min-width: 760px) {
                         display: none;
                     }
                     &:before {
                         @extend %bfr_aftr;
-                        top: 11px;
+                        top: -16px;
                     }
                     &:after {
                         @extend %bfr_aftr;
-                        bottom: 11px;
+                        bottom: -16px;
                     }
                 }
                 .menu-list {

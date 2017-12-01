@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 require('../sass/main.scss');
-
+    
 import Contact from './contact.jsx';
 import Partners from './partners.jsx';
 import Credentials from './credentials.jsx';
@@ -184,7 +184,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 ;
         }
         validateNip = () => {
-            console.log(this.state.nip.length);
             if (this.state.nip.length !== 10) {
                 this.setState({nipErrorMessage : "NIP musi zawierać dokładnie 10 cyfr"})
             } else this.setState({nipErrorMessage : ""});
@@ -223,7 +222,15 @@ document.addEventListener('DOMContentLoaded', function () {
 
         render() {
             
-            console.log(this.menuList);
+            (function() {
+                window.addEventListener("resize", actualResizeHandler, false);
+                function actualResizeHandler() {
+                    if (innerWidth > 720) {
+                        document.getElementById('menu-list').classList.remove("visible");
+                    }
+                }                
+            }());
+
             this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice  * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
             this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice );
             this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice );
@@ -236,7 +243,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             return ( 
             <div>
-                <section className = "section-main" > 
+                <section className="section-main"> 
                     <div className="hero">
                         <div className="main-nav">
                             <div className="container">
