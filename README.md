@@ -1,26 +1,32 @@
-# Strona biura tłumaczeń z kalkulatorem on-line 
+# Strona dla biura tłumaczeń z kalkulatorem on-line 
 
 ### Opis funkcjonalności
 
-Strona biura tłumaczeń udostępnia natychmiastową wycenę tłumaczenia w zależności od wybranego przez klienta zakresu usługi oraz terminu realizacji. 
+Strona stworzona w React.js udostępnia natychmiastową wycenę tłumaczenia w zależności od długości wklejonego tekstu, wybranego przez klienta zakresu usługi oraz terminu realizacji. 
 
-Strona jest wizytówką firmy, przedstawia najważniejsze informacje o niej i pozwala klientowi na łatwy kontakt z firmą. 
+Strona pełni także rolę wizytówki firmy, przedstawia najważniejsze informacje o niej i pozwala klientowi na łatwy kontakt z firmą. 
 
 Najważniejszą funkcjonalnością na stronie jest natychmiastowy kalkulator, który na podstawie długości wklejonego przez klienta tekstu i wybranego przez niego języka oblicza ceny dla 3 zakresów usług i 3 możliwych terminów realizacji zlecenia.
 
 Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może od razu wypełnienić formularz kontaktowy i otrzymać fakturę pro-forma, której opłacenie będzie oznaczało zamówienie usługi tłumaczenia wklejonego tekstu.  
 (projekt w fazie rozwoju)
 
-### Uruchamianie 
+### Demo online
+
+https://marcinostaszewski.github.io/Kalkulator_tlumaczen/
+
+### Uruchamianie lokalnie
 
 w konsoli:      nmp run start
 w przeglądarce: http://localhost:3002/
 
+
+
 ### TO DO 
 
-DONE. uzupełnić walidację okienek formularza
+uzupełnić walidację okienek formularza
 
-DONE. uzupełnić walidację całego formularza przed wysłaniem
+uzupełnić walidację całego formularza przed wysłaniem
 
 dodać płynne przewijanie do początków sekcji po naciśnięciu linków
 
