@@ -9660,14 +9660,10 @@ document.addEventListener('DOMContentLoaded', function () {
             _this.showMobileMenuList = function () {
                 if (_this.state.displayMobileMenuList === 0) {
                     document.getElementById('menu-list').classList.add("visible");
-                    _this.setState({
-                        displayMobileMenuList: 1
-                    });
+                    _this.setState({ displayMobileMenuList: 1 });
                 } else {
                     document.getElementById('menu-list').classList.remove("visible");
-                    _this.setState({
-                        displayMobileMenuList: 0
-                    });
+                    _this.setState({ displayMobileMenuList: 0 });
                 }
             };
 
@@ -9689,7 +9685,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     chosenLanguage: event.target.value.slice(4),
                     languageGroupMultiplier: Number(event.target.value.slice(0, 3)),
                     inVisible: 'not-visible'
-
                 });
             };
 
@@ -9754,13 +9749,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         break;
                     default:
                 }
-                _this.setState({
-                    chosenService: event.currentTarget.id,
-                    inVisible: '',
-                    chosenServicePrice: tempPrice,
-                    chosenTimeMinMax: tempMinTime,
-                    chosenServiceDescripion: tempServiceDescr
-                });
+                _this.setState({ chosenService: event.currentTarget.id, inVisible: '', chosenServicePrice: tempPrice, chosenTimeMinMax: tempMinTime, chosenServiceDescripion: tempServiceDescr });
                 return;
             };
 
@@ -9882,15 +9871,9 @@ document.addEventListener('DOMContentLoaded', function () {
                 this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice);
                 this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice);
                 this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice);
-                this.isEnabled = this.state.email.length > 3 && this.state.company.length > 3 && this.state.nip.length === 10 && this.state.street.length > 3 && this.state.number.lenght > 0 && this.state.locale > 0;
-
-                console.log(this.isEnabled);
-                console.log(this.state.email.length > 3);
-                console.log(this.state.company.length > 3);
-                console.log(this.state.nip.length === 10);
-                console.log(this.state.street.length > 3);
-                console.log(this.state.locale > 0);
-
+                this.isEnabled = this.state.email.length > 3 && this.state.company.length > 3 && this.state.nip.length === 10 && this.state.street.length > 3 && Number(this.state.number) > 0 && this.state.locale > 0;
+                this.currentDate = new Date();
+                console.log(this.currentDate.getDate());
                 return _react2.default.createElement(
                     'div',
                     null,
@@ -10091,20 +10074,24 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'calculator-text' },
                                                         'Wklej tekst do t\u0142umaczenia'
                                                     ),
-                                                    _react2.default.createElement('textarea', { className: 'calculator-textarea', name: 'textArea', onChange: this.changeTextArea, value: this.state.textArea }),
+                                                    _react2.default.createElement('textarea', {
+                                                        className: 'calculator-textarea',
+                                                        name: 'textArea',
+                                                        onChange: this.changeTextArea,
+                                                        value: this.state.textArea }),
                                                     _react2.default.createElement(
                                                         'div',
                                                         { className: 'calculator-text-length' },
-                                                        'D\u0142ugo\u015B\u0107 tekstu: ',
+                                                        'D\u0142ugo\u015B\u0107 tekstu:',
                                                         _react2.default.createElement(
                                                             'strong',
                                                             { className: 'calculator-monospace' },
                                                             this.state.textArea.length,
-                                                            ' znak\xF3w ',
+                                                            'znak\xF3w',
                                                             _react2.default.createElement('br', null),
                                                             'po zaokr\u0105gleniu ',
                                                             this.state.textAreaPages,
-                                                            ' str. '
+                                                            'str.'
                                                         ),
                                                         _react2.default.createElement(
                                                             'span',
@@ -10125,7 +10112,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'language-select' },
                                                         _react2.default.createElement(
                                                             'select',
-                                                            { className: 'chosen-language', onChange: this.setTranslationDirection, value: this.state.select },
+                                                            {
+                                                                className: 'chosen-language',
+                                                                onChange: this.setTranslationDirection,
+                                                                value: this.state.select },
                                                             _react2.default.createElement(
                                                                 'option',
                                                                 { value: '1.2' },
@@ -10148,7 +10138,10 @@ document.addEventListener('DOMContentLoaded', function () {
                                                     { className: 'col-lg-12 col-md-12 col-sm-12' },
                                                     _react2.default.createElement(
                                                         'select',
-                                                        { className: 'chosen-language', onChange: this.handleLanguageChange, value: this.state.select },
+                                                        {
+                                                            className: 'chosen-language',
+                                                            onChange: this.handleLanguageChange,
+                                                            value: this.state.select },
                                                         _react2.default.createElement(
                                                             'option',
                                                             { value: '100.angielski' },
@@ -10219,15 +10212,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             'option',
                                                             { value: '130.\u0142otewski' },
                                                             '\u0142otewski',
-                                                            this.state.suffix,
-                                                            ' '
+                                                            this.state.suffix
                                                         ),
                                                         _react2.default.createElement(
                                                             'option',
                                                             { value: '135.niderlandzki' },
                                                             'niderlandzki',
-                                                            this.state.suffix,
-                                                            ' '
+                                                            this.state.suffix
                                                         ),
                                                         _react2.default.createElement(
                                                             'option',
@@ -10257,8 +10248,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             'option',
                                                             { value: '135.w\u0119gierski' },
                                                             'w\u0119gierski',
-                                                            this.state.suffix,
-                                                            ' '
+                                                            this.state.suffix
                                                         ),
                                                         _react2.default.createElement(
                                                             'option',
@@ -10310,9 +10300,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                                                 'span',
                                                                 { className: 'realisation-time' },
                                                                 this.state.realisationTimeMin,
-                                                                ' - ',
+                                                                '- ',
                                                                 this.state.realisationTimeMax + 24,
-                                                                ' godz.'
+                                                                'godz.'
                                                             )
                                                         )
                                                     ),
@@ -10328,9 +10318,9 @@ document.addEventListener('DOMContentLoaded', function () {
                                                                 'span',
                                                                 { className: 'realisation-time' },
                                                                 this.state.realisationTimeMin,
-                                                                ' - ',
+                                                                '- ',
                                                                 this.state.realisationTimeMax,
-                                                                ' godz.'
+                                                                'godz.'
                                                             )
                                                         )
                                                     ),
@@ -10347,7 +10337,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                                 { className: 'realisation-time' },
                                                                 'maks. ',
                                                                 this.state.realisationTimeMin,
-                                                                ' godz. '
+                                                                'godz.'
                                                             )
                                                         )
                                                     )
@@ -10373,18 +10363,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-transl-cell hover', id: 'translBasic', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-transl-cell hover',
+                                                                id: 'translBasic',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net', id: 'tr-1-net' },
                                                                 this.translationPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat', id: 'tr-1-br' },
                                                                 this.calculateVat(this.translationPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     ),
@@ -10393,18 +10386,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-transl-cell hover', id: 'translUrgent', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-transl-cell hover',
+                                                                id: 'translUrgent',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net', id: 'tr-2-net' },
                                                                 this.transUrgentPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat', id: 'tr-2-br' },
                                                                 this.calculateVat(this.transUrgentPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     ),
@@ -10413,18 +10409,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-transl-cell hover', id: 'translExpress', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-transl-cell hover',
+                                                                id: 'translExpress',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.transExpressPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.transExpressPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     )
@@ -10450,18 +10449,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-redact-cell hover', id: 'redactBasic', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-redact-cell hover',
+                                                                id: 'redactBasic',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.redactionPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.redactionPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     ),
@@ -10470,18 +10472,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-redact-cell hover', id: 'redactUrgent', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-redact-cell hover',
+                                                                id: 'redactUrgent',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.redactUrgentPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.redactUrgentPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     ),
@@ -10490,18 +10495,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-redact-cell hover', id: 'redactExpress', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-redact-cell hover',
+                                                                id: 'redactExpress',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.redactExpressPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.redactExpressPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     )
@@ -10527,18 +10535,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-merit-cell hover', id: 'meritBasic', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-merit-cell hover',
+                                                                id: 'meritBasic',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.meritoryPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.meritoryPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     ),
@@ -10547,18 +10558,22 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            _defineProperty({ className: 'pricing-table-merit-cell hover', id: 'meritUrgent', onClick: this.handleCellClick }, 'onClick', this.handleCellClick),
+                                                            _defineProperty({
+                                                                className: 'pricing-table-merit-cell hover',
+                                                                id: 'meritUrgent',
+                                                                onClick: this.handleCellClick
+                                                            }, 'onClick', this.handleCellClick),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.meritUrgentPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.meritUrgentPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     ),
@@ -10567,18 +10582,21 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         { className: 'col-lg-3 col-md-3 col-sm-3' },
                                                         _react2.default.createElement(
                                                             'div',
-                                                            { className: 'pricing-table-merit-cell hover', id: 'meritExpress', onClick: this.handleCellClick },
+                                                            {
+                                                                className: 'pricing-table-merit-cell hover',
+                                                                id: 'meritExpress',
+                                                                onClick: this.handleCellClick },
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-net' },
                                                                 this.meritExpressPrice,
-                                                                ' z\u0142 netto'
+                                                                'z\u0142 netto'
                                                             ),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.meritExpressPrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     )
@@ -10620,8 +10638,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             _react2.default.createElement(
                                                                 'p',
                                                                 { className: 'medium-text' },
-                                                                this.state.chosenServiceDescripion,
-                                                                ' '
+                                                                this.state.chosenServiceDescripion
                                                             )
                                                         )
                                                     ),
@@ -10632,7 +10649,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             'div',
                                                             { className: 'chosen-time' },
                                                             this.state.chosenTimeMinMax,
-                                                            ' godz.',
+                                                            'godz.',
                                                             _react2.default.createElement('br', null),
                                                             _react2.default.createElement(
                                                                 'span',
@@ -10648,13 +10665,13 @@ document.addEventListener('DOMContentLoaded', function () {
                                                             'div',
                                                             { className: 'chosen-price' },
                                                             this.state.chosenServicePrice,
-                                                            ' z\u0142 netto',
+                                                            'z\u0142 netto',
                                                             _react2.default.createElement('br', null),
                                                             _react2.default.createElement(
                                                                 'span',
                                                                 { className: 'price-with-vat' },
                                                                 this.calculateVat(this.state.chosenServicePrice),
-                                                                ' z\u0142 z VAT'
+                                                                'z\u0142 z VAT'
                                                             )
                                                         )
                                                     )
@@ -10682,9 +10699,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                                 { className: 'col-lg-12 col-md-12 col-sm-12' },
                                                 _react2.default.createElement(
                                                     'form',
-                                                    {
-                                                        className: 'company-data',
-                                                        onSubmit: this.onSubmit },
+                                                    { className: 'company-data', onSubmit: this.onSubmit },
                                                     _react2.default.createElement(
                                                         'label',
                                                         { className: 'company-data-label', htmlFor: 'email' },
@@ -10794,9 +10809,219 @@ document.addEventListener('DOMContentLoaded', function () {
                                                         onChange: this.handleChange,
                                                         value: this.state.locale }),
                                                     _react2.default.createElement(
+                                                        'p',
+                                                        { className: 'order-disabled-explanation' },
+                                                        this.state.textArea.length >= 100 ? "" : "Wklej tekst do tłumaczenia - min. 100 znaków.",
+                                                        _react2.default.createElement('br', null),
+                                                        ' ',
+                                                        this.isEnabled ? "" : "Wypełnij poprawnie wszystkie pola formularza."
+                                                    ),
+                                                    _react2.default.createElement(
                                                         'button',
-                                                        { className: 'order-button', disabled: !this.isEnabled },
+                                                        {
+                                                            className: 'order-button',
+                                                            disabled: !(this.isEnabled && this.state.textArea.length >= 100) },
                                                         'ZAMAWIAM'
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'invoice-info' },
+                                                    ' poni\u017Cej wz\xF3r faktury proforma do wys\u0142ania mailem '
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'invoice-page' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'row' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'invoice-header' },
+                                                        _react2.default.createElement(
+                                                            'div',
+                                                            { className: 'margin' },
+                                                            _react2.default.createElement(
+                                                                'div',
+                                                                { className: 'row' },
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                                                    _react2.default.createElement(
+                                                                        'div',
+                                                                        { className: 'company-data' },
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            'TransLingus Biuro T\u0142umacze\u0144'
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        'ul. T\u0142umaczeniowa 23',
+                                                                        _react2.default.createElement('br', null),
+                                                                        '12-345 Warszawa',
+                                                                        _react2.default.createElement('br', null),
+                                                                        'NIP: 234-45-56-123',
+                                                                        _react2.default.createElement('br', null)
+                                                                    )
+                                                                ),
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                                                    _react2.default.createElement('div', { className: 'logo' })
+                                                                ),
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                                                    _react2.default.createElement(
+                                                                        'div',
+                                                                        { className: 'invoice' },
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            'FAKTURA PROFORMA'
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        'FV TL/2017/13456',
+                                                                        _react2.default.createElement('br', null),
+                                                                        'wystawiona: ',
+                                                                        this.currentDate.getDate(),
+                                                                        '.',
+                                                                        this.currentDate.getMonth(),
+                                                                        '.',
+                                                                        this.currentDate.getFullYear()
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'invoice-main' },
+                                                        _react2.default.createElement(
+                                                            'div',
+                                                            { className: 'margin' },
+                                                            _react2.default.createElement(
+                                                                'div',
+                                                                { className: 'row' },
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                                                    _react2.default.createElement(
+                                                                        'div',
+                                                                        { className: 'client-data' },
+                                                                        'dla:',
+                                                                        _react2.default.createElement('br', null),
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.state.company.length === 0 ? "...podaj nazwę firmy..." : this.state.company
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.state.street.length === 0 ? "...podaj nazwę ulicy..." : this.state.street,
+                                                                            ' ',
+                                                                            this.state.number,
+                                                                            ' lok. ',
+                                                                            this.state.locale
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            'NIP: ',
+                                                                            this.state.nip.length !== 10 ? "...podaj NIP (10 cyfr)..." : this.state.nip
+                                                                        )
+                                                                    )
+                                                                ),
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                                                    _react2.default.createElement(
+                                                                        'div',
+                                                                        { className: 'service-data' },
+                                                                        'Us\u0142uga:',
+                                                                        _react2.default.createElement('br', null),
+                                                                        ' ',
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.state.chosenServiceDescripion
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        'ilo\u015B\u0107 stron: ',
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.state.textAreaPages
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        'cena za stron\u0119: ',
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.state.pagePrice,
+                                                                            ' z\u0142'
+                                                                        )
+                                                                    )
+                                                                ),
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                                                    _react2.default.createElement(
+                                                                        'div',
+                                                                        { className: 'service-prices' },
+                                                                        'Cena netto:',
+                                                                        _react2.default.createElement('br', null),
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.state.chosenServicePrice,
+                                                                            ' z\u0142'
+                                                                        ),
+                                                                        _react2.default.createElement('br', null),
+                                                                        'Cena brutto:',
+                                                                        _react2.default.createElement('br', null),
+                                                                        _react2.default.createElement(
+                                                                            'b',
+                                                                            null,
+                                                                            this.calculateVat(this.state.chosenServicePrice),
+                                                                            ' z\u0142'
+                                                                        ),
+                                                                        _react2.default.createElement('br', null)
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'invoice-footer' },
+                                                        _react2.default.createElement(
+                                                            'div',
+                                                            { className: 'margin' },
+                                                            _react2.default.createElement(
+                                                                'div',
+                                                                { className: 'row' },
+                                                                _react2.default.createElement(
+                                                                    'div',
+                                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                                                    _react2.default.createElement(
+                                                                        'b',
+                                                                        null,
+                                                                        'TransLingus Biuro T\u0142umacze\u0144'
+                                                                    ),
+                                                                    _react2.default.createElement('br', null),
+                                                                    'ul. T\u0142umaczeniowa | 23 12-345 Warszawa | NIP: 234-45-56-123'
+                                                                )
+                                                            )
+                                                        )
                                                     )
                                                 )
                                             )
@@ -23911,7 +24136,7 @@ exports = module.exports = __webpack_require__(190)(undefined);
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n/*-----------------------------------------*/\n/*                  GRID                   */\n/*-----------------------------------------*/\n.container {\n  width: 100%;\n  margin: 0 1rem;\n  max-width: 800px;\n  min-width: 380px; }\n  @media (min-width: 760px) {\n    .container {\n      min-width: 680px;\n      max-width: 1000px;\n      margin: 0 1rem; } }\n  @media (min-width: 1048px) {\n    .container {\n      max-width: 1000px;\n      margin: 0 auto; } }\n  .container .row:before, .container .row:after {\n    clear: both;\n    display: block;\n    content: ''; }\n  .container .row [class*=\"col-\"] {\n    float: left;\n    min-height: 1px;\n    width: 8.33333%;\n    padding: 0px;\n    display: inline-block; }\n  .container .row .col-sm-1 {\n    width: 8.33333%; }\n  .container .row .col-sm-2 {\n    width: 16.66667%; }\n  .container .row .col-sm-3 {\n    width: 25%; }\n  .container .row .col-sm-4 {\n    width: 33.33333%; }\n  .container .row .col-sm-5 {\n    width: 41.66667%; }\n  .container .row .col-sm-6 {\n    width: 50%; }\n  .container .row .col-sm-7 {\n    width: 58.33333%; }\n  .container .row .col-sm-8 {\n    width: 66.66667%; }\n  .container .row .col-sm-9 {\n    width: 75%; }\n  .container .row .col-sm-10 {\n    width: 83.33333%; }\n  .container .row .col-sm-11 {\n    width: 91.66667%; }\n  .container .row .col-sm-12 {\n    width: 100%; }\n  @media (min-width: 760px) {\n    .container .row .col-md-1 {\n      width: 8.33333%; }\n    .container .row .col-md-2 {\n      width: 16.66667%; }\n    .container .row .col-md-3 {\n      width: 25%; }\n    .container .row .col-md-4 {\n      width: 33.33333%; }\n    .container .row .col-md-5 {\n      width: 41.66667%; }\n    .container .row .col-md-6 {\n      width: 50%; }\n    .container .row .col-md-7 {\n      width: 58.33333%; }\n    .container .row .col-md-8 {\n      width: 66.66667%; }\n    .container .row .col-md-9 {\n      width: 75%; }\n    .container .row .col-md-10 {\n      width: 83.33333%; }\n    .container .row .col-md-11 {\n      width: 91.66667%; }\n    .container .row .col-md-12 {\n      width: 100%; } }\n  @media (min-width: 1000px) {\n    .container .row .col-lg-1 {\n      width: 8.33333%; }\n    .container .row .col-lg-2 {\n      width: 16.66667%; }\n    .container .row .col-lg-3 {\n      width: 25%; }\n    .container .row .col-lg-4 {\n      width: 33.33333%; }\n    .container .row .col-lg-5 {\n      width: 41.66667%; }\n    .container .row .col-lg-6 {\n      width: 50%; }\n    .container .row .col-lg-7 {\n      width: 58.33333%; }\n    .container .row .col-lg-8 {\n      width: 66.66667%; }\n    .container .row .col-lg-9 {\n      width: 75%; }\n    .container .row .col-lg-10 {\n      width: 83.33333%; }\n    .container .row .col-lg-11 {\n      width: 91.66667%; }\n    .container .row .col-lg-12 {\n      width: 100%; } }\n\nbody {\n  font-family: 'Roboto', Arial, sans-serif;\n  font-size: 16px;\n  min-width: 600px;\n  font-weight: 300;\n  color: #fff; }\n\n/*---------------------------------------*/\n/*     MAIN SECTION                      */\n/*---------------------------------------*/\n.section-main .hero .main-nav .main-menu .burger:before, .section-main .hero .main-nav .main-menu .burger:after {\n  position: absolute;\n  content: '';\n  height: 7px;\n  width: 47px;\n  border-radius: 3px;\n  background-color: white; }\n\n.section-main {\n  position: relative;\n  width: 100%;\n  height: 624px;\n  display: block; }\n  .section-main .hero {\n    background-image: url(./img/126_opt.jpg);\n    height: 100%;\n    background-size: cover; }\n    .section-main .hero .main-nav {\n      position: absolute;\n      flex-wrap: wrap;\n      justify-content: space-between;\n      width: 100%;\n      height: 75px;\n      top: 20px;\n      flex-direction: row;\n      background-color: rgba(13, 3, 72, 0.7);\n      color: white; }\n      .section-main .hero .main-nav .main-logo {\n        height: 75px;\n        display: flex;\n        flex-direction: row;\n        font-size: 2rem;\n        line-height: 1.5rem;\n        align-items: center; }\n      .section-main .hero .main-nav .main-menu {\n        justify-content: flex-end;\n        position: relative; }\n        @media (max-width: 759px) {\n          .section-main .hero .main-nav .main-menu {\n            justify-content: flex-end; } }\n        .section-main .hero .main-nav .main-menu .burger {\n          display: inline-block;\n          padding: 0px;\n          height: 7px;\n          border-radius: 7px;\n          width: 47px;\n          margin: 34px 10px;\n          position: relative;\n          background-color: white; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .burger {\n              display: none; } }\n          .section-main .hero .main-nav .main-menu .burger:before {\n            top: -16px; }\n          .section-main .hero .main-nav .main-menu .burger:after {\n            bottom: -16px; }\n        .section-main .hero .main-nav .main-menu .menu-list {\n          display: none; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .menu-list {\n              flex-direction: row;\n              display: flex;\n              font-size: 1rem;\n              padding-right: 20px; } }\n          .section-main .hero .main-nav .main-menu .menu-list ul {\n            justify-content: space-between;\n            align-items: center;\n            padding-rigth: 20px; }\n            .section-main .hero .main-nav .main-menu .menu-list ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 75px;\n              padding: 20px 0px; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: white;\n                line-height: 1rem;\n                padding: 10px 15px;\n                text-decoration: none;\n                border-right: 1px solid white; }\n        .section-main .hero .main-nav .main-menu .visible {\n          position: absolute;\n          top: 75px;\n          right: 125px;\n          display: flex; }\n          .section-main .hero .main-nav .main-menu .visible ul {\n            flex-direction: column;\n            align-items: left;\n            background-color: rgba(13, 3, 72, 0.7); }\n            .section-main .hero .main-nav .main-menu .visible ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 40px;\n              padding: 0px; }\n              .section-main .hero .main-nav .main-menu .visible ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .visible ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: white;\n                line-height: 1rem;\n                padding: 12px 10px;\n                text-decoration: none;\n                border: none;\n                width: 125px; }\n        .section-main .hero .main-nav .main-menu .menu-calc {\n          height: 75px;\n          display: flex;\n          font-size: 1.5rem; }\n          .section-main .hero .main-nav .main-menu .menu-calc a {\n            text-decoration: none;\n            color: #fff;\n            text-align: center;\n            padding-left: 15px; }\n    .section-main .hero .main-info {\n      padding-top: 160px; }\n      .section-main .hero .main-info .main-header {\n        text-align: right;\n        color: rgba(13, 3, 72, 0.7);\n        font-size: 2.5rem;\n        width: 100%;\n        border-bottom: 2px solid rgba(13, 3, 72, 0.7);\n        margin-bottom: 1rem; }\n      .section-main .hero .main-info .main-description .main-description-paragraph {\n        text-align: left;\n        color: rgba(13, 3, 72, 0.7);\n        font-size: 1.75rem;\n        line-height: 2rem; }\n      .section-main .hero .main-info .main-description .main-description-button {\n        text-align: center;\n        color: #fff;\n        background-color: rgba(13, 3, 72, 0.7);\n        border-radius: 5px;\n        margin: 10px 0px;\n        padding: 5px 10px;\n        border: none; }\n        .section-main .hero .main-info .main-description .main-description-button a {\n          text-decoration: none;\n          color: #fff; }\n\n/*-----------------------------------------*/\n/*          SECTION CALCULATOR             */\n/*-----------------------------------------*/\n.section-calculator {\n  position: relative;\n  display: flex;\n  width: 100%;\n  margin: 37px 0px;\n  color: #0d0348; }\n  .section-calculator .calculator {\n    /* ---------------------------------*/\n    /*         PRICING TABLE            */\n    /* ---------------------------------*/ }\n    .section-calculator .calculator .calculator-title-box {\n      display: flex;\n      width: 100%;\n      height: 35px;\n      color: white;\n      font-size: 1.5rem;\n      justify-content: center;\n      align-items: center;\n      background-color: #0d0348;\n      border-radius: 10px; }\n    .section-calculator .calculator .calculator-text {\n      font-size: 1.2rem;\n      padding: 10px 0px; }\n    .section-calculator .calculator .calculator-textarea {\n      width: 100%;\n      height: 75px;\n      resize: none;\n      outline: none; }\n    .section-calculator .calculator .calculator-text-length {\n      font-size: 1rem;\n      padding: 10px 0px;\n      line-height: 1.5rem; }\n      .section-calculator .calculator .calculator-text-length .calculator-monospace {\n        font-weight: 500; }\n      .section-calculator .calculator .calculator-text-length span {\n        font-size: 0.75rem; }\n    .section-calculator .calculator .chosen-language {\n      font-size: 1.2rem;\n      width: 100%;\n      height: 32px;\n      margin-top: 5px;\n      color: #fff;\n      background-color: #0d0348;\n      text-align: left;\n      border-radius: 5px;\n      margin-bottom: 0.5rem; }\n      .section-calculator .calculator .chosen-language .calculator-from-language,\n      .section-calculator .calculator .chosen-language .calculator-to-language {\n        font-size: 1.25rem;\n        padding: 5px 0px; }\n      .section-calculator .calculator .chosen-language select.language {\n        width: 100%;\n        margin-top: 20px;\n        display: block; }\n        .section-calculator .calculator .chosen-language select.language form {\n          width: 100%;\n          display: flex;\n          justify-content: space-between; }\n          .section-calculator .calculator .chosen-language select.language form input {\n            padding: 0px 10px; }\n        .section-calculator .calculator .chosen-language select.language .option {\n          white-space: pre;\n          min-height: 1.2em;\n          padding: 0px 5px 1px; }\n    .section-calculator .calculator .pricing-table {\n      font-size: 1.75rem;\n      font-weight: 300;\n      text-align: center;\n      color: #fff;\n      background-color: rgba(13, 3, 72, 0.65);\n      margin-left: -5px; }\n      @media (min-width: 721px) {\n        .section-calculator .calculator .pricing-table {\n          margin-left: 10px; } }\n      .section-calculator .calculator .pricing-table .pricing-table-row-header {\n        align-items: center;\n        height: 75px; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers {\n          height: 75px;\n          font-size: 2rem;\n          line-height: 1.7rem;\n          font-weight: 300;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n          .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers .realisation-time {\n            font-size: 1rem; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-transl {\n        display: flex;\n        background-color: rgba(13, 3, 72, 0.3);\n        align-content: center;\n        height: 100%; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-transl .pricing-table-transl-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-content: center;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang {\n        display: flex;\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang .pricing-table-redact-cell {\n          height: 75px;\n          align-content: center;\n          font-weight: 300;\n          font-size: 1.25rem;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit {\n        display: flex;\n        background-color: rgba(13, 3, 72, 0.3);\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit .pricing-table-merit-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-items: center;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n    .section-calculator .calculator .hover:hover {\n      background-color: rgba(13, 3, 72, 0.75);\n      font-size: 4rem; }\n    .section-calculator .calculator .price-net {\n      font-size: 1.25rem;\n      font-weight: 500;\n      width: 100%;\n      display: block; }\n    .section-calculator .calculator .price-with-vat {\n      font-size: 0.85rem;\n      font-style: italic;\n      font-weight: 300; }\n    .section-calculator .calculator .not-visible {\n      display: none; }\n    .section-calculator .calculator .chosen-table {\n      margin-top: 15px; }\n      .section-calculator .calculator .chosen-table .text-explanation {\n        font-size: 1.25rem;\n        line-height: 1.5rem;\n        margin: 10px 0px; }\n      .section-calculator .calculator .chosen-table .chosen {\n        background-color: rgba(13, 3, 72, 0.75);\n        height: 75px;\n        width: 100%;\n        margin-top: 17px;\n        color: white;\n        display: flex;\n        border-radius: 10px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title,\n        .section-calculator .calculator .chosen-table .chosen .chosen-service,\n        .section-calculator .calculator .chosen-table .chosen .chosen-time,\n        .section-calculator .calculator .chosen-table .chosen .chosen-price {\n          width: 100%;\n          height: 100%;\n          font-size: 1.25rem;\n          font-weight: 300;\n          text-align: center;\n          border-right: 1px solid white;\n          padding: 10px 7px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-service {\n          padding-top: 4px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title {\n          padding: 25px 0px; }\n      .section-calculator .calculator .chosen-table .medium-text {\n        font-size: 0.8rem;\n        line-height: 1rem; }\n      .section-calculator .calculator .chosen-table .small-italic {\n        font-size: 0.8rem;\n        font-style: italic;\n        font-weight: 300; }\n      .section-calculator .calculator .chosen-table .company-data {\n        width: 100%; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-label {\n          display: block;\n          font-size: 1.5rem;\n          width: 100%;\n          margin: 22px 0px 3px; }\n        .section-calculator .calculator .chosen-table .company-data .error-message {\n          color: #f00;\n          font-weight: 500; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-input {\n          font-family: 'Roboto', Arial, sans-serif;\n          font-size: 1.5rem;\n          font-weight: 300;\n          height: 42px;\n          display: block;\n          width: 100%;\n          border: 1px solid rgba(13, 3, 72, 0.5); }\n      .section-calculator .calculator .chosen-table .order-button {\n        width: 100%;\n        height: 50px;\n        background-color: rgba(13, 3, 72, 0.75);\n        color: white;\n        font-size: 2rem;\n        text-align: center;\n        justify-content: center;\n        align-items: center;\n        border-radius: 10px;\n        margin: 25px 0px;\n        padding: 10px 0px; }\n        .section-calculator .calculator .chosen-table .order-button:hover {\n          background-color: rgba(13, 3, 72, 0.85);\n          cursor: pointer;\n          box-shadow: 2px 2px 1px 2px rgba(13, 3, 72, 0.25); }\n        .section-calculator .calculator .chosen-table .order-button:disabled {\n          background: rgba(13, 3, 72, 0.25); }\n\n.section-about-us {\n  display: flex;\n  background-color: rgba(13, 3, 72, 0.7);\n  color: #fff;\n  padding-bottom: 25px;\n  width: 100%; }\n  .section-about-us .section-about-us-header .section-about-us-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #fff; }\n  .section-about-us .section-about-us-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300;\n    margin-bottom: 1rem; }\n  .section-about-us .about-us-image-div {\n    background-image: url(./img/1804_opt.jpg);\n    min-height: 160px;\n    max-height: 200px;\n    width: 100%;\n    background-repeat: no-repeat;\n    background-size: contain; }\n\n.section-credentials {\n  display: flex;\n  background-color: #fff;\n  color: #0d0348;\n  margin: 15px 0px; }\n  .section-credentials .section-credentials-header .section-credentials-header-text {\n    color: #0d0348;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #0d0348; }\n  .section-credentials .section-credentials-main-text .quote {\n    color: #0d0348;\n    font-size: 1.25rem;\n    font-weight: 300;\n    text-align: center; }\n  .section-credentials .section-credentials-main-text .company {\n    font-weight: 500;\n    font-size: 1rem;\n    text-align: right;\n    margin: 10px 0 20px 0; }\n\n.section-partners {\n  display: flex;\n  background-color: #fff;\n  color: #0d0348;\n  height: 100%; }\n  .section-partners .section-partners-header .section-partners-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #0d0348; }\n  .section-partners .section-partners-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300; }\n  .section-partners .partners-image {\n    height: 160px;\n    width: 100%;\n    box-shadow: 1px 1px 2px 1px #fff; }\n\n.section-contact {\n  display: flex;\n  background-color: rgba(13, 3, 72, 0.7);\n  color: #fff;\n  padding: 25px 0px 75px 0px; }\n  .section-contact .section-contact-header .section-contact-header-text {\n    color: #fff;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    border-bottom: 1px solid #fff;\n    width: 100%; }\n  .section-contact .section-contact-main-text {\n    color: #fff;\n    font-size: 1rem;\n    font-weight: 300;\n    text-align: left;\n    margin-bottom: 1rem; }\n    .section-contact .section-contact-main-text .copy {\n      text-align: right; }\n    .section-contact .section-contact-main-text a {\n      text-decoration: none;\n      color: #fff; }\n      .section-contact .section-contact-main-text a span {\n        font-weight: 500; }\n    .section-contact .section-contact-main-text .company {\n      font-weight: 500;\n      font-size: 1rem;\n      text-align: right;\n      margin-bottom: 20px; }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n/*-----------------------------------------*/\n/*                  GRID                   */\n/*-----------------------------------------*/\n.container {\n  width: 100%;\n  margin: 0 1rem;\n  max-width: 800px;\n  min-width: 380px; }\n  @media (min-width: 760px) {\n    .container {\n      min-width: 680px;\n      max-width: 1000px;\n      margin: 0 1rem; } }\n  @media (min-width: 1048px) {\n    .container {\n      max-width: 1000px;\n      margin: 0 auto; } }\n  .container .row:before, .container .row:after {\n    clear: both;\n    display: block;\n    content: ''; }\n  .container .row [class*=\"col-\"] {\n    float: left;\n    min-height: 1px;\n    width: 8.33333%;\n    padding: 0px;\n    display: inline-block; }\n  .container .row .col-sm-1 {\n    width: 8.33333%; }\n  .container .row .col-sm-2 {\n    width: 16.66667%; }\n  .container .row .col-sm-3 {\n    width: 25%; }\n  .container .row .col-sm-4 {\n    width: 33.33333%; }\n  .container .row .col-sm-5 {\n    width: 41.66667%; }\n  .container .row .col-sm-6 {\n    width: 50%; }\n  .container .row .col-sm-7 {\n    width: 58.33333%; }\n  .container .row .col-sm-8 {\n    width: 66.66667%; }\n  .container .row .col-sm-9 {\n    width: 75%; }\n  .container .row .col-sm-10 {\n    width: 83.33333%; }\n  .container .row .col-sm-11 {\n    width: 91.66667%; }\n  .container .row .col-sm-12 {\n    width: 100%; }\n  @media (min-width: 760px) {\n    .container .row .col-md-1 {\n      width: 8.33333%; }\n    .container .row .col-md-2 {\n      width: 16.66667%; }\n    .container .row .col-md-3 {\n      width: 25%; }\n    .container .row .col-md-4 {\n      width: 33.33333%; }\n    .container .row .col-md-5 {\n      width: 41.66667%; }\n    .container .row .col-md-6 {\n      width: 50%; }\n    .container .row .col-md-7 {\n      width: 58.33333%; }\n    .container .row .col-md-8 {\n      width: 66.66667%; }\n    .container .row .col-md-9 {\n      width: 75%; }\n    .container .row .col-md-10 {\n      width: 83.33333%; }\n    .container .row .col-md-11 {\n      width: 91.66667%; }\n    .container .row .col-md-12 {\n      width: 100%; } }\n  @media (min-width: 1000px) {\n    .container .row .col-lg-1 {\n      width: 8.33333%; }\n    .container .row .col-lg-2 {\n      width: 16.66667%; }\n    .container .row .col-lg-3 {\n      width: 25%; }\n    .container .row .col-lg-4 {\n      width: 33.33333%; }\n    .container .row .col-lg-5 {\n      width: 41.66667%; }\n    .container .row .col-lg-6 {\n      width: 50%; }\n    .container .row .col-lg-7 {\n      width: 58.33333%; }\n    .container .row .col-lg-8 {\n      width: 66.66667%; }\n    .container .row .col-lg-9 {\n      width: 75%; }\n    .container .row .col-lg-10 {\n      width: 83.33333%; }\n    .container .row .col-lg-11 {\n      width: 91.66667%; }\n    .container .row .col-lg-12 {\n      width: 100%; } }\n\nbody {\n  font-family: 'Roboto', Arial, sans-serif;\n  font-size: 16px;\n  min-width: 600px;\n  font-weight: 300;\n  color: #fff; }\n\n/*---------------------------------------*/\n/*     MAIN SECTION                      */\n/*---------------------------------------*/\n.section-main .hero .main-nav .main-menu .burger:before, .section-main .hero .main-nav .main-menu .burger:after {\n  position: absolute;\n  content: '';\n  height: 7px;\n  width: 47px;\n  border-radius: 3px;\n  background-color: white; }\n\n.section-main {\n  position: relative;\n  width: 100%;\n  height: 624px;\n  display: block; }\n  .section-main .hero {\n    background-image: url(./img/126_opt.jpg);\n    height: 100%;\n    background-size: cover; }\n    .section-main .hero .main-nav {\n      position: absolute;\n      flex-wrap: wrap;\n      justify-content: space-between;\n      width: 100%;\n      height: 75px;\n      top: 20px;\n      flex-direction: row;\n      background-color: rgba(13, 3, 72, 0.7);\n      color: white; }\n      .section-main .hero .main-nav .main-logo {\n        height: 75px;\n        display: flex;\n        flex-direction: row;\n        font-size: 2rem;\n        line-height: 1.5rem;\n        align-items: center; }\n      .section-main .hero .main-nav .main-menu {\n        justify-content: flex-end;\n        position: relative; }\n        @media (max-width: 759px) {\n          .section-main .hero .main-nav .main-menu {\n            justify-content: flex-end; } }\n        .section-main .hero .main-nav .main-menu .burger {\n          display: inline-block;\n          padding: 0px;\n          height: 7px;\n          border-radius: 7px;\n          width: 47px;\n          margin: 34px 10px;\n          position: relative;\n          background-color: white; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .burger {\n              display: none; } }\n          .section-main .hero .main-nav .main-menu .burger:before {\n            top: -16px; }\n          .section-main .hero .main-nav .main-menu .burger:after {\n            bottom: -16px; }\n        .section-main .hero .main-nav .main-menu .menu-list {\n          display: none; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .menu-list {\n              flex-direction: row;\n              display: flex;\n              font-size: 1rem;\n              padding-right: 20px; } }\n          .section-main .hero .main-nav .main-menu .menu-list ul {\n            justify-content: space-between;\n            align-items: center;\n            padding-rigth: 20px; }\n            .section-main .hero .main-nav .main-menu .menu-list ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 75px;\n              padding: 20px 0px; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: white;\n                line-height: 1rem;\n                padding: 10px 15px;\n                text-decoration: none;\n                border-right: 1px solid white; }\n        .section-main .hero .main-nav .main-menu .visible {\n          position: absolute;\n          top: 75px;\n          right: 125px;\n          display: flex; }\n          .section-main .hero .main-nav .main-menu .visible ul {\n            flex-direction: column;\n            align-items: left;\n            background-color: rgba(13, 3, 72, 0.7); }\n            .section-main .hero .main-nav .main-menu .visible ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 40px;\n              padding: 0px; }\n              .section-main .hero .main-nav .main-menu .visible ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .visible ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: white;\n                line-height: 1rem;\n                padding: 12px 10px;\n                text-decoration: none;\n                border: none;\n                width: 125px; }\n        .section-main .hero .main-nav .main-menu .menu-calc {\n          height: 75px;\n          display: flex;\n          font-size: 1.5rem; }\n          .section-main .hero .main-nav .main-menu .menu-calc a {\n            text-decoration: none;\n            color: #fff;\n            text-align: center;\n            padding-left: 15px; }\n    .section-main .hero .main-info {\n      padding-top: 160px; }\n      .section-main .hero .main-info .main-header {\n        text-align: right;\n        color: rgba(13, 3, 72, 0.7);\n        font-size: 2.5rem;\n        width: 100%;\n        border-bottom: 2px solid rgba(13, 3, 72, 0.7);\n        margin-bottom: 1rem; }\n      .section-main .hero .main-info .main-description .main-description-paragraph {\n        text-align: left;\n        color: rgba(13, 3, 72, 0.7);\n        font-size: 1.75rem;\n        line-height: 2rem; }\n      .section-main .hero .main-info .main-description .main-description-button {\n        text-align: center;\n        color: #fff;\n        background-color: rgba(13, 3, 72, 0.7);\n        border-radius: 5px;\n        margin: 10px 0px;\n        padding: 5px 10px;\n        border: none; }\n        .section-main .hero .main-info .main-description .main-description-button a {\n          text-decoration: none;\n          color: #fff; }\n\n/*-----------------------------------------*/\n/*          SECTION CALCULATOR             */\n/*-----------------------------------------*/\n.section-calculator {\n  position: relative;\n  display: flex;\n  width: 100%;\n  margin: 37px 0px;\n  color: #0d0348; }\n  .section-calculator .calculator {\n    /* ---------------------------------*/\n    /*         PRICING TABLE            */\n    /* ---------------------------------*/ }\n    .section-calculator .calculator .calculator-title-box {\n      display: flex;\n      width: 100%;\n      height: 35px;\n      color: white;\n      font-size: 1.5rem;\n      justify-content: center;\n      align-items: center;\n      background-color: #0d0348;\n      border-radius: 10px; }\n    .section-calculator .calculator .calculator-text {\n      font-size: 1.2rem;\n      padding: 10px 0px; }\n    .section-calculator .calculator .calculator-textarea {\n      width: 100%;\n      height: 75px;\n      resize: none;\n      outline: none; }\n    .section-calculator .calculator .calculator-text-length {\n      font-size: 1rem;\n      padding: 10px 0px;\n      line-height: 1.5rem; }\n      .section-calculator .calculator .calculator-text-length .calculator-monospace {\n        font-weight: 500; }\n      .section-calculator .calculator .calculator-text-length span {\n        font-size: 0.75rem; }\n    .section-calculator .calculator .chosen-language {\n      font-size: 1.2rem;\n      width: 100%;\n      height: 32px;\n      margin-top: 5px;\n      color: #fff;\n      background-color: #0d0348;\n      text-align: left;\n      border-radius: 5px;\n      margin-bottom: 0.5rem; }\n      .section-calculator .calculator .chosen-language .calculator-from-language,\n      .section-calculator .calculator .chosen-language .calculator-to-language {\n        font-size: 1.25rem;\n        padding: 5px 0px; }\n      .section-calculator .calculator .chosen-language select.language {\n        width: 100%;\n        margin-top: 20px;\n        display: block; }\n        .section-calculator .calculator .chosen-language select.language form {\n          width: 100%;\n          display: flex;\n          justify-content: space-between; }\n          .section-calculator .calculator .chosen-language select.language form input {\n            padding: 0px 10px; }\n        .section-calculator .calculator .chosen-language select.language .option {\n          white-space: pre;\n          min-height: 1.2em;\n          padding: 0px 5px 1px; }\n    .section-calculator .calculator .pricing-table {\n      font-size: 1.75rem;\n      font-weight: 300;\n      text-align: center;\n      color: #fff;\n      background-color: rgba(13, 3, 72, 0.65);\n      margin-left: -5px; }\n      @media (min-width: 721px) {\n        .section-calculator .calculator .pricing-table {\n          margin-left: 10px; } }\n      .section-calculator .calculator .pricing-table .pricing-table-row-header {\n        align-items: center;\n        height: 75px; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers {\n          height: 75px;\n          font-size: 2rem;\n          line-height: 1.7rem;\n          font-weight: 300;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n          .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers .realisation-time {\n            font-size: 1rem; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-transl {\n        display: flex;\n        background-color: rgba(13, 3, 72, 0.3);\n        align-content: center;\n        height: 100%; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-transl .pricing-table-transl-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-content: center;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang {\n        display: flex;\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang .pricing-table-redact-cell {\n          height: 75px;\n          align-content: center;\n          font-weight: 300;\n          font-size: 1.25rem;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit {\n        display: flex;\n        background-color: rgba(13, 3, 72, 0.3);\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit .pricing-table-merit-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-items: center;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n    .section-calculator .calculator .hover:hover {\n      background-color: rgba(13, 3, 72, 0.75);\n      font-size: 4rem; }\n    .section-calculator .calculator .price-net {\n      font-size: 1.25rem;\n      font-weight: 500;\n      width: 100%;\n      display: block; }\n    .section-calculator .calculator .price-with-vat {\n      font-size: 0.85rem;\n      font-style: italic;\n      font-weight: 300; }\n    .section-calculator .calculator .not-visible {\n      display: none; }\n    .section-calculator .calculator .chosen-table {\n      margin-top: 15px; }\n      .section-calculator .calculator .chosen-table .text-explanation {\n        font-size: 1.25rem;\n        line-height: 1.5rem;\n        margin: 10px 0px; }\n      .section-calculator .calculator .chosen-table .chosen {\n        background-color: rgba(13, 3, 72, 0.75);\n        height: 75px;\n        width: 100%;\n        margin-top: 17px;\n        color: white;\n        display: flex;\n        border-radius: 10px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title,\n        .section-calculator .calculator .chosen-table .chosen .chosen-service,\n        .section-calculator .calculator .chosen-table .chosen .chosen-time,\n        .section-calculator .calculator .chosen-table .chosen .chosen-price {\n          width: 100%;\n          height: 100%;\n          font-size: 1.25rem;\n          font-weight: 300;\n          text-align: center;\n          border-right: 1px solid white;\n          padding: 10px 7px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-service {\n          padding-top: 4px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title {\n          padding: 25px 0px; }\n      .section-calculator .calculator .chosen-table .medium-text {\n        font-size: 0.8rem;\n        line-height: 1rem; }\n      .section-calculator .calculator .chosen-table .small-italic {\n        font-size: 0.8rem;\n        font-style: italic;\n        font-weight: 300; }\n      .section-calculator .calculator .chosen-table .company-data {\n        width: 100%; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-label {\n          display: block;\n          font-size: 1.5rem;\n          width: 100%;\n          margin: 22px 0px 3px; }\n        .section-calculator .calculator .chosen-table .company-data .error-message {\n          color: #d00;\n          font-weight: 500; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-input {\n          font-family: 'Roboto', Arial, sans-serif;\n          font-size: 1.5rem;\n          font-weight: 300;\n          height: 42px;\n          display: block;\n          width: 100%;\n          border: 1px solid rgba(13, 3, 72, 0.5); }\n      .section-calculator .calculator .chosen-table .order-disabled-explanation {\n        text-align: center;\n        margin-top: 1rem;\n        margin-bottom: -1rem;\n        color: #d00;\n        font-weight: 500; }\n      .section-calculator .calculator .chosen-table .order-button {\n        width: 100%;\n        height: 50px;\n        background-color: rgba(13, 3, 72, 0.75);\n        color: white;\n        font-size: 2rem;\n        text-align: center;\n        justify-content: center;\n        align-items: center;\n        border-radius: 10px;\n        margin: 25px 0px;\n        padding: 5px 0px; }\n        .section-calculator .calculator .chosen-table .order-button:hover {\n          background-color: rgba(13, 3, 72, 0.85);\n          cursor: pointer;\n          box-shadow: 2px 2px 1px 2px rgba(13, 3, 72, 0.25); }\n        .section-calculator .calculator .chosen-table .order-button:disabled {\n          background: rgba(13, 3, 72, 0.25);\n          color: #d77; }\n          .section-calculator .calculator .chosen-table .order-button:disabled:hover {\n            cursor: not-allowed;\n            box-shadow: none;\n            background: rgba(13, 3, 2, 0.25); }\n      .section-calculator .calculator .chosen-table .invoice-info {\n        font-weight: 500;\n        padding: 1rem;\n        text-align: center; }\n    .section-calculator .calculator .invoice-page {\n      display: flex;\n      flex-direction: row;\n      border: 1px solid #0d0348;\n      width: 100%;\n      font-size: 2vw;\n      height: 120vw; }\n      @media (max-width: 620px) {\n        .section-calculator .calculator .invoice-page {\n          font-size: 12px; } }\n      .section-calculator .calculator .invoice-page .margin {\n        padding: 6vw; }\n      .section-calculator .calculator .invoice-page b {\n        font-weight: 500; }\n      .section-calculator .calculator .invoice-page .invoice-header {\n        background-color: rgba(13, 3, 72, 0.25); }\n      .section-calculator .calculator .invoice-page .invoice-main {\n        height: 85vw; }\n        .section-calculator .calculator .invoice-page .invoice-main .client-data,\n        .section-calculator .calculator .invoice-page .invoice-main .service-data,\n        .section-calculator .calculator .invoice-page .invoice-main .service-prices {\n          height: 260px;\n          padding: 0.5rem;\n          line-height: 2rem;\n          border: 1px solid #000; }\n      .section-calculator .calculator .invoice-page .invoice-footer {\n        background-color: rgba(13, 3, 72, 0.25);\n        text-align: center;\n        align-self: flex-end; }\n\n.section-about-us {\n  display: flex;\n  background-color: rgba(13, 3, 72, 0.7);\n  color: #fff;\n  padding-bottom: 25px;\n  width: 100%; }\n  .section-about-us .section-about-us-header .section-about-us-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #fff; }\n  .section-about-us .section-about-us-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300;\n    margin-bottom: 1rem; }\n  .section-about-us .about-us-image-div {\n    background-image: url(./img/1804_opt.jpg);\n    min-height: 160px;\n    max-height: 200px;\n    width: 100%;\n    background-repeat: no-repeat;\n    background-size: contain; }\n\n.section-credentials {\n  display: flex;\n  background-color: #fff;\n  color: #0d0348;\n  margin: 15px 0px; }\n  .section-credentials .section-credentials-header .section-credentials-header-text {\n    color: #0d0348;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #0d0348; }\n  .section-credentials .section-credentials-main-text .quote {\n    color: #0d0348;\n    font-size: 1.25rem;\n    font-weight: 300;\n    text-align: center; }\n  .section-credentials .section-credentials-main-text .company {\n    font-weight: 500;\n    font-size: 1rem;\n    text-align: right;\n    margin: 10px 0 20px 0; }\n\n.section-partners {\n  display: flex;\n  background-color: #fff;\n  color: #0d0348;\n  height: 100%; }\n  .section-partners .section-partners-header .section-partners-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #0d0348; }\n  .section-partners .section-partners-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300; }\n  .section-partners .partners-image {\n    height: 160px;\n    width: 100%;\n    box-shadow: 1px 1px 2px 1px #fff; }\n\n.section-contact {\n  display: flex;\n  background-color: rgba(13, 3, 72, 0.7);\n  color: #fff;\n  padding: 25px 0px 75px 0px; }\n  .section-contact .section-contact-header .section-contact-header-text {\n    color: #fff;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    border-bottom: 1px solid #fff;\n    width: 100%; }\n  .section-contact .section-contact-main-text {\n    color: #fff;\n    font-size: 1rem;\n    font-weight: 300;\n    text-align: left;\n    margin-bottom: 1rem; }\n    .section-contact .section-contact-main-text .copy {\n      text-align: right; }\n    .section-contact .section-contact-main-text a {\n      text-decoration: none;\n      color: #fff; }\n      .section-contact .section-contact-main-text a span {\n        font-weight: 500; }\n    .section-contact .section-contact-main-text .company {\n      font-weight: 500;\n      font-size: 1rem;\n      text-align: right;\n      margin-bottom: 20px; }\n", ""]);
 
 // exports
 
