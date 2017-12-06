@@ -24,7 +24,7 @@ body {
     height: 624px;
     display: block;
     .hero {
-        background-image: url(../img/126_opt.jpg);
+        background-image: url(./img/126_opt.jpg);
         height: 100%;
         background-size: cover;
         .main-nav {
@@ -54,7 +54,7 @@ body {
                 }
                 .burger {
                     display: inline-block;
-                    padding: 0px 0px;
+                    padding: 0px;
                     height: 7px;
                     border-radius: 7px;
                     width: 47px;
@@ -156,13 +156,14 @@ body {
             }
         }
         .main-info {
-            padding-top: 120px;
+            padding-top: 160px;
             .main-header {
                 text-align: right;
                 color: rgba(13, 3, 72, 0.7);
                 font-size: 2.5rem;
                 width: 100%;
                 border-bottom: 2px solid rgba(13, 3, 72, 0.7);
+                margin-bottom: 1rem;
             }
             .main-description {
                 .main-description-paragraph {
@@ -188,6 +189,7 @@ body {
         }
     }
 }
+
 /*-----------------------------------------*/
 /*          SECTION CALCULATOR             */
 /*-----------------------------------------*/
@@ -406,7 +408,7 @@ body {
                     margin: 22px 0px 3px;
                 }
                 .error-message {
-                    color: #f00;
+                    color: #d00;
                     font-weight: 500;
                 }
                 .company-data-input {
@@ -419,6 +421,13 @@ body {
                     border: 1px solid rgba(13, 3, 72, 0.5);
                 }
             }
+            .order-disabled-explanation {
+                text-align: center;
+                margin-top: 1rem;
+                margin-bottom: -1rem;
+                color: #d00;
+                font-weight: 500;
+            }
             .order-button {
                 width: 100%;
                 height: 50px;
@@ -430,12 +439,62 @@ body {
                 align-items: center;
                 border-radius: 10px;
                 margin: 25px 0px;
-                padding: 10px 0px;
+                padding: 5px 0px;
                 &:hover {
                     background-color: rgba(13, 3, 72, 0.85);
                     cursor: pointer;
                     box-shadow: 2px 2px 1px 2px rgba(13, 3, 72, 0.25)
                 }
+                &:disabled {
+                    background: rgba(13, 3, 72, 0.25);
+                    color: #d77;
+                    &:hover {
+                        cursor: not-allowed;
+                        box-shadow: none;
+                        background: rgba(13, 3, 2, 0.25);
+                    }
+                }
+            }
+            .invoice-info {
+                font-weight: 500;
+                padding: 1rem;
+                text-align: center;
+            }
+        }
+        .invoice-page {
+            display: flex;
+            flex-direction: row;
+            border: 1px solid rgb(13, 3, 72);
+            width: 100%;
+            font-size: 2vw;
+            height: 120vw;
+            @media (max-width: 620px) {
+                font-size: 12px;
+            }
+            .margin {
+                padding: 6vw;
+            }
+            b {
+                font-weight: 500;
+            }
+            .invoice-header {
+                background-color: rgba(13, 3, 72, 0.25);
+            }
+            .invoice-main {
+                height: 85vw;
+                .client-data,
+                .service-data,
+                .service-prices {
+                    height: 260px;
+                    padding: 0.5rem;
+                    line-height: 2rem;
+                    border: 1px solid #000;
+                }
+            }
+            .invoice-footer {
+                background-color: rgba(13, 3, 72, 0.25);
+                text-align: center;
+                align-self: flex-end;
             }
         }
     }
@@ -468,7 +527,7 @@ body {
     }
     
     .about-us-image-div {
-        background-image: url("img/1804_opt.jpg");
+        background-image: url(./img/1804_opt.jpg);
         min-height: 160px;
         max-height: 200px;
         width: 100%;

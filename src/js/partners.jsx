@@ -26,22 +26,22 @@ class Partners extends React.Component {
                         </div> 
                         <div className="row">
                             <div className = "col-lg-2 col-md-4 col-sm-4"> 
-                                <img src="img/FAKELOGO01.png" alt="fake-logo-1"/> 
+                                <img src="./img/FAKELOGO01.png" alt="fake-logo-1"/> 
                             </div>
                             <div className="col-lg-2 col-md-4 col-sm-4">
-                                <img src="img/FAKELOGO02.png " alt=" fake - logo - 2 "/>
+                                <img src="./img/FAKELOGO02.png " alt=" fake - logo - 2 "/>
                             </div>
                             <div className = "col-lg-2 col-md-4 col-sm-4">
-                                <img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
+                                <img src = "./img/FAKELOGO03.png " alt = " fake - logo - 3 " />
                             </div>
                             <div className = "col-lg-2 col-md-4 col-sm-4">
-                                <img src = "img/FAKELOGO02.png " alt = " fake - logo - 2 "/>
+                                <img src = "./img/FAKELOGO02.png " alt = " fake - logo - 2 "/>
                             </div>
                             <div className="col-lg-2 col-md-4 col-sm-4">
-                                <img src = "img/FAKELOGO01.png " alt = " fake - logo - 1 " />
+                                <img src = "./img/FAKELOGO01.png " alt = " fake - logo - 1 " />
                             </div>
                             <div className="col-lg-2 col-md-4 col-sm-4">
-                                <img src = "img/FAKELOGO03.png " alt = " fake - logo - 3 " />
+                                <img src = "./img/FAKELOGO03.png " alt = " fake - logo - 3 " />
                             </div>
                         </div>
                     </div> 
