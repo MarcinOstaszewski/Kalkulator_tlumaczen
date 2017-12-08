@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+/*-----------------------------------------*/
+/*                  GRID                   */
+/*-----------------------------------------*/
+
+.container {
+    width: 100%;
+    // margin: 0 1rem;
+    max-width: 800px;
+    @media (min-width: $tabletWidth) {
+        max-width: 1000px;
+        // margin: 0 1rem;
+    }
+    @media (min-width: $desktopWidth) {
+        // max-width: 1000px;
+        margin: 0 auto;
+    }
+    .row {
+        // padding-bottom: 2rem;
+        &:before,
+        &:after {
+            clear: both;
+            display: block;
+            content: '';
+        }
+        [class*="col-"] {
+            float: left;
+            min-height: 1px;
+            width: $singleColumnWidth;
+            padding: 0px;
+            display: inline-block;
+        }
+        @for $i from 1 through $columns {
+            .col-sm-#{$i} {
+                width: ($singleColumnWidth * $i);
+            }
+        }
+        @media (min-width: 760px) {
+            @for $i from 1 through $columns {
+                .col-md-#{$i} {
+                    width: ($singleColumnWidth * $i);
+                }
+            }
+        }
+        @media (min-width: 1000px) {
+            @for $i from 1 through $columns {
+                .col-lg-#{$i} {
+                    width: ($singleColumnWidth * $i);
+                }
+            }
+        }
+    }
+}
