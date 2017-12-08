@@ -775,7 +775,7 @@ module.exports = ExecutionEnvironment;
 
 
 
-var _prodInvariant = __webpack_require__(17);
+var _prodInvariant = __webpack_require__(18);
 
 var ReactCurrentOwner = __webpack_require__(10);
 
@@ -1263,9 +1263,9 @@ var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
 var CallbackQueue = __webpack_require__(62);
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 var ReactFeatureFlags = __webpack_require__(63);
-var ReactReconciler = __webpack_require__(18);
+var ReactReconciler = __webpack_require__(19);
 var Transaction = __webpack_require__(29);
 
 var invariant = __webpack_require__(1);
@@ -1516,7 +1516,7 @@ module.exports = ReactUpdates;
 
 var _assign = __webpack_require__(4);
 
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 
 var emptyFunction = __webpack_require__(9);
 var warning = __webpack_require__(2);
@@ -1992,6 +1992,16 @@ module.exports = DOMProperty;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+module.exports = __webpack_require__(17);
+
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -2007,7 +2017,7 @@ var _assign = __webpack_require__(4);
 var ReactCurrentOwner = __webpack_require__(10);
 
 var warning = __webpack_require__(2);
-var canDefineProperty = __webpack_require__(26);
+var canDefineProperty = __webpack_require__(25);
 var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 var REACT_ELEMENT_TYPE = __webpack_require__(53);
@@ -2333,7 +2343,7 @@ module.exports = ReactElement;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 15 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2449,7 +2459,7 @@ module.exports = PooledClass;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 16 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2468,7 +2478,7 @@ var _assign = __webpack_require__(4);
 var ReactBaseClasses = __webpack_require__(51);
 var ReactChildren = __webpack_require__(84);
 var ReactDOMFactories = __webpack_require__(88);
-var ReactElement = __webpack_require__(14);
+var ReactElement = __webpack_require__(15);
 var ReactPropTypes = __webpack_require__(92);
 var ReactVersion = __webpack_require__(95);
 
@@ -2481,7 +2491,7 @@ var cloneElement = ReactElement.cloneElement;
 
 if (process.env.NODE_ENV !== 'production') {
   var lowPriorityWarning = __webpack_require__(34);
-  var canDefineProperty = __webpack_require__(26);
+  var canDefineProperty = __webpack_require__(25);
   var ReactElementValidator = __webpack_require__(55);
   var didWarnPropTypesDeprecated = false;
   createElement = ReactElementValidator.createElement;
@@ -2585,7 +2595,7 @@ module.exports = React;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 17 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2627,7 +2637,7 @@ function reactProdInvariant(code) {
 module.exports = reactProdInvariant;
 
 /***/ }),
-/* 18 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2797,7 +2807,7 @@ module.exports = ReactReconciler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 19 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2918,27 +2928,7 @@ DOMLazyTree.queueText = queueText;
 module.exports = DOMLazyTree;
 
 /***/ }),
-/* 20 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(16);
-
-
-/***/ }),
 /* 21 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(99);
-
-
-/***/ }),
-/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2952,7 +2942,7 @@ module.exports = __webpack_require__(99);
 
 
 
-var EventPluginHub = __webpack_require__(23);
+var EventPluginHub = __webpack_require__(22);
 var EventPluginUtils = __webpack_require__(35);
 
 var accumulateInto = __webpack_require__(59);
@@ -3076,7 +3066,7 @@ module.exports = EventPropagators;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 23 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3354,7 +3344,7 @@ module.exports = EventPluginHub;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3416,7 +3406,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 25 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3465,7 +3455,7 @@ var ReactInstanceMap = {
 module.exports = ReactInstanceMap;
 
 /***/ }),
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3495,7 +3485,7 @@ module.exports = canDefineProperty;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 27 */
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3517,6 +3507,16 @@ if (process.env.NODE_ENV !== 'production') {
 
 module.exports = emptyObject;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 27 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(99);
+
 
 /***/ }),
 /* 28 */
@@ -4022,7 +4022,7 @@ module.exports = TransactionImpl;
 
 
 
-var SyntheticUIEvent = __webpack_require__(24);
+var SyntheticUIEvent = __webpack_require__(23);
 var ViewportMetrics = __webpack_require__(66);
 
 var getEventModifierState = __webpack_require__(39);
@@ -5178,7 +5178,7 @@ module.exports = getEventModifierState;
 
 
 
-var DOMLazyTree = __webpack_require__(19);
+var DOMLazyTree = __webpack_require__(20);
 var Danger = __webpack_require__(118);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(8);
@@ -5471,7 +5471,7 @@ var _prodInvariant = __webpack_require__(3);
 var ReactPropTypesSecret = __webpack_require__(71);
 var propTypesFactory = __webpack_require__(56);
 
-var React = __webpack_require__(16);
+var React = __webpack_require__(17);
 var PropTypes = propTypesFactory(React.isValidElement);
 
 var invariant = __webpack_require__(1);
@@ -5837,7 +5837,7 @@ module.exports = KeyEscapeUtils;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(10);
-var ReactInstanceMap = __webpack_require__(25);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactUpdates = __webpack_require__(11);
 
@@ -6500,13 +6500,13 @@ module.exports = getEventCharCode;
 
 
 
-var _prodInvariant = __webpack_require__(17),
+var _prodInvariant = __webpack_require__(18),
     _assign = __webpack_require__(4);
 
 var ReactNoopUpdateQueue = __webpack_require__(52);
 
-var canDefineProperty = __webpack_require__(26);
-var emptyObject = __webpack_require__(27);
+var canDefineProperty = __webpack_require__(25);
+var emptyObject = __webpack_require__(26);
 var invariant = __webpack_require__(1);
 var lowPriorityWarning = __webpack_require__(34);
 
@@ -6822,11 +6822,11 @@ module.exports = getIteratorFn;
 
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactComponentTreeHook = __webpack_require__(7);
-var ReactElement = __webpack_require__(14);
+var ReactElement = __webpack_require__(15);
 
 var checkReactTypeSpec = __webpack_require__(89);
 
-var canDefineProperty = __webpack_require__(26);
+var canDefineProperty = __webpack_require__(25);
 var getIteratorFn = __webpack_require__(54);
 var warning = __webpack_require__(2);
 var lowPriorityWarning = __webpack_require__(34);
@@ -7275,7 +7275,7 @@ var _prodInvariant = __webpack_require__(3);
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 
 var invariant = __webpack_require__(1);
 
@@ -8468,7 +8468,7 @@ module.exports = instantiateReactComponent;
 
 var _prodInvariant = __webpack_require__(3);
 
-var React = __webpack_require__(16);
+var React = __webpack_require__(17);
 
 var invariant = __webpack_require__(1);
 
@@ -9045,23 +9045,23 @@ module.exports = getActiveElement;
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(19);
+var DOMLazyTree = __webpack_require__(20);
 var DOMProperty = __webpack_require__(13);
-var React = __webpack_require__(16);
+var React = __webpack_require__(17);
 var ReactBrowserEventEmitter = __webpack_require__(33);
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMContainerInfo = __webpack_require__(174);
 var ReactDOMFeatureFlags = __webpack_require__(175);
 var ReactFeatureFlags = __webpack_require__(63);
-var ReactInstanceMap = __webpack_require__(25);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactMarkupChecksum = __webpack_require__(176);
-var ReactReconciler = __webpack_require__(18);
+var ReactReconciler = __webpack_require__(19);
 var ReactUpdateQueue = __webpack_require__(48);
 var ReactUpdates = __webpack_require__(11);
 
-var emptyObject = __webpack_require__(27);
+var emptyObject = __webpack_require__(26);
 var instantiateReactComponent = __webpack_require__(73);
 var invariant = __webpack_require__(1);
 var setInnerHTML = __webpack_require__(31);
@@ -9612,33 +9612,39 @@ module.exports = getHostComponentFromComposite;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(20);
+var _react = __webpack_require__(14);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(21);
+var _reactDom = __webpack_require__(27);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _contact = __webpack_require__(184);
+var _hero = __webpack_require__(184);
 
-var _contact2 = _interopRequireDefault(_contact);
+var _hero2 = _interopRequireDefault(_hero);
 
-var _partners = __webpack_require__(185);
+var _calculator = __webpack_require__(185);
 
-var _partners2 = _interopRequireDefault(_partners);
+var _calculator2 = _interopRequireDefault(_calculator);
 
-var _credentials = __webpack_require__(186);
-
-var _credentials2 = _interopRequireDefault(_credentials);
-
-var _aboutus = __webpack_require__(187);
+var _aboutus = __webpack_require__(186);
 
 var _aboutus2 = _interopRequireDefault(_aboutus);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _credentials = __webpack_require__(187);
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var _credentials2 = _interopRequireDefault(_credentials);
+
+var _partners = __webpack_require__(188);
+
+var _partners2 = _interopRequireDefault(_partners);
+
+var _contact = __webpack_require__(189);
+
+var _contact2 = _interopRequireDefault(_contact);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -9646,1400 +9652,11 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-__webpack_require__(188);
+__webpack_require__(190);
 
 document.addEventListener('DOMContentLoaded', function () {
-    var Main = function (_React$Component) {
-        _inherits(Main, _React$Component);
-
-        function Main(props) {
-            _classCallCheck(this, Main);
-
-            var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this, props));
-
-            _this.showMobileMenuList = function () {
-                if (_this.state.displayMobileMenuList === 0) {
-                    document.getElementById('menu-list').classList.add("visible");
-                    _this.setState({ displayMobileMenuList: 1 });
-                } else {
-                    document.getElementById('menu-list').classList.remove("visible");
-                    _this.setState({ displayMobileMenuList: 0 });
-                }
-            };
-
-            _this.changeTextArea = function (event) {
-                var _this$setState;
-
-                _this.setState((_this$setState = {}, _defineProperty(_this$setState, event.target.name, event.target.value), _defineProperty(_this$setState, 'textAreaPages', Math.floor(event.target.value.length / 1800) < 1 ? 1 : Number((event.target.value.length / 1800).toFixed(1))), _defineProperty(_this$setState, 'realisationTimeMin', Math.ceil(_this.state.textAreaPages / 6) * 24), _defineProperty(_this$setState, 'realisationTimeMax', Math.ceil(_this.state.textAreaPages / 6) * 24 + 24), _this$setState));
-            };
-
-            _this.setTranslationDirection = function (event) {
-                _this.setState({
-                    translationDirection: Number(event.target.value),
-                    suffix: _this.state.translationDirection == 1 ? '' : 'ego'
-                }); // suffix jest ustawiany odwrotnie niż powinien, bo zmiana działa 'z opóźnieniem' ;)
-            };
-
-            _this.handleLanguageChange = function (event) {
-                _this.setState({
-                    chosenLanguage: event.target.value.slice(4),
-                    languageGroupMultiplier: Number(event.target.value.slice(0, 3)),
-                    inVisible: 'not-visible'
-                });
-            };
-
-            _this.calculateVat = function (netPrice) {
-                return Math.floor(netPrice * _this.state.vat);
-            };
-
-            _this.handleCellClick = function (event) {
-                var tempPrice = void 0,
-                    tempMinTime = void 0,
-                    tempMaxTime = void 0,
-                    tempServiceDescr = void 0;
-                var tj = "tłumaczenie na " + _this.state.chosenLanguage;
-                var rj = " z redakcją językową ";
-                var rm = "i merytoryczną";
-
-                switch (event.currentTarget.id) {
-                    case "translBasic":
-                        tempPrice = _this.translationPrice;
-                        tempMinTime = _this.state.realisationTimeMin + " - " + (_this.state.realisationTimeMax + 24);
-                        tempServiceDescr = tj;
-                        break;
-                    case "translUrgent":
-                        tempPrice = _this.transUrgentPrice;
-                        tempMinTime = _this.state.realisationTimeMin + " - " + _this.state.realisationTimeMax;
-                        tempServiceDescr = tj;
-                        break;
-                    case "translExpress":
-                        tempPrice = _this.transExpressPrice;
-                        tempMinTime = _this.state.realisationTimeMin;
-                        tempServiceDescr = tj;
-                        break;
-                    case "redactBasic":
-                        tempPrice = _this.redactionPrice;
-                        tempMinTime = _this.state.realisationTimeMin + " - " + (_this.state.realisationTimeMax + 24);
-                        tempServiceDescr = tj + rj;
-                        break;
-                    case "redactUrgent":
-                        tempPrice = _this.redactUrgentPrice;
-                        tempMinTime = _this.state.realisationTimeMin + " - " + _this.state.realisationTimeMax;
-                        tempServiceDescr = tj + rj;
-                        break;
-                    case "redactExpress":
-                        tempPrice = _this.redactExpressPrice;
-                        tempMinTime = _this.state.realisationTimeMin;
-                        tempServiceDescr = tj + rj;
-                        break;
-                    case "meritBasic":
-                        tempPrice = _this.meritoryPrice;
-                        tempMinTime = _this.state.realisationTimeMin + " - " + (_this.state.realisationTimeMax + 24);
-                        tempServiceDescr = tj + rj + rm;
-                        break;
-                    case "meritUrgent":
-                        tempPrice = _this.meritUrgentPrice;
-                        tempMinTime = _this.state.realisationTimeMin + " - " + _this.state.realisationTimeMax;
-                        tempServiceDescr = tj + rj + rm;
-                        break;
-                    case "meritExpress":
-                        tempPrice = _this.meritExpressPrice;
-                        tempMinTime = _this.state.realisationTimeMin;
-                        tempServiceDescr = tj + rj + rm;
-                        break;
-                    default:
-                }
-                _this.setState({ chosenService: event.currentTarget.id, inVisible: '', chosenServicePrice: tempPrice, chosenTimeMinMax: tempMinTime, chosenServiceDescripion: tempServiceDescr });
-                return;
-            };
-
-            _this.realisationTime = function () {
-                _this.setState({
-                    realisationTimeMin: Math.ceil(_this.state.textAreaPages / 6) * 24,
-                    realisationTimeMax: Math.ceil(_this.state.textAreaPages / 6) * 24 + 24
-                });
-            };
-
-            _this.handleChange = function (event) {
-                _this.setState(_defineProperty({}, event.target.name, event.target.value));
-            };
-
-            _this.validateEmail = function () {
-                if (_this.state.email.length < 4) {
-                    _this.setState({ emailErrorMessage: "Email musi zawierać co najmniej 4 znaki" });
-                } else {
-                    _this.setState({ emailErrorMessage: "" });
-                }
-            };
-
-            _this.validateCompany = function () {
-                if (_this.state.company.length < 4) {
-                    _this.setState({ companyErrorMessage: "Nazwa firmy musi zawierać co najmniej 4 znaki" });
-                } else _this.setState({ companyErrorMessage: "" });
-                ;
-            };
-
-            _this.validateNip = function () {
-                if (_this.state.nip.length !== 10) {
-                    _this.setState({ nipErrorMessage: "NIP musi zawierać dokładnie 10 cyfr" });
-                } else _this.setState({ nipErrorMessage: "" });
-            };
-
-            _this.validateStreet = function () {
-                if (_this.state.street.length < 4) {
-                    _this.setState({ streetErrorMessage: "Nazwa ulicy musi zawierać co najmniej 4 znaki" });
-                } else _this.setState({ streetErrorMessage: "" });
-            };
-
-            _this.validateNumber = function () {
-                if (_this.state.number.length < 1 || _this.state.number === 0) {
-                    _this.setState({ numberErrorMessage: "Niepoprawny numer domu" });
-                } else _this.setState({ numberErrorMessage: "" });
-            };
-
-            _this.validateLocale = function () {
-                if (_this.state.locale.length < 1 || _this.state.locale === 0) {
-                    _this.setState({ localeErrorMessage: "Niepoprawny numer lokalu" });
-                } else _this.setState({ localeErrorMessage: "" });
-            };
-
-            _this.onSubmit = function (e) {
-                e.preventDefault;
-                console.log(_this.isEnabled);
-                if (_this.state.textArea === '') {
-                    alert("nie wklejono tekstu do tłumaczenia");
-                } else if (_this.state.mailErrorMessage === '' && _this.state.companyErrorMessage === '' && _this.state.nipErrorMessage === '' && _this.state.streetErrorMessage === '' && _this.state.numberErrorMessage === '' && _this.state.localeErrorMessage === '') {
-                    alert("formularz wypełniony zgodnie z wymaganiami, dane mogą być wysłane");
-                }
-            };
-
-            _this.state = {
-                textArea: '',
-                pagePrice: 36,
-                textAreaPages: 1,
-                vat: 1.23,
-                redactPrice: 1.5,
-                meritPrice: 2,
-                urgentPrice: 1.5,
-                expressPrice: 2,
-                inVisible: 'not-visible',
-                chosenLanguage: 'angielski',
-                suffix: '',
-                languageGroupMultiplier: 100,
-                chosenService: '',
-                chosenServiceDescripion: '',
-                chosenTimeMinMax: '',
-                realisationTimeMin: 24,
-                realisationTimeMax: 48,
-                chosenServicePrice: 0,
-                translationDirection: 1.2,
-                email: '',
-                company: '',
-                nip: '',
-                street: '',
-                number: 0,
-                locale: 0,
-                mailErrorMessage: '',
-                companyErrorMessage: '',
-                nipErrorMessage: '',
-                streetErrorMessage: '',
-                numberErrorMessage: '',
-                localeErrorMessage: '',
-                displayMobileMenuList: 0
-            };
-            return _this;
-        }
-
-        _createClass(Main, [{
-            key: 'render',
-            value: function render() {
-                (function () {
-                    window.addEventListener("resize", actualResizeHandler, false);
-                    function actualResizeHandler() {
-                        if (window.innerWidth > 720) {
-                            document.getElementById('menu-list').classList.remove("visible");
-                        }
-                    }
-                })();
-
-                this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
-                this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice);
-                this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice);
-                this.transUrgentPrice = Math.floor(this.translationPrice * this.state.urgentPrice);
-                this.redactUrgentPrice = Math.floor(this.redactionPrice * this.state.urgentPrice);
-                this.meritUrgentPrice = Math.floor(this.meritoryPrice * this.state.urgentPrice);
-                this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice);
-                this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice);
-                this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice);
-                this.isEnabled = this.state.email.length > 3 && this.state.company.length > 3 && this.state.nip.length === 10 && this.state.street.length > 3 && Number(this.state.number) > 0 && this.state.locale > 0;
-                this.currentDate = new Date();
-                console.log(this.currentDate.getDate());
-                return _react2.default.createElement(
-                    'div',
-                    null,
-                    _react2.default.createElement(
-                        'section',
-                        { className: 'section-main' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'hero' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'main-nav' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'container' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'row' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'col-lg-2 col-md-2 col-sm-2' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'main-logo' },
-                                                'TRANS',
-                                                _react2.default.createElement('br', null),
-                                                'LINGUS'
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'col-lg-10 col-md-10 col-sm-10' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'main-menu' },
-                                                _react2.default.createElement('div', { className: 'burger', onClick: this.showMobileMenuList }),
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'menu-list', id: 'menu-list' },
-                                                    _react2.default.createElement(
-                                                        'ul',
-                                                        null,
-                                                        _react2.default.createElement(
-                                                            'li',
-                                                            null,
-                                                            _react2.default.createElement(
-                                                                'a',
-                                                                { href: '#section-about-us' },
-                                                                'O NAS'
-                                                            )
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'li',
-                                                            null,
-                                                            _react2.default.createElement(
-                                                                'a',
-                                                                { href: '#section-credentials' },
-                                                                'REFERENCJE'
-                                                            )
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'li',
-                                                            null,
-                                                            _react2.default.createElement(
-                                                                'a',
-                                                                { href: '#section-partners' },
-                                                                'ZAUFALI NAM'
-                                                            )
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'li',
-                                                            null,
-                                                            _react2.default.createElement(
-                                                                'a',
-                                                                { href: '#section-contact' },
-                                                                'KONTAKT'
-                                                            )
-                                                        )
-                                                    )
-                                                ),
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'menu-calc' },
-                                                    _react2.default.createElement(
-                                                        'a',
-                                                        { href: '#section-calculator' },
-                                                        'WYCENA',
-                                                        _react2.default.createElement('br', null),
-                                                        'ON-LINE'
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'main-info' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'container' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'row' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'col-lg-3 col-md-3 col-sm-5' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'main-header' },
-                                                _react2.default.createElement(
-                                                    'h1',
-                                                    null,
-                                                    'O NAS'
-                                                )
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'col-lg-2 col-md-2 col-sm-9' },
-                                            '\xA0'
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'col-lg-6 col-md-6 col-sm-12' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'main-description' },
-                                                _react2.default.createElement(
-                                                    'p',
-                                                    { className: 'main-description-paragraph' },
-                                                    'Tworzymy t\u0142umaczenia',
-                                                    _react2.default.createElement('br', null),
-                                                    'od ponad 12 lat!',
-                                                    _react2.default.createElement('br', null),
-                                                    'Nasze do\u015Bwiadczenie',
-                                                    _react2.default.createElement('br', null),
-                                                    'to gwarancja',
-                                                    _react2.default.createElement('br', null),
-                                                    'Twojego zadowolenia'
-                                                ),
-                                                _react2.default.createElement(
-                                                    'button',
-                                                    { className: 'main-description-button' },
-                                                    _react2.default.createElement(
-                                                        'a',
-                                                        { href: '#section-about-us' },
-                                                        'WI\u0118CEJ'
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'section',
-                        { className: 'section-calculator' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'container' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'calculator' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'row' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'col-lg-4 col-md-4 col-sm-12' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'input-area' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'calculator-title-box' },
-                                                        _react2.default.createElement(
-                                                            'a',
-                                                            { name: 'section-calculator' },
-                                                            _react2.default.createElement(
-                                                                'h2',
-                                                                null,
-                                                                'WYCENA ON-LINE'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'calculator-text' },
-                                                        'Wklej tekst do t\u0142umaczenia'
-                                                    ),
-                                                    _react2.default.createElement('textarea', {
-                                                        className: 'calculator-textarea',
-                                                        name: 'textArea',
-                                                        onChange: this.changeTextArea,
-                                                        value: this.state.textArea }),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'calculator-text-length' },
-                                                        'D\u0142ugo\u015B\u0107 tekstu:',
-                                                        _react2.default.createElement(
-                                                            'strong',
-                                                            { className: 'calculator-monospace' },
-                                                            this.state.textArea.length,
-                                                            'znak\xF3w',
-                                                            _react2.default.createElement('br', null),
-                                                            'po zaokr\u0105gleniu ',
-                                                            this.state.textAreaPages,
-                                                            'str.'
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'span',
-                                                            { className: 'minimum-text' },
-                                                            '(min. 1 str.)'
-                                                        )
-                                                    )
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'language-select' },
-                                                        _react2.default.createElement(
-                                                            'select',
-                                                            {
-                                                                className: 'chosen-language',
-                                                                onChange: this.setTranslationDirection,
-                                                                value: this.state.select },
-                                                            _react2.default.createElement(
-                                                                'option',
-                                                                { value: '1.2' },
-                                                                'T\u0142umaczenie z polskiego na:'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'option',
-                                                                { value: '1' },
-                                                                'T\u0142umaczenie na polski z:'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                    _react2.default.createElement(
-                                                        'select',
-                                                        {
-                                                            className: 'chosen-language',
-                                                            onChange: this.handleLanguageChange,
-                                                            value: this.state.select },
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '100.angielski' },
-                                                            'angielski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '100.francuski' },
-                                                            'francuski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '100.niemiecki ' },
-                                                            'niemiecki',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '100.rosyjski ' },
-                                                            'rosyjski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '110.hiszpa\u0144ski' },
-                                                            'hiszpa\u0144ski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '110.ukrai\u0144ski' },
-                                                            'ukrai\u0144ski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '110.w\u0142oski' },
-                                                            'w\u0142oski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '120.bia\u0142oruski' },
-                                                            'bia\u0142oruski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '125.czeski' },
-                                                            'czeski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '125.du\u0144ski' },
-                                                            'du\u0144ski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '125.litewski' },
-                                                            'litewski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '130.\u0142otewski' },
-                                                            '\u0142otewski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '135.niderlandzki' },
-                                                            'niderlandzki',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '130.norweski' },
-                                                            'norweski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '125.portugalski' },
-                                                            'portugalski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '125.szwedzki' },
-                                                            'szwedzki',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '125.rumu\u0144ski' },
-                                                            'rumu\u0144ski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '135.w\u0119gierski' },
-                                                            'w\u0119gierski',
-                                                            this.state.suffix
-                                                        ),
-                                                        _react2.default.createElement(
-                                                            'option',
-                                                            { value: '140.chi\u0144ski' },
-                                                            'chi\u0144ski',
-                                                            this.state.suffix
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    ),
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'col-lg-8 col-md-8 col-sm-12' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'pricing-table ' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'pricing-table-row-header' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-headers' },
-                                                            'Termin:',
-                                                            _react2.default.createElement('br', null),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'realisation-time' },
-                                                                'czas realizacji'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-headers' },
-                                                            'Zwyk\u0142y',
-                                                            _react2.default.createElement('br', null),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'realisation-time' },
-                                                                this.state.realisationTimeMin,
-                                                                '- ',
-                                                                this.state.realisationTimeMax + 24,
-                                                                'godz.'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-headers' },
-                                                            'Pilny',
-                                                            _react2.default.createElement('br', null),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'realisation-time' },
-                                                                this.state.realisationTimeMin,
-                                                                '- ',
-                                                                this.state.realisationTimeMax,
-                                                                'godz.'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-headers' },
-                                                            'Ekspres',
-                                                            _react2.default.createElement('br', null),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'realisation-time' },
-                                                                'maks. ',
-                                                                this.state.realisationTimeMin,
-                                                                'godz.'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'pricing-table-row-transl' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-transl-cell' },
-                                                            'T\u0142umaczenie zwyk\u0142e'
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-transl-cell hover',
-                                                                id: 'translBasic',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net', id: 'tr-1-net' },
-                                                                this.translationPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat', id: 'tr-1-br' },
-                                                                this.calculateVat(this.translationPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-transl-cell hover',
-                                                                id: 'translUrgent',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net', id: 'tr-2-net' },
-                                                                this.transUrgentPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat', id: 'tr-2-br' },
-                                                                this.calculateVat(this.transUrgentPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-transl-cell hover',
-                                                                id: 'translExpress',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.transExpressPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.transExpressPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'pricing-table-row-redact-lang' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-redact-cell' },
-                                                            '+ redakcja j\u0119zykowa'
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-redact-cell hover',
-                                                                id: 'redactBasic',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.redactionPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.redactionPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-redact-cell hover',
-                                                                id: 'redactUrgent',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.redactUrgentPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.redactUrgentPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-redact-cell hover',
-                                                                id: 'redactExpress',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.redactExpressPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.redactExpressPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            ),
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'pricing-table-row-redact-merit' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'pricing-table-merit-cell' },
-                                                            '+ redakcja merytoryczna'
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-merit-cell hover',
-                                                                id: 'meritBasic',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.meritoryPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.meritoryPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            _defineProperty({
-                                                                className: 'pricing-table-merit-cell hover',
-                                                                id: 'meritUrgent',
-                                                                onClick: this.handleCellClick
-                                                            }, 'onClick', this.handleCellClick),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.meritUrgentPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.meritUrgentPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            {
-                                                                className: 'pricing-table-merit-cell hover',
-                                                                id: 'meritExpress',
-                                                                onClick: this.handleCellClick },
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-net' },
-                                                                this.meritExpressPrice,
-                                                                'z\u0142 netto'
-                                                            ),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.meritExpressPrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                ),
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: this.state.inVisible },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'chosen-table' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'row' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'row chosen' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'chosen-title' },
-                                                            'TW\xD3J WYB\xD3R:'
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'chosen-service' },
-                                                            _react2.default.createElement(
-                                                                'p',
-                                                                { className: 'medium-text' },
-                                                                this.state.chosenServiceDescripion
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'chosen-time' },
-                                                            this.state.chosenTimeMinMax,
-                                                            'godz.',
-                                                            _react2.default.createElement('br', null),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'small-italic' },
-                                                                'czas realizacji'
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'col-lg-3 col-md-3 col-sm-3' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'chosen-price' },
-                                                            this.state.chosenServicePrice,
-                                                            'z\u0142 netto',
-                                                            _react2.default.createElement('br', null),
-                                                            _react2.default.createElement(
-                                                                'span',
-                                                                { className: 'price-with-vat' },
-                                                                this.calculateVat(this.state.chosenServicePrice),
-                                                                'z\u0142 z VAT'
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'row' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'text-explanation' },
-                                                    'Wpisz sw\xF3j adres email, podaj dane Twojej firmy i wci\u015Bnij ZAMAWIAM, aby otrzyma\u0107 maila z gotow\u0105 faktur\u0105 pro-forma.'
-                                                )
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'row' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                _react2.default.createElement(
-                                                    'form',
-                                                    { className: 'company-data', onSubmit: this.onSubmit },
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        { className: 'company-data-label', htmlFor: 'email' },
-                                                        'Podaj sw\xF3j email'
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'error-message' },
-                                                        this.state.emailErrorMessage
-                                                    ),
-                                                    _react2.default.createElement('input', {
-                                                        required: true,
-                                                        onBlur: this.validateEmail,
-                                                        className: 'company-data-input',
-                                                        name: 'email',
-                                                        type: 'email',
-                                                        onChange: this.handleChange,
-                                                        value: this.state.email,
-                                                        pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' }),
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        { className: 'company-data-label', htmlFor: 'company' },
-                                                        'Podaj nazw\u0119 firmy'
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'error-message' },
-                                                        this.state.companyErrorMessage
-                                                    ),
-                                                    _react2.default.createElement('input', {
-                                                        required: true,
-                                                        onBlur: this.validateCompany,
-                                                        className: 'company-data-input',
-                                                        name: 'company',
-                                                        type: 'text',
-                                                        onChange: this.handleChange,
-                                                        value: this.state.company }),
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        { className: 'company-data-label', htmlFor: 'NIP' },
-                                                        'Podaj NIP firmy'
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'error-message' },
-                                                        this.state.nipErrorMessage
-                                                    ),
-                                                    _react2.default.createElement('input', {
-                                                        required: true,
-                                                        onBlur: this.validateNip,
-                                                        className: 'company-data-input',
-                                                        name: 'nip',
-                                                        type: 'number',
-                                                        onChange: this.handleChange,
-                                                        value: this.state.nip }),
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        { className: 'company-data-label', htmlFor: 'street' },
-                                                        'Podaj nazw\u0119 ulicy'
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'error-message' },
-                                                        this.state.streetErrorMessage
-                                                    ),
-                                                    _react2.default.createElement('input', {
-                                                        required: true,
-                                                        onBlur: this.validateStreet,
-                                                        className: 'company-data-input',
-                                                        name: 'street',
-                                                        type: 'text',
-                                                        onChange: this.handleChange,
-                                                        value: this.state.street }),
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        { className: 'company-data-label', htmlFor: 'number' },
-                                                        'Podaj numer domu'
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'error-message' },
-                                                        this.state.numberErrorMessage
-                                                    ),
-                                                    _react2.default.createElement('input', {
-                                                        required: true,
-                                                        onBlur: this.validateNumber,
-                                                        className: 'company-data-input',
-                                                        name: 'number',
-                                                        type: 'text',
-                                                        onChange: this.handleChange,
-                                                        value: this.state.number }),
-                                                    _react2.default.createElement(
-                                                        'label',
-                                                        { className: 'company-data-label', htmlFor: 'locale' },
-                                                        'Podaj numer lokalu'
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'error-message' },
-                                                        this.state.localeErrorMessage
-                                                    ),
-                                                    _react2.default.createElement('input', {
-                                                        onBlur: this.validateLocale,
-                                                        className: 'company-data-input',
-                                                        name: 'locale',
-                                                        type: 'number',
-                                                        onChange: this.handleChange,
-                                                        value: this.state.locale }),
-                                                    _react2.default.createElement(
-                                                        'p',
-                                                        { className: 'order-disabled-explanation' },
-                                                        this.state.textArea.length >= 100 ? "" : "Wklej tekst do tłumaczenia - min. 100 znaków.",
-                                                        _react2.default.createElement('br', null),
-                                                        ' ',
-                                                        this.isEnabled ? "" : "Wypełnij poprawnie wszystkie pola formularza."
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'button',
-                                                        {
-                                                            className: 'order-button',
-                                                            disabled: !(this.isEnabled && this.state.textArea.length >= 100) },
-                                                        'ZAMAWIAM'
-                                                    )
-                                                ),
-                                                _react2.default.createElement(
-                                                    'p',
-                                                    { className: 'invoice-info' },
-                                                    ' poni\u017Cej wz\xF3r faktury proforma do wys\u0142ania mailem '
-                                                )
-                                            )
-                                        ),
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'invoice-page' },
-                                            _react2.default.createElement(
-                                                'div',
-                                                { className: 'row' },
-                                                _react2.default.createElement(
-                                                    'div',
-                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'invoice-header' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'margin' },
-                                                            _react2.default.createElement(
-                                                                'div',
-                                                                { className: 'row' },
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                                                    _react2.default.createElement(
-                                                                        'div',
-                                                                        { className: 'company-data' },
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            'TransLingus Biuro T\u0142umacze\u0144'
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        'ul. T\u0142umaczeniowa 23',
-                                                                        _react2.default.createElement('br', null),
-                                                                        '12-345 Warszawa',
-                                                                        _react2.default.createElement('br', null),
-                                                                        'NIP: 234-45-56-123',
-                                                                        _react2.default.createElement('br', null)
-                                                                    )
-                                                                ),
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                                                    _react2.default.createElement('div', { className: 'logo' })
-                                                                ),
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                                                    _react2.default.createElement(
-                                                                        'div',
-                                                                        { className: 'invoice' },
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            'FAKTURA PROFORMA'
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        'FV TL/2017/13456',
-                                                                        _react2.default.createElement('br', null),
-                                                                        'wystawiona: ',
-                                                                        this.currentDate.getDate(),
-                                                                        '.',
-                                                                        this.currentDate.getMonth(),
-                                                                        '.',
-                                                                        this.currentDate.getFullYear()
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'invoice-main' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'margin' },
-                                                            _react2.default.createElement(
-                                                                'div',
-                                                                { className: 'row' },
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                                                    _react2.default.createElement(
-                                                                        'div',
-                                                                        { className: 'client-data' },
-                                                                        'dla:',
-                                                                        _react2.default.createElement('br', null),
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.state.company.length === 0 ? "...podaj nazwę firmy..." : this.state.company
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.state.street.length === 0 ? "...podaj nazwę ulicy..." : this.state.street,
-                                                                            ' ',
-                                                                            this.state.number,
-                                                                            ' lok. ',
-                                                                            this.state.locale
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            'NIP: ',
-                                                                            this.state.nip.length !== 10 ? "...podaj NIP (10 cyfr)..." : this.state.nip
-                                                                        )
-                                                                    )
-                                                                ),
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                                                    _react2.default.createElement(
-                                                                        'div',
-                                                                        { className: 'service-data' },
-                                                                        'Us\u0142uga:',
-                                                                        _react2.default.createElement('br', null),
-                                                                        ' ',
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.state.chosenServiceDescripion
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        'ilo\u015B\u0107 stron: ',
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.state.textAreaPages
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        'cena za stron\u0119: ',
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.state.pagePrice,
-                                                                            ' z\u0142'
-                                                                        )
-                                                                    )
-                                                                ),
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                                                    _react2.default.createElement(
-                                                                        'div',
-                                                                        { className: 'service-prices' },
-                                                                        'Cena netto:',
-                                                                        _react2.default.createElement('br', null),
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.state.chosenServicePrice,
-                                                                            ' z\u0142'
-                                                                        ),
-                                                                        _react2.default.createElement('br', null),
-                                                                        'Cena brutto:',
-                                                                        _react2.default.createElement('br', null),
-                                                                        _react2.default.createElement(
-                                                                            'b',
-                                                                            null,
-                                                                            this.calculateVat(this.state.chosenServicePrice),
-                                                                            ' z\u0142'
-                                                                        ),
-                                                                        _react2.default.createElement('br', null)
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
-                                                    ),
-                                                    _react2.default.createElement(
-                                                        'div',
-                                                        { className: 'invoice-footer' },
-                                                        _react2.default.createElement(
-                                                            'div',
-                                                            { className: 'margin' },
-                                                            _react2.default.createElement(
-                                                                'div',
-                                                                { className: 'row' },
-                                                                _react2.default.createElement(
-                                                                    'div',
-                                                                    { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                                                    _react2.default.createElement(
-                                                                        'b',
-                                                                        null,
-                                                                        'TransLingus Biuro T\u0142umacze\u0144'
-                                                                    ),
-                                                                    _react2.default.createElement('br', null),
-                                                                    'ul. T\u0142umaczeniowa | 23 12-345 Warszawa | NIP: 234-45-56-123'
-                                                                )
-                                                            )
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-                );
-            }
-        }]);
-
-        return Main;
-    }(_react2.default.Component);
-
-    var App = function (_React$Component2) {
-        _inherits(App, _React$Component2);
+    var App = function (_React$Component) {
+        _inherits(App, _React$Component);
 
         function App() {
             _classCallCheck(this, App);
@@ -11053,7 +9670,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 return _react2.default.createElement(
                     'div',
                     null,
-                    _react2.default.createElement(Main, null),
+                    _react2.default.createElement(_hero2.default, null),
+                    _react2.default.createElement(_calculator2.default, null),
                     _react2.default.createElement(_aboutus2.default, null),
                     _react2.default.createElement(_credentials2.default, null),
                     _react2.default.createElement(_partners2.default, null),
@@ -11084,7 +9702,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 var PooledClass = __webpack_require__(85);
-var ReactElement = __webpack_require__(14);
+var ReactElement = __webpack_require__(15);
 
 var emptyFunction = __webpack_require__(9);
 var traverseAllChildren = __webpack_require__(86);
@@ -11278,7 +9896,7 @@ module.exports = ReactChildren;
 
 
 
-var _prodInvariant = __webpack_require__(17);
+var _prodInvariant = __webpack_require__(18);
 
 var invariant = __webpack_require__(1);
 
@@ -11393,7 +10011,7 @@ module.exports = PooledClass;
 
 
 
-var _prodInvariant = __webpack_require__(17);
+var _prodInvariant = __webpack_require__(18);
 
 var ReactCurrentOwner = __webpack_require__(10);
 var REACT_ELEMENT_TYPE = __webpack_require__(53);
@@ -11635,7 +10253,7 @@ module.exports = KeyEscapeUtils;
 
 
 
-var ReactElement = __webpack_require__(14);
+var ReactElement = __webpack_require__(15);
 
 /**
  * Create a factory that creates HTML tag elements.
@@ -11808,7 +10426,7 @@ module.exports = ReactDOMFactories;
 
 
 
-var _prodInvariant = __webpack_require__(17);
+var _prodInvariant = __webpack_require__(18);
 
 var ReactPropTypeLocationNames = __webpack_require__(90);
 var ReactPropTypesSecret = __webpack_require__(91);
@@ -11948,7 +10566,7 @@ module.exports = ReactPropTypesSecret;
 
 
 
-var _require = __webpack_require__(14),
+var _require = __webpack_require__(15),
     isValidElement = _require.isValidElement;
 
 var factory = __webpack_require__(56);
@@ -12607,7 +11225,7 @@ module.exports = '15.6.2';
 var _require = __webpack_require__(51),
     Component = _require.Component;
 
-var _require2 = __webpack_require__(14),
+var _require2 = __webpack_require__(15),
     isValidElement = _require2.isValidElement;
 
 var ReactNoopUpdateQueue = __webpack_require__(52);
@@ -12632,7 +11250,7 @@ module.exports = factory(Component, isValidElement, ReactNoopUpdateQueue);
 
 var _assign = __webpack_require__(4);
 
-var emptyObject = __webpack_require__(27);
+var emptyObject = __webpack_require__(26);
 var _invariant = __webpack_require__(1);
 
 if (process.env.NODE_ENV !== 'production') {
@@ -13507,9 +12125,9 @@ module.exports = factory;
  */
 
 
-var _prodInvariant = __webpack_require__(17);
+var _prodInvariant = __webpack_require__(18);
 
-var ReactElement = __webpack_require__(14);
+var ReactElement = __webpack_require__(15);
 
 var invariant = __webpack_require__(1);
 
@@ -13555,7 +12173,7 @@ module.exports = onlyChild;
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDefaultInjection = __webpack_require__(100);
 var ReactMount = __webpack_require__(81);
-var ReactReconciler = __webpack_require__(18);
+var ReactReconciler = __webpack_require__(19);
 var ReactUpdates = __webpack_require__(11);
 var ReactVersion = __webpack_require__(178);
 
@@ -13831,7 +12449,7 @@ module.exports = ARIADOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(22);
+var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(6);
 var FallbackCompositionState = __webpack_require__(103);
 var SyntheticCompositionEvent = __webpack_require__(104);
@@ -14220,7 +12838,7 @@ module.exports = BeforeInputEventPlugin;
 
 var _assign = __webpack_require__(4);
 
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 
 var getTextContentAccessor = __webpack_require__(61);
 
@@ -14395,8 +13013,8 @@ module.exports = SyntheticInputEvent;
 
 
 
-var EventPluginHub = __webpack_require__(23);
-var EventPropagators = __webpack_require__(22);
+var EventPluginHub = __webpack_require__(22);
+var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
@@ -15434,7 +14052,7 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(22);
+var EventPropagators = __webpack_require__(21);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticMouseEvent = __webpack_require__(30);
 
@@ -15808,7 +14426,7 @@ module.exports = ReactComponentBrowserEnvironment;
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(19);
+var DOMLazyTree = __webpack_require__(20);
 var ExecutionEnvironment = __webpack_require__(6);
 
 var createNodesFromMarkup = __webpack_require__(119);
@@ -16217,11 +14835,11 @@ var _prodInvariant = __webpack_require__(3),
 
 var AutoFocusUtils = __webpack_require__(124);
 var CSSPropertyOperations = __webpack_require__(125);
-var DOMLazyTree = __webpack_require__(19);
+var DOMLazyTree = __webpack_require__(20);
 var DOMNamespaces = __webpack_require__(41);
 var DOMProperty = __webpack_require__(13);
 var DOMPropertyOperations = __webpack_require__(70);
-var EventPluginHub = __webpack_require__(23);
+var EventPluginHub = __webpack_require__(22);
 var EventPluginRegistry = __webpack_require__(28);
 var ReactBrowserEventEmitter = __webpack_require__(33);
 var ReactDOMComponentFlags = __webpack_require__(58);
@@ -17775,7 +16393,7 @@ module.exports = quoteAttributeValueForBrowser;
 
 
 
-var EventPluginHub = __webpack_require__(23);
+var EventPluginHub = __webpack_require__(22);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -18207,7 +16825,7 @@ module.exports = ReactDOMInput;
 
 var _assign = __webpack_require__(4);
 
-var React = __webpack_require__(16);
+var React = __webpack_require__(17);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMSelect = __webpack_require__(72);
 
@@ -18498,11 +17116,11 @@ module.exports = ReactDOMTextarea;
 var _prodInvariant = __webpack_require__(3);
 
 var ReactComponentEnvironment = __webpack_require__(44);
-var ReactInstanceMap = __webpack_require__(25);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 
 var ReactCurrentOwner = __webpack_require__(10);
-var ReactReconciler = __webpack_require__(18);
+var ReactReconciler = __webpack_require__(19);
 var ReactChildReconciler = __webpack_require__(139);
 
 var emptyFunction = __webpack_require__(9);
@@ -18945,7 +17563,7 @@ module.exports = ReactMultiChild;
 
 
 
-var ReactReconciler = __webpack_require__(18);
+var ReactReconciler = __webpack_require__(19);
 
 var instantiateReactComponent = __webpack_require__(73);
 var KeyEscapeUtils = __webpack_require__(47);
@@ -19105,20 +17723,20 @@ module.exports = ReactChildReconciler;
 var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
-var React = __webpack_require__(16);
+var React = __webpack_require__(17);
 var ReactComponentEnvironment = __webpack_require__(44);
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactErrorUtils = __webpack_require__(36);
-var ReactInstanceMap = __webpack_require__(25);
+var ReactInstanceMap = __webpack_require__(24);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactNodeTypes = __webpack_require__(74);
-var ReactReconciler = __webpack_require__(18);
+var ReactReconciler = __webpack_require__(19);
 
 if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__(141);
 }
 
-var emptyObject = __webpack_require__(27);
+var emptyObject = __webpack_require__(26);
 var invariant = __webpack_require__(1);
 var shallowEqual = __webpack_require__(45);
 var shouldUpdateReactComponent = __webpack_require__(46);
@@ -20299,7 +18917,7 @@ module.exports = flattenChildren;
 
 var _assign = __webpack_require__(4);
 
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 var Transaction = __webpack_require__(29);
 var ReactInstrumentation = __webpack_require__(8);
 var ReactServerUpdateQueue = __webpack_require__(148);
@@ -20536,7 +19154,7 @@ module.exports = ReactServerUpdateQueue;
 
 var _assign = __webpack_require__(4);
 
-var DOMLazyTree = __webpack_require__(19);
+var DOMLazyTree = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var ReactDOMEmptyComponent = function (instantiate) {
@@ -20741,7 +19359,7 @@ var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
 var DOMChildrenOperations = __webpack_require__(40);
-var DOMLazyTree = __webpack_require__(19);
+var DOMLazyTree = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var escapeTextContentForBrowser = __webpack_require__(32);
@@ -20978,7 +19596,7 @@ var _assign = __webpack_require__(4);
 
 var EventListener = __webpack_require__(78);
 var ExecutionEnvironment = __webpack_require__(6);
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(11);
 
@@ -21175,7 +19793,7 @@ module.exports = getUnboundedScrollPosition;
 
 
 var DOMProperty = __webpack_require__(13);
-var EventPluginHub = __webpack_require__(23);
+var EventPluginHub = __webpack_require__(22);
 var EventPluginUtils = __webpack_require__(35);
 var ReactComponentEnvironment = __webpack_require__(44);
 var ReactEmptyComponent = __webpack_require__(75);
@@ -21214,7 +19832,7 @@ module.exports = ReactInjection;
 var _assign = __webpack_require__(4);
 
 var CallbackQueue = __webpack_require__(62);
-var PooledClass = __webpack_require__(15);
+var PooledClass = __webpack_require__(16);
 var ReactBrowserEventEmitter = __webpack_require__(33);
 var ReactInputSelection = __webpack_require__(79);
 var ReactInstrumentation = __webpack_require__(8);
@@ -22089,7 +20707,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(22);
+var EventPropagators = __webpack_require__(21);
 var ExecutionEnvironment = __webpack_require__(6);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInputSelection = __webpack_require__(79);
@@ -22284,7 +20902,7 @@ module.exports = SelectEventPlugin;
 var _prodInvariant = __webpack_require__(3);
 
 var EventListener = __webpack_require__(78);
-var EventPropagators = __webpack_require__(22);
+var EventPropagators = __webpack_require__(21);
 var ReactDOMComponentTree = __webpack_require__(5);
 var SyntheticAnimationEvent = __webpack_require__(165);
 var SyntheticClipboardEvent = __webpack_require__(166);
@@ -22295,7 +20913,7 @@ var SyntheticMouseEvent = __webpack_require__(30);
 var SyntheticDragEvent = __webpack_require__(170);
 var SyntheticTouchEvent = __webpack_require__(171);
 var SyntheticTransitionEvent = __webpack_require__(172);
-var SyntheticUIEvent = __webpack_require__(24);
+var SyntheticUIEvent = __webpack_require__(23);
 var SyntheticWheelEvent = __webpack_require__(173);
 
 var emptyFunction = __webpack_require__(9);
@@ -22593,7 +21211,7 @@ module.exports = SyntheticClipboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(24);
+var SyntheticUIEvent = __webpack_require__(23);
 
 /**
  * @interface FocusEvent
@@ -22632,7 +21250,7 @@ module.exports = SyntheticFocusEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(24);
+var SyntheticUIEvent = __webpack_require__(23);
 
 var getEventCharCode = __webpack_require__(50);
 var getEventKey = __webpack_require__(169);
@@ -22873,7 +21491,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(24);
+var SyntheticUIEvent = __webpack_require__(23);
 
 var getEventModifierState = __webpack_require__(39);
 
@@ -23197,7 +21815,7 @@ var _prodInvariant = __webpack_require__(3);
 
 var ReactCurrentOwner = __webpack_require__(10);
 var ReactDOMComponentTree = __webpack_require__(5);
-var ReactInstanceMap = __webpack_require__(25);
+var ReactInstanceMap = __webpack_require__(24);
 
 var getHostComponentFromComposite = __webpack_require__(82);
 var invariant = __webpack_require__(1);
@@ -23530,11 +22148,1709 @@ module.exports = ReactDOMInvalidARIAHook;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(20);
+var _react = __webpack_require__(14);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactDom = __webpack_require__(21);
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Hero = function (_React$Component) {
+    _inherits(Hero, _React$Component);
+
+    function Hero(props) {
+        _classCallCheck(this, Hero);
+
+        var _this = _possibleConstructorReturn(this, (Hero.__proto__ || Object.getPrototypeOf(Hero)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(Hero, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { className: "section-main" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "hero" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "main-nav" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "container" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "row" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-lg-2 col-md-2 col-sm-2" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "main-logo" },
+                                        "TRANS",
+                                        _react2.default.createElement("br", null),
+                                        "LINGUS"
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-lg-10 col-md-10 col-sm-10" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "main-menu" },
+                                        _react2.default.createElement(
+                                            "div",
+                                            { className: "burger", onClick: this.showMobileMenuList },
+                                            _react2.default.createElement("div", { className: "burger-bar" }),
+                                            _react2.default.createElement("div", { className: "burger-bar" }),
+                                            _react2.default.createElement("div", { className: "burger-bar" })
+                                        ),
+                                        _react2.default.createElement(
+                                            "div",
+                                            { className: "menu-list", id: "menu-list" },
+                                            _react2.default.createElement(
+                                                "ul",
+                                                null,
+                                                _react2.default.createElement(
+                                                    "li",
+                                                    null,
+                                                    _react2.default.createElement(
+                                                        "a",
+                                                        { href: "#section-about-us" },
+                                                        "O NAS"
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    "li",
+                                                    null,
+                                                    _react2.default.createElement(
+                                                        "a",
+                                                        { href: "#section-credentials" },
+                                                        "REFERENCJE"
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    "li",
+                                                    null,
+                                                    _react2.default.createElement(
+                                                        "a",
+                                                        { href: "#section-partners" },
+                                                        "ZAUFALI NAM"
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    "li",
+                                                    null,
+                                                    _react2.default.createElement(
+                                                        "a",
+                                                        { href: "#section-contact" },
+                                                        "KONTAKT"
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            "div",
+                                            { className: "menu-calc" },
+                                            _react2.default.createElement(
+                                                "a",
+                                                { href: "#section-calculator" },
+                                                "WYCENA",
+                                                _react2.default.createElement("br", null),
+                                                "ON-LINE"
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "main-info" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "container" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "row" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-lg-3 col-md-3 col-sm-5" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "main-header" },
+                                        _react2.default.createElement(
+                                            "h1",
+                                            null,
+                                            "O NAS"
+                                        )
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-lg-2 col-md-2 col-sm-9" },
+                                    "\xA0"
+                                ),
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-lg-6 col-md-6 col-sm-12" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "main-description" },
+                                        _react2.default.createElement(
+                                            "p",
+                                            { className: "main-description-paragraph" },
+                                            "Tworzymy t\u0142umaczenia",
+                                            _react2.default.createElement("br", null),
+                                            "od ponad 12 lat!",
+                                            _react2.default.createElement("br", null),
+                                            "Nasze do\u015Bwiadczenie",
+                                            _react2.default.createElement("br", null),
+                                            "to gwarancja",
+                                            _react2.default.createElement("br", null),
+                                            "Twojego zadowolenia"
+                                        ),
+                                        _react2.default.createElement(
+                                            "button",
+                                            { className: "main-description-button" },
+                                            _react2.default.createElement(
+                                                "a",
+                                                { href: "#section-about-us" },
+                                                "WI\u0118CEJ"
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Hero;
+}(_react2.default.Component);
+
+module.exports = Hero;
+
+/***/ }),
+/* 185 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Calculator = function (_React$Component) {
+    _inherits(Calculator, _React$Component);
+
+    function Calculator(props) {
+        _classCallCheck(this, Calculator);
+
+        var _this = _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this, props));
+
+        _this.showMobileMenuList = function () {
+            if (_this.state.displayMobileMenuList === 0) {
+                document.getElementById('menu-list').classList.add("visible");
+                _this.setState({ displayMobileMenuList: 1 });
+            } else {
+                document.getElementById('menu-list').classList.remove("visible");
+                _this.setState({ displayMobileMenuList: 0 });
+            }
+        };
+
+        _this.changeTextArea = function (event) {
+            var _this$setState;
+
+            _this.setState((_this$setState = {}, _defineProperty(_this$setState, event.target.name, event.target.value), _defineProperty(_this$setState, 'textAreaPages', Math.floor(event.target.value.length / 1800) < 1 ? 1 : Number((event.target.value.length / 1800).toFixed(1))), _defineProperty(_this$setState, 'realisationTimeMin', Math.ceil(_this.state.textAreaPages / 6) * 24), _defineProperty(_this$setState, 'realisationTimeMax', Math.ceil(_this.state.textAreaPages / 6) * 24 + 24), _defineProperty(_this$setState, 'inVisible', 'not-visible'), _this$setState));
+        };
+
+        _this.setTranslationDirection = function (event) {
+            _this.setState({
+                translationDirection: Number(event.target.value),
+                suffix: _this.state.translationDirection == 1 ? '' : 'ego'
+            }); // suffix jest ustawiany odwrotnie niż powinien, bo zmiana działa 'z opóźnieniem' ;)
+        };
+
+        _this.handleLanguageChange = function (event) {
+            _this.setState({
+                chosenLanguage: event.target.value.slice(4),
+                languageGroupMultiplier: Number(event.target.value.slice(0, 3)),
+                inVisible: 'not-visible'
+            });
+        };
+
+        _this.calculateVat = function (netPrice) {
+            return Math.floor(netPrice * _this.state.vat);
+        };
+
+        _this.handleCellClick = function (event) {
+            var tempPrice = void 0,
+                tempMinTime = void 0,
+                tempMaxTime = void 0,
+                tempServiceDescr = void 0;
+            var tj = "tłumaczenie na " + _this.state.chosenLanguage;
+            var rj = " z redakcją językową ";
+            var rm = "i merytoryczną";
+
+            switch (event.currentTarget.id) {
+                case "translBasic":
+                    tempPrice = _this.translationPrice;
+                    tempMinTime = _this.state.realisationTimeMin + " - " + (_this.state.realisationTimeMax + 24);
+                    tempServiceDescr = tj;
+                    break;
+                case "translUrgent":
+                    tempPrice = _this.transUrgentPrice;
+                    tempMinTime = _this.state.realisationTimeMin + " - " + _this.state.realisationTimeMax;
+                    tempServiceDescr = tj;
+                    break;
+                case "translExpress":
+                    tempPrice = _this.transExpressPrice;
+                    tempMinTime = _this.state.realisationTimeMin;
+                    tempServiceDescr = tj;
+                    break;
+                case "redactBasic":
+                    tempPrice = _this.redactionPrice;
+                    tempMinTime = _this.state.realisationTimeMin + " - " + (_this.state.realisationTimeMax + 24);
+                    tempServiceDescr = tj + rj;
+                    break;
+                case "redactUrgent":
+                    tempPrice = _this.redactUrgentPrice;
+                    tempMinTime = _this.state.realisationTimeMin + " - " + _this.state.realisationTimeMax;
+                    tempServiceDescr = tj + rj;
+                    break;
+                case "redactExpress":
+                    tempPrice = _this.redactExpressPrice;
+                    tempMinTime = _this.state.realisationTimeMin;
+                    tempServiceDescr = tj + rj;
+                    break;
+                case "meritBasic":
+                    tempPrice = _this.meritoryPrice;
+                    tempMinTime = _this.state.realisationTimeMin + " - " + (_this.state.realisationTimeMax + 24);
+                    tempServiceDescr = tj + rj + rm;
+                    break;
+                case "meritUrgent":
+                    tempPrice = _this.meritUrgentPrice;
+                    tempMinTime = _this.state.realisationTimeMin + " - " + _this.state.realisationTimeMax;
+                    tempServiceDescr = tj + rj + rm;
+                    break;
+                case "meritExpress":
+                    tempPrice = _this.meritExpressPrice;
+                    tempMinTime = _this.state.realisationTimeMin;
+                    tempServiceDescr = tj + rj + rm;
+                    break;
+                default:
+            }
+            _this.setState({ chosenService: event.currentTarget.id,
+                inVisible: '',
+                chosenServicePrice: tempPrice,
+                chosenTimeMinMax: tempMinTime,
+                chosenServiceDescription: tempServiceDescr
+            });
+            return;
+        };
+
+        _this.realisationTime = function () {
+            _this.setState({
+                realisationTimeMin: Math.ceil(_this.state.textAreaPages / 6) * 24,
+                realisationTimeMax: Math.ceil(_this.state.textAreaPages / 6) * 48
+            });
+        };
+
+        _this.handleChange = function (event) {
+            _this.setState(_defineProperty({}, event.target.name, event.target.value));
+        };
+
+        _this.validateEmail = function () {
+            if (_this.state.email.length < 4) {
+                _this.setState({ emailErrorMessage: "Email musi zawierać co najmniej 4 znaki" });
+            } else {
+                _this.setState({ emailErrorMessage: "" });
+            }
+        };
+
+        _this.validateCompany = function () {
+            if (_this.state.company.length < 4) {
+                _this.setState({ companyErrorMessage: "Nazwa firmy musi zawierać co najmniej 4 znaki" });
+            } else _this.setState({ companyErrorMessage: "" });
+            ;
+        };
+
+        _this.validateNip = function () {
+            if (_this.state.nip.length !== 10) {
+                _this.setState({ nipErrorMessage: "NIP musi zawierać dokładnie 10 cyfr" });
+            } else _this.setState({ nipErrorMessage: "" });
+        };
+
+        _this.validateStreet = function () {
+            if (_this.state.street.length < 4) {
+                _this.setState({ streetErrorMessage: "Nazwa ulicy musi zawierać co najmniej 4 znaki" });
+            } else _this.setState({ streetErrorMessage: "" });
+        };
+
+        _this.validateNumber = function () {
+            if (_this.state.number.length < 1 || _this.state.number === 0) {
+                _this.setState({ numberErrorMessage: "Niepoprawny numer domu" });
+            } else _this.setState({ numberErrorMessage: "" });
+        };
+
+        _this.validateLocale = function () {
+            if (_this.state.locale.length < 1 || _this.state.locale === 0) {
+                _this.setState({ localeErrorMessage: "Niepoprawny numer lokalu" });
+            } else _this.setState({ localeErrorMessage: "" });
+        };
+
+        _this.textToPDF = function (today, company, companyAddress, serviceTime, nip, chosenServiceDescription, textAreaPages, pagePrice, netPrice, grossPrice) {
+
+            var doc = new jsPDF();
+
+            doc.setFontType("bold");
+            doc.setFontSize(10);
+            doc.text(20, 20, 'TransLingus Biuro Tlumaczen');
+            doc.text(20, 25, 'ul. Tlumaczeniowa 23');
+            doc.text(20, 30, '12-345 Warszawa ');
+            doc.text(20, 35, 'NIP: 234-45-56-123');
+
+            doc.text(90, 20, 'Faktura pro-forma');
+
+            doc.setFontType("normal");
+            doc.text(90, 25, 'FV TL/2017/13456');
+            doc.text(90, 30, 'wystawiona dnia:');
+            doc.text(90, 35, String(today));
+
+            doc.text(20, 70, 'dla:');
+            doc.setFontType("bold");
+            doc.text(20, 75, String(company));
+            doc.text(20, 80, String(companyAddress));
+            doc.text(90, 85, String(serviceTime));
+            doc.text(20, 85, String(nip));
+
+            doc.setFontType("normal");
+            doc.text(90, 70, 'usluga:');
+            doc.text(90, 80, 'termin wykonania uslugi:');
+            doc.text(22, 120, 'ilosc stron:');
+            doc.text(52, 120, 'cena za strone:');
+            doc.text(92, 120, 'cena netto:');
+            doc.text(132, 120, 'cena brutto:');
+
+            doc.setFontType("bold");
+            doc.text(90, 75, String(chosenServiceDescription));
+            doc.text(22, 130, String(textAreaPages));
+            doc.text(52, 130, String(pagePrice));
+            doc.text(92, 130, String(netPrice));
+            doc.text(132, 130, String(grossPrice));
+
+            doc.setLineWidth(0.25);
+            doc.line(20, 115, 190, 115);
+            doc.line(20, 124, 190, 124);
+            doc.line(20, 134, 190, 134);
+
+            doc.line(20, 115, 20, 134);
+            doc.line(50, 115, 50, 134);
+            doc.line(90, 115, 90, 134);
+            doc.line(130, 115, 130, 134);
+            doc.line(190, 115, 190, 134);
+
+            doc.line(50, 134, 150, 134);
+            doc.text(105, 275, 'TransLingus Biuro Tlumaczen', null, null, 'center');
+            doc.setFontType("italic");
+            doc.text(105, 280, 'ul. Tlumaczeniowa 23   |   12-345 Warszawa   |   NIP: 234-45-56-123', null, null, 'center');
+
+            doc.save('faktura-proforma_TransLingus.pdf');
+        };
+
+        _this.replaceDiacritics = function (text) {
+            return text.replace(/ą/g, 'a').replace(/Ą/g, 'A').replace(/ć/g, 'c').replace(/Ć/g, 'C').replace(/ę/g, 'e').replace(/Ę/g, 'E').replace(/ł/g, 'l').replace(/Ł/g, 'L').replace(/ń/g, 'n').replace(/Ń/g, 'N').replace(/ó/g, 'o').replace(/Ó/g, 'O').replace(/ś/g, 's').replace(/Ś/g, 'S').replace(/ż/g, 'z').replace(/Ż/g, 'Z').replace(/ź/g, 'z').replace(/Ź/g, 'Z');
+        };
+
+        _this.onSubmit = function (e) {
+            e.preventDefault;
+            _this.setState({ isEnabled: false });
+            if (_this.state.textArea === '') {
+                alert("! nie wklejono tekstu do tłumaczenia !");
+            } else if (_this.state.mailErrorMessage === '' && _this.state.companyErrorMessage === '' && _this.state.nipErrorMessage === '' && _this.state.streetErrorMessage === '' && _this.state.numberErrorMessage === '' && _this.state.localeErrorMessage === '') {
+                var today = _this.currentDate.getDate() + '.' + (_this.currentDate.getMonth() + 1) + '.' + _this.currentDate.getFullYear();
+                var companyAddress = _this.state.street + ' ' + _this.state.number + ' / ' + _this.state.locale;
+                var serviceTime = _this.state.chosenTimeMinMax + " godz.";
+                var nip = 'NIP: ' + _this.state.nip;
+                var pagePrice = (_this.state.chosenServicePrice / _this.state.textAreaPages).toFixed(2) + ' zl';
+                var netPrice = _this.state.chosenServicePrice + ' zl';
+                var grossPrice = _this.calculateVat(_this.state.chosenServicePrice) + ' zl';
+                _this.textToPDF(today, _this.replaceDiacritics(_this.state.company), _this.replaceDiacritics(companyAddress), serviceTime, nip, _this.replaceDiacritics(_this.state.chosenServiceDescription), _this.state.textAreaPages, pagePrice, netPrice, grossPrice);
+                alert("Dziękujemy, formularz został poprawnie wypełniony. Prosimy o zapisanie pliku PDF z fakturą proforma.");
+            }
+        };
+
+        _this.state = {
+            textArea: '',
+            pagePrice: 36,
+            textAreaPages: 1,
+            vat: 1.23,
+            redactPrice: 1.5,
+            meritPrice: 2,
+            urgentPrice: 1.5,
+            expressPrice: 2,
+            inVisible: 'not-visible',
+            chosenLanguage: 'angielski',
+            suffix: '',
+            languageGroupMultiplier: 100,
+            chosenService: '',
+            chosenServiceDescription: '',
+            chosenTimeMinMax: '',
+            realisationTimeMin: 24,
+            realisationTimeMax: 48,
+            chosenServicePrice: 0,
+            translationDirection: 1.2,
+            email: 'aa@ww.pl',
+            company: 'Firma Potrzebująca Tłumaczenia',
+            nip: 1234567890,
+            street: 'Językowa',
+            number: 123,
+            locale: 4,
+            mailErrorMessage: '',
+            companyErrorMessage: '',
+            nipErrorMessage: '',
+            streetErrorMessage: '',
+            numberErrorMessage: '',
+            localeErrorMessage: '',
+            displayMobileMenuList: 0
+        };
+        return _this;
+    }
+
+    _createClass(Calculator, [{
+        key: 'render',
+        value: function render() {
+            (function () {
+                window.addEventListener("resize", actualResizeHandler, false);
+                function actualResizeHandler() {
+                    if (window.innerWidth > 720) {
+                        document.getElementById('menu-list').classList.remove("visible");
+                    }
+                }
+            })();
+
+            this.translationPrice = Math.floor(this.state.textAreaPages * this.state.pagePrice * this.state.languageGroupMultiplier / 100 * this.state.translationDirection);
+            this.redactionPrice = Math.floor(this.translationPrice * this.state.redactPrice);
+            this.meritoryPrice = Math.floor(this.translationPrice * this.state.meritPrice);
+            this.transUrgentPrice = Math.floor(this.translationPrice * this.state.urgentPrice);
+            this.redactUrgentPrice = Math.floor(this.redactionPrice * this.state.urgentPrice);
+            this.meritUrgentPrice = Math.floor(this.meritoryPrice * this.state.urgentPrice);
+            this.transExpressPrice = Math.floor(this.translationPrice * this.state.expressPrice);
+            this.redactExpressPrice = Math.floor(this.redactionPrice * this.state.expressPrice);
+            this.meritExpressPrice = Math.floor(this.meritoryPrice * this.state.expressPrice);
+            this.isEnabled = this.state.email.length > 3 && this.state.company.length > 3 && this.state.nip.length === 10 && this.state.street.length > 3 && Number(this.state.number) > 0 && this.state.locale > 0;
+            this.currentDate = new Date();
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'section',
+                    { className: 'section-calculator' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'container' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'calculator' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'row' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-lg-4 col-md-4 col-sm-12' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'input-area' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'calculator-title-box' },
+                                                    _react2.default.createElement(
+                                                        'a',
+                                                        { name: 'section-calculator' },
+                                                        _react2.default.createElement(
+                                                            'h2',
+                                                            null,
+                                                            'WYCENA ON-LINE'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'calculator-text' },
+                                                    'Wklej tekst do t\u0142umaczenia'
+                                                ),
+                                                _react2.default.createElement('textarea', {
+                                                    className: 'calculator-textarea',
+                                                    name: 'textArea',
+                                                    onChange: this.changeTextArea,
+                                                    value: this.state.textArea }),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'calculator-text-length' },
+                                                    'D\u0142ugo\u015B\u0107 tekstu:\xA0',
+                                                    _react2.default.createElement(
+                                                        'strong',
+                                                        { className: 'calculator-monospace' },
+                                                        this.state.textArea.length,
+                                                        '\xA0znak\xF3w',
+                                                        _react2.default.createElement('br', null),
+                                                        'po zaokr\u0105gleniu\xA0',
+                                                        this.state.textAreaPages,
+                                                        '\xA0str.\xA0'
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'span',
+                                                        { className: 'minimum-text' },
+                                                        this.state.textAreaPages <= 1 ? "(min. 1 str.)" : ""
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'language-select' },
+                                                    _react2.default.createElement(
+                                                        'select',
+                                                        {
+                                                            className: 'chosen-language',
+                                                            onChange: this.setTranslationDirection,
+                                                            value: this.state.select },
+                                                        _react2.default.createElement(
+                                                            'option',
+                                                            { value: '1.2' },
+                                                            'T\u0142umaczenie z polskiego na:'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'option',
+                                                            { value: '1' },
+                                                            'T\u0142umaczenie na polski z:'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                                _react2.default.createElement(
+                                                    'select',
+                                                    {
+                                                        className: 'chosen-language',
+                                                        onChange: this.handleLanguageChange,
+                                                        value: this.state.select },
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '100.angielski' },
+                                                        'angielski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '100.francuski' },
+                                                        'francuski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '100.niemiecki ' },
+                                                        'niemiecki',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '100.rosyjski ' },
+                                                        'rosyjski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '110.hiszpa\u0144ski' },
+                                                        'hiszpa\u0144ski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '110.ukrai\u0144ski' },
+                                                        'ukrai\u0144ski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '110.w\u0142oski' },
+                                                        'w\u0142oski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '120.bia\u0142oruski' },
+                                                        'bia\u0142oruski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '125.czeski' },
+                                                        'czeski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '125.du\u0144ski' },
+                                                        'du\u0144ski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '125.litewski' },
+                                                        'litewski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '130.\u0142otewski' },
+                                                        '\u0142otewski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '135.niderlandzki' },
+                                                        'niderlandzki',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '130.norweski' },
+                                                        'norweski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '125.portugalski' },
+                                                        'portugalski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '125.szwedzki' },
+                                                        'szwedzki',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '125.rumu\u0144ski' },
+                                                        'rumu\u0144ski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '135.w\u0119gierski' },
+                                                        'w\u0119gierski',
+                                                        this.state.suffix
+                                                    ),
+                                                    _react2.default.createElement(
+                                                        'option',
+                                                        { value: '140.chi\u0144ski' },
+                                                        'chi\u0144ski',
+                                                        this.state.suffix
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                ),
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-lg-8 col-md-8 col-sm-12' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'pricing-table ' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'pricing-table-row-header' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-headers' },
+                                                        'Termin:',
+                                                        _react2.default.createElement('br', null),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'realisation-time' },
+                                                            'czas realizacji'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-headers' },
+                                                        'Zwyk\u0142y',
+                                                        _react2.default.createElement('br', null),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'realisation-time' },
+                                                            this.state.realisationTimeMin,
+                                                            '\xA0 - ',
+                                                            this.state.realisationTimeMax + 24,
+                                                            '\xA0 godz.'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-headers' },
+                                                        'Pilny',
+                                                        _react2.default.createElement('br', null),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'realisation-time' },
+                                                            this.state.realisationTimeMin,
+                                                            '\xA0 - ',
+                                                            this.state.realisationTimeMax,
+                                                            '\xA0 godz.'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-headers' },
+                                                        'Ekspres',
+                                                        _react2.default.createElement('br', null),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'realisation-time' },
+                                                            'maks. ',
+                                                            this.state.realisationTimeMin,
+                                                            '\xA0 godz.'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'pricing-table-row-transl' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-transl-cell' },
+                                                        'T\u0142umaczenie zwyk\u0142e'
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-transl-cell hover',
+                                                            id: 'translBasic',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net', id: 'tr-1-net' },
+                                                            this.translationPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat', id: 'tr-1-br' },
+                                                            this.calculateVat(this.translationPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-transl-cell hover',
+                                                            id: 'translUrgent',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net', id: 'tr-2-net' },
+                                                            this.transUrgentPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat', id: 'tr-2-br' },
+                                                            this.calculateVat(this.transUrgentPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-transl-cell hover',
+                                                            id: 'translExpress',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.transExpressPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.transExpressPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'pricing-table-row-redact-lang' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-redact-cell' },
+                                                        '+ redakcja j\u0119zykowa'
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-redact-cell hover',
+                                                            id: 'redactBasic',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.redactionPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.redactionPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-redact-cell hover',
+                                                            id: 'redactUrgent',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.redactUrgentPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.redactUrgentPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-redact-cell hover',
+                                                            id: 'redactExpress',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.redactExpressPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.redactExpressPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        ),
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'row' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'pricing-table-row-redact-merit' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'pricing-table-merit-cell' },
+                                                        '+ redakcja merytoryczna'
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-merit-cell hover',
+                                                            id: 'meritBasic',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.meritoryPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.meritoryPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        _defineProperty({
+                                                            className: 'pricing-table-merit-cell hover',
+                                                            id: 'meritUrgent',
+                                                            onClick: this.handleCellClick
+                                                        }, 'onClick', this.handleCellClick),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.meritUrgentPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.meritUrgentPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        {
+                                                            className: 'pricing-table-merit-cell hover',
+                                                            id: 'meritExpress',
+                                                            onClick: this.handleCellClick },
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-net' },
+                                                            this.meritExpressPrice,
+                                                            '\xA0 z\u0142 netto'
+                                                        ),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.meritExpressPrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: this.state.inVisible },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'chosen-table' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'row' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'row chosen' },
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'chosen-title' },
+                                                        'TW\xD3J WYB\xD3R:'
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'chosen-service' },
+                                                        _react2.default.createElement(
+                                                            'p',
+                                                            { className: 'medium-text' },
+                                                            this.state.chosenServiceDescription
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'chosen-time' },
+                                                        this.state.chosenTimeMinMax,
+                                                        '\xA0godz.',
+                                                        _react2.default.createElement('br', null),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'small-italic' },
+                                                            'maksymalny czas realizacji'
+                                                        )
+                                                    )
+                                                ),
+                                                _react2.default.createElement(
+                                                    'div',
+                                                    { className: 'col-lg-3 col-md-3 col-sm-3' },
+                                                    _react2.default.createElement(
+                                                        'div',
+                                                        { className: 'chosen-price' },
+                                                        this.state.chosenServicePrice,
+                                                        '\xA0 z\u0142 netto',
+                                                        _react2.default.createElement('br', null),
+                                                        _react2.default.createElement(
+                                                            'span',
+                                                            { className: 'price-with-vat' },
+                                                            this.calculateVat(this.state.chosenServicePrice),
+                                                            '\xA0 z\u0142 z VAT'
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'row' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                            _react2.default.createElement(
+                                                'div',
+                                                { className: 'text-explanation' },
+                                                'Wpisz sw\xF3j adres email, podaj dane Twojej firmy i wci\u015Bnij ZAMAWIAM, ',
+                                                _react2.default.createElement('br', null),
+                                                'aby otrzyma\u0107 maila z gotow\u0105 faktur\u0105 pro-forma.'
+                                            )
+                                        )
+                                    ),
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'row' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                            _react2.default.createElement(
+                                                'form',
+                                                { className: 'company-data', onSubmit: this.onSubmit },
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    { className: 'company-data-label', htmlFor: 'email' },
+                                                    'Podaj sw\xF3j email'
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'error-message' },
+                                                    this.state.emailErrorMessage
+                                                ),
+                                                _react2.default.createElement('input', {
+                                                    required: true,
+                                                    onBlur: this.validateEmail,
+                                                    className: 'company-data-input',
+                                                    name: 'email',
+                                                    type: 'email',
+                                                    onChange: this.handleChange,
+                                                    value: this.state.email,
+                                                    pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$' }),
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    { className: 'company-data-label', htmlFor: 'company' },
+                                                    'Podaj nazw\u0119 firmy'
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'error-message' },
+                                                    this.state.companyErrorMessage
+                                                ),
+                                                _react2.default.createElement('input', {
+                                                    required: true,
+                                                    onBlur: this.validateCompany,
+                                                    className: 'company-data-input',
+                                                    name: 'company',
+                                                    type: 'text',
+                                                    onChange: this.handleChange,
+                                                    value: this.state.company }),
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    { className: 'company-data-label', htmlFor: 'NIP' },
+                                                    'Podaj NIP firmy'
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'error-message' },
+                                                    this.state.nipErrorMessage
+                                                ),
+                                                _react2.default.createElement('input', {
+                                                    required: true,
+                                                    onBlur: this.validateNip,
+                                                    className: 'company-data-input',
+                                                    name: 'nip',
+                                                    type: 'number',
+                                                    onChange: this.handleChange,
+                                                    value: this.state.nip }),
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    { className: 'company-data-label', htmlFor: 'street' },
+                                                    'Podaj nazw\u0119 ulicy'
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'error-message' },
+                                                    this.state.streetErrorMessage
+                                                ),
+                                                _react2.default.createElement('input', {
+                                                    required: true,
+                                                    onBlur: this.validateStreet,
+                                                    className: 'company-data-input',
+                                                    name: 'street',
+                                                    type: 'text',
+                                                    onChange: this.handleChange,
+                                                    value: this.state.street }),
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    { className: 'company-data-label', htmlFor: 'number' },
+                                                    'Podaj numer domu'
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'error-message' },
+                                                    this.state.numberErrorMessage
+                                                ),
+                                                _react2.default.createElement('input', {
+                                                    required: true,
+                                                    onBlur: this.validateNumber,
+                                                    className: 'company-data-input',
+                                                    name: 'number',
+                                                    type: 'text',
+                                                    onChange: this.handleChange,
+                                                    value: this.state.number }),
+                                                _react2.default.createElement(
+                                                    'label',
+                                                    { className: 'company-data-label', htmlFor: 'locale' },
+                                                    'Podaj numer lokalu'
+                                                ),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'error-message' },
+                                                    this.state.localeErrorMessage
+                                                ),
+                                                _react2.default.createElement('input', {
+                                                    onBlur: this.validateLocale,
+                                                    className: 'company-data-input',
+                                                    name: 'locale',
+                                                    type: 'number',
+                                                    onChange: this.handleChange,
+                                                    value: this.state.locale }),
+                                                _react2.default.createElement(
+                                                    'p',
+                                                    { className: 'order-disabled-explanation' },
+                                                    this.state.textArea.length >= 100 ? "" : "Wklej tekst do tłumaczenia - min. 100 znaków.",
+                                                    _react2.default.createElement('br', null),
+                                                    ' ',
+                                                    this.isEnabled ? "" : "Wypełnij poprawnie wszystkie pola formularza."
+                                                ),
+                                                _react2.default.createElement(
+                                                    'button',
+                                                    {
+                                                        className: 'order-button',
+                                                        disabled: !(this.isEnabled && this.state.textArea.length >= 100),
+                                                        onClick: this.textToPDF },
+                                                    'ZAMAWIAM'
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Calculator;
+}(_react2.default.Component);
+
+module.exports = Calculator;
+
+/***/ }),
+/* 186 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(27);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AboutUs = function (_React$Component) {
+    _inherits(AboutUs, _React$Component);
+
+    function AboutUs(props) {
+        _classCallCheck(this, AboutUs);
+
+        var _this = _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(AboutUs, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'div',
+                null,
+                _react2.default.createElement(
+                    'section',
+                    { className: 'section-about-us' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'container' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-12 col-md-12 col-sm-12' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'row' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'col-lg-4 col-md-4 col-sm-12' },
+                                        _react2.default.createElement(
+                                            'div',
+                                            { className: 'section-about-us-header' },
+                                            _react2.default.createElement(
+                                                'h2',
+                                                { className: 'section-about-us-header-text' },
+                                                _react2.default.createElement(
+                                                    'a',
+                                                    { name: 'section-about-us' },
+                                                    _react2.default.createElement(
+                                                        'h2',
+                                                        null,
+                                                        'O NAS'
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-6 col-md-6 col-sm-12' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'section-about-us-main-text' },
+                                    _react2.default.createElement(
+                                        'p',
+                                        null,
+                                        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
+                                    )
+                                )
+                            ),
+                            _react2.default.createElement('div', { className: 'col-lg-1 col-md-1 col-sm-12' }),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-5 col-md-5 col-sm-12' },
+                                _react2.default.createElement('div', { className: 'about-us-image-div' })
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return AboutUs;
+}(_react2.default.Component);
+
+module.exports = AboutUs;
+
+/***/ }),
+/* 187 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Credentials = function (_React$Component) {
+    _inherits(Credentials, _React$Component);
+
+    function Credentials(props) {
+        _classCallCheck(this, Credentials);
+
+        var _this = _possibleConstructorReturn(this, (Credentials.__proto__ || Object.getPrototypeOf(Credentials)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(Credentials, [{
+        key: "render",
+        value: function render() {
+            return _react2.default.createElement(
+                "section",
+                { className: "section-credentials" },
+                _react2.default.createElement(
+                    "div",
+                    { className: "container" },
+                    _react2.default.createElement(
+                        "div",
+                        { className: "row" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col-lg-12 col-md-12 col-sm-12" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "row" },
+                                _react2.default.createElement(
+                                    "div",
+                                    { className: "col-lg-4 col-md-4 col-sm-4" },
+                                    _react2.default.createElement(
+                                        "div",
+                                        { className: "section-credentials-header" },
+                                        _react2.default.createElement(
+                                            "h2",
+                                            { className: "section-credentials-header-text" },
+                                            _react2.default.createElement(
+                                                "a",
+                                                { name: "section-credentials" },
+                                                _react2.default.createElement(
+                                                    "h2",
+                                                    null,
+                                                    "REFERENCJE"
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        )
+                    ),
+                    _react2.default.createElement(
+                        "div",
+                        { className: "row" },
+                        _react2.default.createElement(
+                            "div",
+                            { className: "col-lg-12 col-lg-12 col-md-12 col-sm-12" },
+                            _react2.default.createElement(
+                                "div",
+                                { className: "section-credentials-main-text" },
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "quote" },
+                                    "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque a at..."
+                                ),
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "company" },
+                                    "Firmus Concretnus"
+                                ),
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "quote" },
+                                    "At nulla quas fugit impedit! Cras sit amet consectetur adipisicing elit. Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing elit."
+                                ),
+                                _react2.default.createElement(
+                                    "p",
+                                    { className: "company" },
+                                    "Aliud Corporationis"
+                                )
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Credentials;
+}(_react2.default.Component);
+
+module.exports = Credentials;
+
+/***/ }),
+/* 188 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(27);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Partners = function (_React$Component) {
+    _inherits(Partners, _React$Component);
+
+    function Partners(props) {
+        _classCallCheck(this, Partners);
+
+        var _this = _possibleConstructorReturn(this, (Partners.__proto__ || Object.getPrototypeOf(Partners)).call(this, props));
+
+        _this.state = {};
+        return _this;
+    }
+
+    _createClass(Partners, [{
+        key: 'render',
+        value: function render() {
+            return _react2.default.createElement(
+                'section',
+                { className: 'section-partners' },
+                _react2.default.createElement(
+                    'div',
+                    { className: 'container' },
+                    _react2.default.createElement(
+                        'div',
+                        { className: 'row' },
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'col-lg-12 col-md-12 col-sm-12' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'row' },
+                                _react2.default.createElement(
+                                    'div',
+                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
+                                    _react2.default.createElement(
+                                        'div',
+                                        { className: 'section-partners-header' },
+                                        _react2.default.createElement(
+                                            'h2',
+                                            { className: 'section-partners-header-text' },
+                                            _react2.default.createElement(
+                                                'a',
+                                                { name: 'section-partners' },
+                                                _react2.default.createElement(
+                                                    'h2',
+                                                    null,
+                                                    'ZAUFALI NAM'
+                                                )
+                                            )
+                                        )
+                                    )
+                                )
+                            )
+                        ),
+                        _react2.default.createElement(
+                            'div',
+                            { className: 'row' },
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-2 col-md-4 col-sm-4' },
+                                _react2.default.createElement('img', { src: './img/FAKELOGO01.png', alt: 'fake-logo-1' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-2 col-md-4 col-sm-4' },
+                                _react2.default.createElement('img', { src: './img/FAKELOGO02.png ', alt: ' fake - logo - 2 ' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-2 col-md-4 col-sm-4' },
+                                _react2.default.createElement('img', { src: './img/FAKELOGO03.png ', alt: ' fake - logo - 3 ' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-2 col-md-4 col-sm-4' },
+                                _react2.default.createElement('img', { src: './img/FAKELOGO02.png ', alt: ' fake - logo - 2 ' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-2 col-md-4 col-sm-4' },
+                                _react2.default.createElement('img', { src: './img/FAKELOGO01.png ', alt: ' fake - logo - 1 ' })
+                            ),
+                            _react2.default.createElement(
+                                'div',
+                                { className: 'col-lg-2 col-md-4 col-sm-4' },
+                                _react2.default.createElement('img', { src: './img/FAKELOGO03.png ', alt: ' fake - logo - 3 ' })
+                            )
+                        )
+                    )
+                )
+            );
+        }
+    }]);
+
+    return Partners;
+}(_react2.default.Component);
+
+module.exports = Partners;
+
+/***/ }),
+/* 189 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(14);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(27);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
@@ -23737,373 +24053,13 @@ var Contact = function (_React$Component) {
 module.exports = Contact;
 
 /***/ }),
-/* 185 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(20);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(21);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Partners = function (_React$Component) {
-    _inherits(Partners, _React$Component);
-
-    function Partners(props) {
-        _classCallCheck(this, Partners);
-
-        var _this = _possibleConstructorReturn(this, (Partners.__proto__ || Object.getPrototypeOf(Partners)).call(this, props));
-
-        _this.state = {};
-        return _this;
-    }
-
-    _createClass(Partners, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'section',
-                { className: 'section-partners' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'container' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-lg-12 col-md-12 col-sm-12' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'row' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'section-partners-header' },
-                                        _react2.default.createElement(
-                                            'h2',
-                                            { className: 'section-partners-header-text' },
-                                            _react2.default.createElement(
-                                                'a',
-                                                { name: 'section-partners' },
-                                                _react2.default.createElement(
-                                                    'h2',
-                                                    null,
-                                                    'ZAUFALI NAM'
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-2 col-md-4 col-sm-4' },
-                                _react2.default.createElement('img', { src: './img/FAKELOGO01.png', alt: 'fake-logo-1' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-2 col-md-4 col-sm-4' },
-                                _react2.default.createElement('img', { src: './img/FAKELOGO02.png ', alt: ' fake - logo - 2 ' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-2 col-md-4 col-sm-4' },
-                                _react2.default.createElement('img', { src: './img/FAKELOGO03.png ', alt: ' fake - logo - 3 ' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-2 col-md-4 col-sm-4' },
-                                _react2.default.createElement('img', { src: './img/FAKELOGO02.png ', alt: ' fake - logo - 2 ' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-2 col-md-4 col-sm-4' },
-                                _react2.default.createElement('img', { src: './img/FAKELOGO01.png ', alt: ' fake - logo - 1 ' })
-                            ),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-2 col-md-4 col-sm-4' },
-                                _react2.default.createElement('img', { src: './img/FAKELOGO03.png ', alt: ' fake - logo - 3 ' })
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Partners;
-}(_react2.default.Component);
-
-module.exports = Partners;
-
-/***/ }),
-/* 186 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(20);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(21);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Credentials = function (_React$Component) {
-    _inherits(Credentials, _React$Component);
-
-    function Credentials(props) {
-        _classCallCheck(this, Credentials);
-
-        var _this = _possibleConstructorReturn(this, (Credentials.__proto__ || Object.getPrototypeOf(Credentials)).call(this, props));
-
-        _this.state = {};
-        return _this;
-    }
-
-    _createClass(Credentials, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'section',
-                { className: 'section-credentials' },
-                _react2.default.createElement(
-                    'div',
-                    { className: 'container' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-lg-12 col-md-12 col-sm-12' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'row' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'col-lg-4 col-md-4 col-sm-4' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'section-credentials-header' },
-                                        _react2.default.createElement(
-                                            'h2',
-                                            { className: 'section-credentials-header-text' },
-                                            _react2.default.createElement(
-                                                'a',
-                                                { name: 'section-credentials' },
-                                                _react2.default.createElement(
-                                                    'h2',
-                                                    null,
-                                                    'REFERENCJE'
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    ),
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'row' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'col-lg-12 col-lg-12 col-md-12 col-sm-12' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'section-credentials-main-text' },
-                                _react2.default.createElement(
-                                    'p',
-                                    { className: 'quote' },
-                                    'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque a at...'
-                                ),
-                                _react2.default.createElement(
-                                    'p',
-                                    { className: 'company' },
-                                    'Firmus Concretnus'
-                                ),
-                                _react2.default.createElement(
-                                    'p',
-                                    { className: 'quote' },
-                                    'At nulla quas fugit impedit! Cras sit amet consectetur adipisicing elit. Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
-                                ),
-                                _react2.default.createElement(
-                                    'p',
-                                    { className: 'company' },
-                                    'Aliud Corporationis'
-                                )
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return Credentials;
-}(_react2.default.Component);
-
-module.exports = Credentials;
-
-/***/ }),
-/* 187 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(20);
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactDom = __webpack_require__(21);
-
-var _reactDom2 = _interopRequireDefault(_reactDom);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AboutUs = function (_React$Component) {
-    _inherits(AboutUs, _React$Component);
-
-    function AboutUs(props) {
-        _classCallCheck(this, AboutUs);
-
-        var _this = _possibleConstructorReturn(this, (AboutUs.__proto__ || Object.getPrototypeOf(AboutUs)).call(this, props));
-
-        _this.state = {};
-        return _this;
-    }
-
-    _createClass(AboutUs, [{
-        key: 'render',
-        value: function render() {
-            return _react2.default.createElement(
-                'div',
-                null,
-                _react2.default.createElement(
-                    'section',
-                    { className: 'section-about-us' },
-                    _react2.default.createElement(
-                        'div',
-                        { className: 'container' },
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-12 col-md-12 col-sm-12' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'row' },
-                                    _react2.default.createElement(
-                                        'div',
-                                        { className: 'col-lg-4 col-md-4 col-sm-12' },
-                                        _react2.default.createElement(
-                                            'div',
-                                            { className: 'section-about-us-header' },
-                                            _react2.default.createElement(
-                                                'h2',
-                                                { className: 'section-about-us-header-text' },
-                                                _react2.default.createElement(
-                                                    'a',
-                                                    { name: 'section-about-us' },
-                                                    _react2.default.createElement(
-                                                        'h2',
-                                                        null,
-                                                        'O NAS'
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        ),
-                        _react2.default.createElement(
-                            'div',
-                            { className: 'row' },
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-6 col-md-6 col-sm-12' },
-                                _react2.default.createElement(
-                                    'div',
-                                    { className: 'section-about-us-main-text' },
-                                    _react2.default.createElement(
-                                        'p',
-                                        null,
-                                        'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia, voluptate quisquam quis, fugiat porro velit itaque doloremque a at nulla quas fugit impedit! Quas sunt similique deserunt fugiat fuga corrupti! Lorem, ipsum dolor sit amet consectetur adipisicing Lorem, ipsum dolor sit amet consectetur adipisicing elit.'
-                                    )
-                                )
-                            ),
-                            _react2.default.createElement('div', { className: 'col-lg-1 col-md-1 col-sm-12' }),
-                            _react2.default.createElement(
-                                'div',
-                                { className: 'col-lg-5 col-md-5 col-sm-12' },
-                                _react2.default.createElement('div', { className: 'about-us-image-div' })
-                            )
-                        )
-                    )
-                )
-            );
-        }
-    }]);
-
-    return AboutUs;
-}(_react2.default.Component);
-
-module.exports = AboutUs;
-
-/***/ }),
-/* 188 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(189);
+var content = __webpack_require__(191);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24111,7 +24067,7 @@ var transform;
 var options = {"hmr":true}
 options.transform = transform
 // add the styles to the DOM
-var update = __webpack_require__(191)(content, options);
+var update = __webpack_require__(193)(content, options);
 if(content.locals) module.exports = content.locals;
 // Hot Module Replacement
 if(false) {
@@ -24128,21 +24084,21 @@ if(false) {
 }
 
 /***/ }),
-/* 189 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
-exports = module.exports = __webpack_require__(190)(undefined);
+exports = module.exports = __webpack_require__(192)(undefined);
 // imports
 
 
 // module
-exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n/*-----------------------------------------*/\n/*                  GRID                   */\n/*-----------------------------------------*/\n.container {\n  width: 100%;\n  margin: 0 1rem;\n  max-width: 800px;\n  min-width: 380px; }\n  @media (min-width: 760px) {\n    .container {\n      min-width: 680px;\n      max-width: 1000px;\n      margin: 0 1rem; } }\n  @media (min-width: 1048px) {\n    .container {\n      max-width: 1000px;\n      margin: 0 auto; } }\n  .container .row:before, .container .row:after {\n    clear: both;\n    display: block;\n    content: ''; }\n  .container .row [class*=\"col-\"] {\n    float: left;\n    min-height: 1px;\n    width: 8.33333%;\n    padding: 0px;\n    display: inline-block; }\n  .container .row .col-sm-1 {\n    width: 8.33333%; }\n  .container .row .col-sm-2 {\n    width: 16.66667%; }\n  .container .row .col-sm-3 {\n    width: 25%; }\n  .container .row .col-sm-4 {\n    width: 33.33333%; }\n  .container .row .col-sm-5 {\n    width: 41.66667%; }\n  .container .row .col-sm-6 {\n    width: 50%; }\n  .container .row .col-sm-7 {\n    width: 58.33333%; }\n  .container .row .col-sm-8 {\n    width: 66.66667%; }\n  .container .row .col-sm-9 {\n    width: 75%; }\n  .container .row .col-sm-10 {\n    width: 83.33333%; }\n  .container .row .col-sm-11 {\n    width: 91.66667%; }\n  .container .row .col-sm-12 {\n    width: 100%; }\n  @media (min-width: 760px) {\n    .container .row .col-md-1 {\n      width: 8.33333%; }\n    .container .row .col-md-2 {\n      width: 16.66667%; }\n    .container .row .col-md-3 {\n      width: 25%; }\n    .container .row .col-md-4 {\n      width: 33.33333%; }\n    .container .row .col-md-5 {\n      width: 41.66667%; }\n    .container .row .col-md-6 {\n      width: 50%; }\n    .container .row .col-md-7 {\n      width: 58.33333%; }\n    .container .row .col-md-8 {\n      width: 66.66667%; }\n    .container .row .col-md-9 {\n      width: 75%; }\n    .container .row .col-md-10 {\n      width: 83.33333%; }\n    .container .row .col-md-11 {\n      width: 91.66667%; }\n    .container .row .col-md-12 {\n      width: 100%; } }\n  @media (min-width: 1000px) {\n    .container .row .col-lg-1 {\n      width: 8.33333%; }\n    .container .row .col-lg-2 {\n      width: 16.66667%; }\n    .container .row .col-lg-3 {\n      width: 25%; }\n    .container .row .col-lg-4 {\n      width: 33.33333%; }\n    .container .row .col-lg-5 {\n      width: 41.66667%; }\n    .container .row .col-lg-6 {\n      width: 50%; }\n    .container .row .col-lg-7 {\n      width: 58.33333%; }\n    .container .row .col-lg-8 {\n      width: 66.66667%; }\n    .container .row .col-lg-9 {\n      width: 75%; }\n    .container .row .col-lg-10 {\n      width: 83.33333%; }\n    .container .row .col-lg-11 {\n      width: 91.66667%; }\n    .container .row .col-lg-12 {\n      width: 100%; } }\n\nbody {\n  font-family: 'Roboto', Arial, sans-serif;\n  font-size: 16px;\n  min-width: 600px;\n  font-weight: 300;\n  color: #fff; }\n\n/*---------------------------------------*/\n/*     MAIN SECTION                      */\n/*---------------------------------------*/\n.section-main .hero .main-nav .main-menu .burger:before, .section-main .hero .main-nav .main-menu .burger:after {\n  position: absolute;\n  content: '';\n  height: 7px;\n  width: 47px;\n  border-radius: 3px;\n  background-color: white; }\n\n.section-main {\n  position: relative;\n  width: 100%;\n  height: 624px;\n  display: block; }\n  .section-main .hero {\n    background-image: url(./img/126_opt.jpg);\n    height: 100%;\n    background-size: cover; }\n    .section-main .hero .main-nav {\n      position: absolute;\n      flex-wrap: wrap;\n      justify-content: space-between;\n      width: 100%;\n      height: 75px;\n      top: 20px;\n      flex-direction: row;\n      background-color: rgba(13, 3, 72, 0.7);\n      color: white; }\n      .section-main .hero .main-nav .main-logo {\n        height: 75px;\n        display: flex;\n        flex-direction: row;\n        font-size: 2rem;\n        line-height: 1.5rem;\n        align-items: center; }\n      .section-main .hero .main-nav .main-menu {\n        justify-content: flex-end;\n        position: relative; }\n        @media (max-width: 759px) {\n          .section-main .hero .main-nav .main-menu {\n            justify-content: flex-end; } }\n        .section-main .hero .main-nav .main-menu .burger {\n          display: inline-block;\n          padding: 0px;\n          height: 7px;\n          border-radius: 7px;\n          width: 47px;\n          margin: 34px 10px;\n          position: relative;\n          background-color: white; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .burger {\n              display: none; } }\n          .section-main .hero .main-nav .main-menu .burger:before {\n            top: -16px; }\n          .section-main .hero .main-nav .main-menu .burger:after {\n            bottom: -16px; }\n        .section-main .hero .main-nav .main-menu .menu-list {\n          display: none; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .menu-list {\n              flex-direction: row;\n              display: flex;\n              font-size: 1rem;\n              padding-right: 20px; } }\n          .section-main .hero .main-nav .main-menu .menu-list ul {\n            justify-content: space-between;\n            align-items: center;\n            padding-rigth: 20px; }\n            .section-main .hero .main-nav .main-menu .menu-list ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 75px;\n              padding: 20px 0px; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: white;\n                line-height: 1rem;\n                padding: 10px 15px;\n                text-decoration: none;\n                border-right: 1px solid white; }\n        .section-main .hero .main-nav .main-menu .visible {\n          position: absolute;\n          top: 75px;\n          right: 125px;\n          display: flex; }\n          .section-main .hero .main-nav .main-menu .visible ul {\n            flex-direction: column;\n            align-items: left;\n            background-color: rgba(13, 3, 72, 0.7); }\n            .section-main .hero .main-nav .main-menu .visible ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 40px;\n              padding: 0px; }\n              .section-main .hero .main-nav .main-menu .visible ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .visible ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: white;\n                line-height: 1rem;\n                padding: 12px 10px;\n                text-decoration: none;\n                border: none;\n                width: 125px; }\n        .section-main .hero .main-nav .main-menu .menu-calc {\n          height: 75px;\n          display: flex;\n          font-size: 1.5rem; }\n          .section-main .hero .main-nav .main-menu .menu-calc a {\n            text-decoration: none;\n            color: #fff;\n            text-align: center;\n            padding-left: 15px; }\n    .section-main .hero .main-info {\n      padding-top: 160px; }\n      .section-main .hero .main-info .main-header {\n        text-align: right;\n        color: rgba(13, 3, 72, 0.7);\n        font-size: 2.5rem;\n        width: 100%;\n        border-bottom: 2px solid rgba(13, 3, 72, 0.7);\n        margin-bottom: 1rem; }\n      .section-main .hero .main-info .main-description .main-description-paragraph {\n        text-align: left;\n        color: rgba(13, 3, 72, 0.7);\n        font-size: 1.75rem;\n        line-height: 2rem; }\n      .section-main .hero .main-info .main-description .main-description-button {\n        text-align: center;\n        color: #fff;\n        background-color: rgba(13, 3, 72, 0.7);\n        border-radius: 5px;\n        margin: 10px 0px;\n        padding: 5px 10px;\n        border: none; }\n        .section-main .hero .main-info .main-description .main-description-button a {\n          text-decoration: none;\n          color: #fff; }\n\n/*-----------------------------------------*/\n/*          SECTION CALCULATOR             */\n/*-----------------------------------------*/\n.section-calculator {\n  position: relative;\n  display: flex;\n  width: 100%;\n  margin: 37px 0px;\n  color: #0d0348; }\n  .section-calculator .calculator {\n    /* ---------------------------------*/\n    /*         PRICING TABLE            */\n    /* ---------------------------------*/ }\n    .section-calculator .calculator .calculator-title-box {\n      display: flex;\n      width: 100%;\n      height: 35px;\n      color: white;\n      font-size: 1.5rem;\n      justify-content: center;\n      align-items: center;\n      background-color: #0d0348;\n      border-radius: 10px; }\n    .section-calculator .calculator .calculator-text {\n      font-size: 1.2rem;\n      padding: 10px 0px; }\n    .section-calculator .calculator .calculator-textarea {\n      width: 100%;\n      height: 75px;\n      resize: none;\n      outline: none; }\n    .section-calculator .calculator .calculator-text-length {\n      font-size: 1rem;\n      padding: 10px 0px;\n      line-height: 1.5rem; }\n      .section-calculator .calculator .calculator-text-length .calculator-monospace {\n        font-weight: 500; }\n      .section-calculator .calculator .calculator-text-length span {\n        font-size: 0.75rem; }\n    .section-calculator .calculator .chosen-language {\n      font-size: 1.2rem;\n      width: 100%;\n      height: 32px;\n      margin-top: 5px;\n      color: #fff;\n      background-color: #0d0348;\n      text-align: left;\n      border-radius: 5px;\n      margin-bottom: 0.5rem; }\n      .section-calculator .calculator .chosen-language .calculator-from-language,\n      .section-calculator .calculator .chosen-language .calculator-to-language {\n        font-size: 1.25rem;\n        padding: 5px 0px; }\n      .section-calculator .calculator .chosen-language select.language {\n        width: 100%;\n        margin-top: 20px;\n        display: block; }\n        .section-calculator .calculator .chosen-language select.language form {\n          width: 100%;\n          display: flex;\n          justify-content: space-between; }\n          .section-calculator .calculator .chosen-language select.language form input {\n            padding: 0px 10px; }\n        .section-calculator .calculator .chosen-language select.language .option {\n          white-space: pre;\n          min-height: 1.2em;\n          padding: 0px 5px 1px; }\n    .section-calculator .calculator .pricing-table {\n      font-size: 1.75rem;\n      font-weight: 300;\n      text-align: center;\n      color: #fff;\n      background-color: rgba(13, 3, 72, 0.65);\n      margin-left: -5px; }\n      @media (min-width: 721px) {\n        .section-calculator .calculator .pricing-table {\n          margin-left: 10px; } }\n      .section-calculator .calculator .pricing-table .pricing-table-row-header {\n        align-items: center;\n        height: 75px; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers {\n          height: 75px;\n          font-size: 2rem;\n          line-height: 1.7rem;\n          font-weight: 300;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n          .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers .realisation-time {\n            font-size: 1rem; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-transl {\n        display: flex;\n        background-color: rgba(13, 3, 72, 0.3);\n        align-content: center;\n        height: 100%; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-transl .pricing-table-transl-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-content: center;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang {\n        display: flex;\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang .pricing-table-redact-cell {\n          height: 75px;\n          align-content: center;\n          font-weight: 300;\n          font-size: 1.25rem;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit {\n        display: flex;\n        background-color: rgba(13, 3, 72, 0.3);\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit .pricing-table-merit-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-items: center;\n          border-right: 1px solid white;\n          padding: 10px 0px; }\n    .section-calculator .calculator .hover:hover {\n      background-color: rgba(13, 3, 72, 0.75);\n      font-size: 4rem; }\n    .section-calculator .calculator .price-net {\n      font-size: 1.25rem;\n      font-weight: 500;\n      width: 100%;\n      display: block; }\n    .section-calculator .calculator .price-with-vat {\n      font-size: 0.85rem;\n      font-style: italic;\n      font-weight: 300; }\n    .section-calculator .calculator .not-visible {\n      display: none; }\n    .section-calculator .calculator .chosen-table {\n      margin-top: 15px; }\n      .section-calculator .calculator .chosen-table .text-explanation {\n        font-size: 1.25rem;\n        line-height: 1.5rem;\n        margin: 10px 0px; }\n      .section-calculator .calculator .chosen-table .chosen {\n        background-color: rgba(13, 3, 72, 0.75);\n        height: 75px;\n        width: 100%;\n        margin-top: 17px;\n        color: white;\n        display: flex;\n        border-radius: 10px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title,\n        .section-calculator .calculator .chosen-table .chosen .chosen-service,\n        .section-calculator .calculator .chosen-table .chosen .chosen-time,\n        .section-calculator .calculator .chosen-table .chosen .chosen-price {\n          width: 100%;\n          height: 100%;\n          font-size: 1.25rem;\n          font-weight: 300;\n          text-align: center;\n          border-right: 1px solid white;\n          padding: 10px 7px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-service {\n          padding-top: 4px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title {\n          padding: 25px 0px; }\n      .section-calculator .calculator .chosen-table .medium-text {\n        font-size: 0.8rem;\n        line-height: 1rem; }\n      .section-calculator .calculator .chosen-table .small-italic {\n        font-size: 0.8rem;\n        font-style: italic;\n        font-weight: 300; }\n      .section-calculator .calculator .chosen-table .company-data {\n        width: 100%; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-label {\n          display: block;\n          font-size: 1.5rem;\n          width: 100%;\n          margin: 22px 0px 3px; }\n        .section-calculator .calculator .chosen-table .company-data .error-message {\n          color: #d00;\n          font-weight: 500; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-input {\n          font-family: 'Roboto', Arial, sans-serif;\n          font-size: 1.5rem;\n          font-weight: 300;\n          height: 42px;\n          display: block;\n          width: 100%;\n          border: 1px solid rgba(13, 3, 72, 0.5); }\n      .section-calculator .calculator .chosen-table .order-disabled-explanation {\n        text-align: center;\n        margin-top: 1rem;\n        margin-bottom: -1rem;\n        color: #d00;\n        font-weight: 500; }\n      .section-calculator .calculator .chosen-table .order-button {\n        width: 100%;\n        height: 50px;\n        background-color: rgba(13, 3, 72, 0.75);\n        color: white;\n        font-size: 2rem;\n        text-align: center;\n        justify-content: center;\n        align-items: center;\n        border-radius: 10px;\n        margin: 25px 0px;\n        padding: 5px 0px; }\n        .section-calculator .calculator .chosen-table .order-button:hover {\n          background-color: rgba(13, 3, 72, 0.85);\n          cursor: pointer;\n          box-shadow: 2px 2px 1px 2px rgba(13, 3, 72, 0.25); }\n        .section-calculator .calculator .chosen-table .order-button:disabled {\n          background: rgba(13, 3, 72, 0.25);\n          color: #d77; }\n          .section-calculator .calculator .chosen-table .order-button:disabled:hover {\n            cursor: not-allowed;\n            box-shadow: none;\n            background: rgba(13, 3, 2, 0.25); }\n      .section-calculator .calculator .chosen-table .invoice-info {\n        font-weight: 500;\n        padding: 1rem;\n        text-align: center; }\n    .section-calculator .calculator .invoice-page {\n      display: flex;\n      flex-direction: row;\n      border: 1px solid #0d0348;\n      width: 100%;\n      font-size: 2vw;\n      height: 120vw; }\n      @media (max-width: 620px) {\n        .section-calculator .calculator .invoice-page {\n          font-size: 12px; } }\n      .section-calculator .calculator .invoice-page .margin {\n        padding: 6vw; }\n      .section-calculator .calculator .invoice-page b {\n        font-weight: 500; }\n      .section-calculator .calculator .invoice-page .invoice-header {\n        background-color: rgba(13, 3, 72, 0.25); }\n      .section-calculator .calculator .invoice-page .invoice-main {\n        height: 85vw; }\n        .section-calculator .calculator .invoice-page .invoice-main .client-data,\n        .section-calculator .calculator .invoice-page .invoice-main .service-data,\n        .section-calculator .calculator .invoice-page .invoice-main .service-prices {\n          height: 260px;\n          padding: 0.5rem;\n          line-height: 2rem;\n          border: 1px solid #000; }\n      .section-calculator .calculator .invoice-page .invoice-footer {\n        background-color: rgba(13, 3, 72, 0.25);\n        text-align: center;\n        align-self: flex-end; }\n\n.section-about-us {\n  display: flex;\n  background-color: rgba(13, 3, 72, 0.7);\n  color: #fff;\n  padding-bottom: 25px;\n  width: 100%; }\n  .section-about-us .section-about-us-header .section-about-us-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #fff; }\n  .section-about-us .section-about-us-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300;\n    margin-bottom: 1rem; }\n  .section-about-us .about-us-image-div {\n    background-image: url(./img/1804_opt.jpg);\n    min-height: 160px;\n    max-height: 200px;\n    width: 100%;\n    background-repeat: no-repeat;\n    background-size: contain; }\n\n.section-credentials {\n  display: flex;\n  background-color: #fff;\n  color: #0d0348;\n  margin: 15px 0px; }\n  .section-credentials .section-credentials-header .section-credentials-header-text {\n    color: #0d0348;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #0d0348; }\n  .section-credentials .section-credentials-main-text .quote {\n    color: #0d0348;\n    font-size: 1.25rem;\n    font-weight: 300;\n    text-align: center; }\n  .section-credentials .section-credentials-main-text .company {\n    font-weight: 500;\n    font-size: 1rem;\n    text-align: right;\n    margin: 10px 0 20px 0; }\n\n.section-partners {\n  display: flex;\n  background-color: #fff;\n  color: #0d0348;\n  height: 100%; }\n  .section-partners .section-partners-header .section-partners-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #0d0348; }\n  .section-partners .section-partners-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300; }\n  .section-partners .partners-image {\n    height: 160px;\n    width: 100%;\n    box-shadow: 1px 1px 2px 1px #fff; }\n\n.section-contact {\n  display: flex;\n  background-color: rgba(13, 3, 72, 0.7);\n  color: #fff;\n  padding: 25px 0px 75px 0px; }\n  .section-contact .section-contact-header .section-contact-header-text {\n    color: #fff;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    border-bottom: 1px solid #fff;\n    width: 100%; }\n  .section-contact .section-contact-main-text {\n    color: #fff;\n    font-size: 1rem;\n    font-weight: 300;\n    text-align: left;\n    margin-bottom: 1rem; }\n    .section-contact .section-contact-main-text .copy {\n      text-align: right; }\n    .section-contact .section-contact-main-text a {\n      text-decoration: none;\n      color: #fff; }\n      .section-contact .section-contact-main-text a span {\n        font-weight: 500; }\n    .section-contact .section-contact-main-text .company {\n      font-weight: 500;\n      font-size: 1rem;\n      text-align: right;\n      margin-bottom: 20px; }\n", ""]);
+exports.push([module.i, "* {\n  box-sizing: border-box; }\n\n/*-----------------------------------------*/\n/*                  GRID                   */\n/*-----------------------------------------*/\n.container {\n  width: 100%;\n  max-width: 800px; }\n  @media (min-width: 760px) {\n    .container {\n      max-width: 1000px; } }\n  @media (min-width: 1048px) {\n    .container {\n      margin: 0 auto; } }\n  .container .row:before, .container .row:after {\n    clear: both;\n    display: block;\n    content: ''; }\n  .container .row [class*=\"col-\"] {\n    float: left;\n    min-height: 1px;\n    width: 8.33333%;\n    padding: 0px;\n    display: inline-block; }\n  .container .row .col-sm-1 {\n    width: 8.33333%; }\n  .container .row .col-sm-2 {\n    width: 16.66667%; }\n  .container .row .col-sm-3 {\n    width: 25%; }\n  .container .row .col-sm-4 {\n    width: 33.33333%; }\n  .container .row .col-sm-5 {\n    width: 41.66667%; }\n  .container .row .col-sm-6 {\n    width: 50%; }\n  .container .row .col-sm-7 {\n    width: 58.33333%; }\n  .container .row .col-sm-8 {\n    width: 66.66667%; }\n  .container .row .col-sm-9 {\n    width: 75%; }\n  .container .row .col-sm-10 {\n    width: 83.33333%; }\n  .container .row .col-sm-11 {\n    width: 91.66667%; }\n  .container .row .col-sm-12 {\n    width: 100%; }\n  @media (min-width: 760px) {\n    .container .row .col-md-1 {\n      width: 8.33333%; }\n    .container .row .col-md-2 {\n      width: 16.66667%; }\n    .container .row .col-md-3 {\n      width: 25%; }\n    .container .row .col-md-4 {\n      width: 33.33333%; }\n    .container .row .col-md-5 {\n      width: 41.66667%; }\n    .container .row .col-md-6 {\n      width: 50%; }\n    .container .row .col-md-7 {\n      width: 58.33333%; }\n    .container .row .col-md-8 {\n      width: 66.66667%; }\n    .container .row .col-md-9 {\n      width: 75%; }\n    .container .row .col-md-10 {\n      width: 83.33333%; }\n    .container .row .col-md-11 {\n      width: 91.66667%; }\n    .container .row .col-md-12 {\n      width: 100%; } }\n  @media (min-width: 1000px) {\n    .container .row .col-lg-1 {\n      width: 8.33333%; }\n    .container .row .col-lg-2 {\n      width: 16.66667%; }\n    .container .row .col-lg-3 {\n      width: 25%; }\n    .container .row .col-lg-4 {\n      width: 33.33333%; }\n    .container .row .col-lg-5 {\n      width: 41.66667%; }\n    .container .row .col-lg-6 {\n      width: 50%; }\n    .container .row .col-lg-7 {\n      width: 58.33333%; }\n    .container .row .col-lg-8 {\n      width: 66.66667%; }\n    .container .row .col-lg-9 {\n      width: 75%; }\n    .container .row .col-lg-10 {\n      width: 83.33333%; }\n    .container .row .col-lg-11 {\n      width: 91.66667%; }\n    .container .row .col-lg-12 {\n      width: 100%; } }\n\nbody {\n  font-family: 'Roboto', Arial, sans-serif;\n  font-size: 16px;\n  font-weight: 300;\n  color: #fff; }\n\n/*---------------------------------------*/\n/*     MAIN SECTION                      */\n/*---------------------------------------*/\n.section-main .hero .main-nav .main-menu .burger .burger-bar {\n  content: '';\n  height: 7px;\n  width: 47px;\n  border-radius: 3px;\n  background-color: #ffffff; }\n\n.section-main {\n  position: relative;\n  width: 100%;\n  height: 624px;\n  display: block; }\n  .section-main .hero {\n    background-image: url(./img/126_opt.jpg);\n    height: 100%;\n    background-size: cover; }\n    .section-main .hero .main-nav {\n      position: absolute;\n      flex-wrap: wrap;\n      justify-content: space-between;\n      width: 100%;\n      height: 75px;\n      top: 20px;\n      flex-direction: row;\n      background-color: rgba(57, 57, 168, 0.7);\n      color: #ffffff; }\n      .section-main .hero .main-nav .main-logo {\n        height: 75px;\n        display: flex;\n        flex-direction: row;\n        font-size: 2rem;\n        line-height: 1.5rem;\n        align-items: center; }\n      .section-main .hero .main-nav .main-menu {\n        justify-content: flex-end;\n        position: relative; }\n        @media (max-width: 759px) {\n          .section-main .hero .main-nav .main-menu {\n            justify-content: flex-end; } }\n        .section-main .hero .main-nav .main-menu .burger {\n          display: flex;\n          flex-direction: column;\n          justify-content: space-between;\n          padding: 0px;\n          height: 43px;\n          width: 47px;\n          margin: 16px 10px;\n          position: relative; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .burger {\n              display: none; } }\n        .section-main .hero .main-nav .main-menu .menu-list {\n          display: none; }\n          @media (min-width: 760px) {\n            .section-main .hero .main-nav .main-menu .menu-list {\n              display: flex;\n              flex-direction: row;\n              font-size: 1rem;\n              padding-right: 20px; } }\n          .section-main .hero .main-nav .main-menu .menu-list ul {\n            justify-content: space-between;\n            align-items: center;\n            padding-rigth: 20px; }\n            .section-main .hero .main-nav .main-menu .menu-list ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 75px;\n              padding: 0px 0px; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .menu-list ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: #ffffff;\n                line-height: 1rem;\n                padding: 30px 15px;\n                text-decoration: none;\n                border-right: 1px solid white; }\n        .section-main .hero .main-nav .main-menu .visible {\n          position: absolute;\n          top: 75px;\n          right: 125px;\n          display: flex; }\n          .section-main .hero .main-nav .main-menu .visible ul {\n            flex-direction: column;\n            align-items: left;\n            background-color: rgba(57, 57, 168, 0.7); }\n            .section-main .hero .main-nav .main-menu .visible ul li {\n              flex-direction: row;\n              align-items: center;\n              justify-content: space-between;\n              display: inline-block;\n              height: 40px;\n              padding: 0px; }\n              .section-main .hero .main-nav .main-menu .visible ul li:hover {\n                background-color: rgba(255, 255, 255, 0.25);\n                cursor: pointer; }\n              .section-main .hero .main-nav .main-menu .visible ul li a {\n                display: inline-block;\n                font-size: 1rem;\n                color: #ffffff;\n                line-height: 1rem;\n                padding: 12px 10px;\n                text-decoration: none;\n                border: none;\n                max-width: 125px; }\n        .section-main .hero .main-nav .main-menu .menu-calc {\n          height: 75px;\n          display: flex;\n          font-size: 1.5rem; }\n          .section-main .hero .main-nav .main-menu .menu-calc a {\n            text-decoration: none;\n            color: #fff;\n            text-align: center;\n            padding: 15px 0px 15px 15px; }\n    .section-main .hero .main-info {\n      padding-top: 160px; }\n      .section-main .hero .main-info .main-header {\n        text-align: right;\n        color: rgba(57, 57, 168, 0.7);\n        font-size: 2.5rem;\n        width: 100%;\n        border-bottom: 2px solid rgba(57, 57, 168, 0.7);\n        margin-bottom: 1rem; }\n      .section-main .hero .main-info .main-description .main-description-paragraph {\n        text-align: left;\n        color: rgba(57, 57, 168, 0.7);\n        font-size: 1.75rem;\n        line-height: 2rem; }\n      .section-main .hero .main-info .main-description .main-description-button {\n        text-align: center;\n        color: #ffffff;\n        background-color: rgba(57, 57, 168, 0.7);\n        border-radius: 5px;\n        margin: 10px 0px;\n        padding: 5px 10px;\n        border: none; }\n        .section-main .hero .main-info .main-description .main-description-button a {\n          text-decoration: none;\n          color: #ffffff; }\n\n/*-----------------------------------------*/\n/*          SECTION CALCULATOR             */\n/*-----------------------------------------*/\n.section-calculator {\n  position: relative;\n  display: flex;\n  width: 100%;\n  margin: 37px 0px;\n  color: #3939a8; }\n  .section-calculator .calculator {\n    /* ---------------------------------*/\n    /*         PRICING TABLE            */\n    /* ---------------------------------*/ }\n    .section-calculator .calculator .calculator-title-box {\n      display: flex;\n      width: 100%;\n      height: 35px;\n      color: #ffffff;\n      font-size: 1.5rem;\n      justify-content: center;\n      align-items: center;\n      background-color: #3939a8;\n      border-radius: 10px; }\n    .section-calculator .calculator .calculator-text {\n      font-size: 1.2rem;\n      padding: 10px 0px; }\n    .section-calculator .calculator .calculator-textarea {\n      width: 100%;\n      height: 75px;\n      resize: none;\n      outline: none; }\n    .section-calculator .calculator .calculator-text-length {\n      font-size: 1rem;\n      padding: 10px 0px;\n      line-height: 1.5rem; }\n      .section-calculator .calculator .calculator-text-length .calculator-monospace {\n        font-weight: 500; }\n      .section-calculator .calculator .calculator-text-length span {\n        font-size: 0.75rem; }\n    .section-calculator .calculator .chosen-language {\n      font-size: 1.2rem;\n      width: 100%;\n      height: 32px;\n      margin-top: 5px;\n      color: #ffffff;\n      background-color: #3939a8;\n      text-align: left;\n      border-radius: 5px;\n      margin-bottom: 0.5rem; }\n      .section-calculator .calculator .chosen-language .calculator-from-language,\n      .section-calculator .calculator .chosen-language .calculator-to-language {\n        font-size: 1.25rem;\n        padding: 5px 0px; }\n      .section-calculator .calculator .chosen-language select.language {\n        width: 100%;\n        margin-top: 20px;\n        display: block; }\n        .section-calculator .calculator .chosen-language select.language form {\n          width: 100%;\n          display: flex;\n          justify-content: space-between; }\n          .section-calculator .calculator .chosen-language select.language form input {\n            padding: 0px 10px; }\n        .section-calculator .calculator .chosen-language select.language .option {\n          white-space: pre;\n          min-height: 1.2em;\n          padding: 0px 5px 1px; }\n    .section-calculator .calculator .pricing-table {\n      font-size: 1.75rem;\n      font-weight: 300;\n      text-align: center;\n      color: #ffffff;\n      background-color: #7b3cb2;\n      margin-left: -5px; }\n      @media (min-width: 721px) {\n        .section-calculator .calculator .pricing-table {\n          margin-left: 10px; } }\n      .section-calculator .calculator .pricing-table .pricing-table-row-header {\n        align-items: center;\n        height: 75px; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers {\n          height: 75px;\n          font-size: 2rem;\n          line-height: 1.7rem;\n          font-weight: 300;\n          border-right: 1px solid #ffffff;\n          padding: 10px 0px; }\n          .section-calculator .calculator .pricing-table .pricing-table-row-header .pricing-table-headers .realisation-time {\n            font-size: 1rem; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-transl {\n        display: flex;\n        background-color: #9c3c90;\n        align-content: center;\n        height: 100%; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-transl .pricing-table-transl-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-content: center;\n          border-right: 1px solid #ffffff;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang {\n        display: flex;\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-lang .pricing-table-redact-cell {\n          height: 75px;\n          align-content: center;\n          font-weight: 300;\n          font-size: 1.25rem;\n          border-right: 1px solid #ffffff;\n          padding: 10px 0px; }\n      .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit {\n        display: flex;\n        background-color: #9c3c90;\n        align-content: center; }\n        .section-calculator .calculator .pricing-table .pricing-table-row-redact-merit .pricing-table-merit-cell {\n          height: 75px;\n          font-weight: 300;\n          font-size: 1.25rem;\n          align-items: center;\n          border-right: 1px solid #ffffff;\n          padding: 10px 0px; }\n    .section-calculator .calculator .hover:hover {\n      background-color: #3939a8;\n      font-size: 4rem; }\n    .section-calculator .calculator .price-net {\n      font-size: 1.25rem;\n      font-weight: 500;\n      width: 100%;\n      display: block; }\n    .section-calculator .calculator .price-with-vat {\n      font-size: 0.85rem;\n      font-style: italic;\n      font-weight: 300; }\n    .section-calculator .calculator .not-visible {\n      display: none; }\n    .section-calculator .calculator .chosen-table {\n      margin-top: 15px; }\n      .section-calculator .calculator .chosen-table .text-explanation {\n        font-size: 1.25rem;\n        line-height: 1.5rem;\n        margin: 10px 0px; }\n      .section-calculator .calculator .chosen-table .chosen {\n        background-color: #3939a8;\n        height: 75px;\n        width: 100%;\n        margin-top: 17px;\n        color: #ffffff;\n        display: flex;\n        border-radius: 10px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title,\n        .section-calculator .calculator .chosen-table .chosen .chosen-service,\n        .section-calculator .calculator .chosen-table .chosen .chosen-time,\n        .section-calculator .calculator .chosen-table .chosen .chosen-price {\n          width: 100%;\n          height: 100%;\n          font-weight: 300;\n          text-align: center;\n          border-right: 1px solid #ffffff;\n          padding: 10px 7px;\n          font-size: 1rem; }\n          @media (min-width: 620px) {\n            .section-calculator .calculator .chosen-table .chosen .chosen-title,\n            .section-calculator .calculator .chosen-table .chosen .chosen-service,\n            .section-calculator .calculator .chosen-table .chosen .chosen-time,\n            .section-calculator .calculator .chosen-table .chosen .chosen-price {\n              font-size: 1.25rem;\n              padding: 5px 4px; } }\n        .section-calculator .calculator .chosen-table .chosen .chosen-service {\n          padding-top: 4px; }\n        .section-calculator .calculator .chosen-table .chosen .chosen-title {\n          padding: 25px 0px; }\n      .section-calculator .calculator .chosen-table .medium-text {\n        font-size: 0.8rem;\n        line-height: 1rem; }\n      .section-calculator .calculator .chosen-table .small-italic {\n        font-size: 0.8rem;\n        font-style: italic;\n        font-weight: 300; }\n      .section-calculator .calculator .chosen-table .company-data {\n        width: 100%; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-label {\n          display: block;\n          font-size: 1.5rem;\n          width: 100%;\n          margin: 22px 0px 3px; }\n        .section-calculator .calculator .chosen-table .company-data .error-message {\n          color: #d00;\n          font-weight: 500; }\n        .section-calculator .calculator .chosen-table .company-data .company-data-input {\n          font-family: 'Roboto', Arial, sans-serif;\n          font-size: 1.5rem;\n          font-weight: 300;\n          height: 42px;\n          display: block;\n          width: 100%;\n          border: 1px solid rgba(13, 3, 72, 0.5); }\n      .section-calculator .calculator .chosen-table .order-disabled-explanation {\n        text-align: center;\n        margin-top: 1rem;\n        margin-bottom: -1rem;\n        color: #c00;\n        font-weight: 500; }\n      .section-calculator .calculator .chosen-table .order-button {\n        width: 100%;\n        height: 50px;\n        background-color: rgba(13, 3, 72, 0.75);\n        color: #ffffff;\n        font-size: 2rem;\n        text-align: center;\n        justify-content: center;\n        align-items: center;\n        border-radius: 10px;\n        margin: 25px 0px;\n        padding: 5px 0px; }\n        .section-calculator .calculator .chosen-table .order-button:hover {\n          background-color: rgba(57, 57, 168, 0.7);\n          cursor: pointer;\n          box-shadow: 2px 2px 1px 2px rgba(57, 57, 168, 0.25); }\n        .section-calculator .calculator .chosen-table .order-button:disabled {\n          background-color: rgba(57, 57, 168, 0.25);\n          color: #d77; }\n          .section-calculator .calculator .chosen-table .order-button:disabled:hover {\n            cursor: not-allowed;\n            box-shadow: none; }\n      .section-calculator .calculator .chosen-table .invoice-info {\n        font-weight: 500;\n        padding: 1rem;\n        text-align: center; }\n    .section-calculator .calculator .invoice-page {\n      display: flex;\n      flex-direction: row;\n      background-color: rgba(57, 57, 168, 0.25);\n      border: 1px solid #3939a8;\n      font-size: 12px;\n      width: 210mm;\n      height: 297mm; }\n      .section-calculator .calculator .invoice-page .margin {\n        padding: 30px; }\n      .section-calculator .calculator .invoice-page b {\n        font-weight: 500; }\n      .section-calculator .calculator .invoice-page .invoice-header {\n        width: 100%; }\n      .section-calculator .calculator .invoice-page .invoice-main {\n        height: 50mm;\n        background-color: #ffffff; }\n        .section-calculator .calculator .invoice-page .invoice-main .client-data,\n        .section-calculator .calculator .invoice-page .invoice-main .service-data,\n        .section-calculator .calculator .invoice-page .invoice-main .service-prices {\n          height: 260px;\n          padding: 10px;\n          line-height: 24px; }\n      .section-calculator .calculator .invoice-page .invoice-footer {\n        text-align: center;\n        align-self: flex-end; }\n\n.section-about-us {\n  display: flex;\n  background-color: rgba(57, 57, 168, 0.7);\n  color: #ffffff;\n  padding-bottom: 25px;\n  width: 100%; }\n  .section-about-us .section-about-us-header .section-about-us-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #ffffff; }\n  .section-about-us .section-about-us-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300;\n    margin-bottom: 1rem; }\n  .section-about-us .about-us-image-div {\n    background-image: url(./img/1804_opt.jpg);\n    min-height: 160px;\n    max-height: 200px;\n    width: 100%;\n    background-repeat: no-repeat;\n    background-size: contain; }\n\n.section-credentials {\n  display: flex;\n  background-color: #ffffff;\n  color: #3939a8;\n  margin: 15px 0px; }\n  .section-credentials .section-credentials-header .section-credentials-header-text {\n    color: #3939a8;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #3939a8; }\n  .section-credentials .section-credentials-main-text .quote {\n    color: #3939a8;\n    font-size: 1.25rem;\n    font-weight: 300;\n    text-align: center; }\n  .section-credentials .section-credentials-main-text .company {\n    font-weight: 500;\n    font-size: 1rem;\n    text-align: right;\n    margin: 10px 0 20px 0; }\n\n.section-partners {\n  display: flex;\n  background-color: #ffffff;\n  color: #3939a8;\n  height: 100%; }\n  .section-partners .section-partners-header .section-partners-header-text {\n    margin: 20px 0px;\n    font-size: 2rem;\n    font-weight: 300;\n    width: 100%;\n    border-bottom: 1px solid #3939a8; }\n  .section-partners .section-partners-main-text p {\n    font-size: 1.25rem;\n    font-weight: 300; }\n  .section-partners .partners-image {\n    height: 160px;\n    width: 100%;\n    box-shadow: 1px 1px 2px 1px #ffffff; }\n\n.section-contact {\n  display: flex;\n  background-color: rgba(57, 57, 168, 0.7);\n  color: #ffffff;\n  padding: 25px 0px 75px 0px; }\n  .section-contact .section-contact-header .section-contact-header-text {\n    color: #ffffff;\n    margin-bottom: 20px;\n    font-size: 2rem;\n    font-weight: 300;\n    border-bottom: 1px solid #ffffff;\n    width: 100%; }\n  .section-contact .section-contact-main-text {\n    color: #ffffff;\n    font-size: 1rem;\n    font-weight: 300;\n    text-align: left;\n    margin-bottom: 1rem; }\n    .section-contact .section-contact-main-text .copy {\n      text-align: right; }\n    .section-contact .section-contact-main-text a {\n      text-decoration: none;\n      color: #ffffff; }\n      .section-contact .section-contact-main-text a span {\n        font-weight: 500; }\n    .section-contact .section-contact-main-text .company {\n      font-weight: 500;\n      font-size: 1rem;\n      text-align: right;\n      margin-bottom: 20px; }\n", ""]);
 
 // exports
 
 
 /***/ }),
-/* 190 */
+/* 192 */
 /***/ (function(module, exports) {
 
 /*
@@ -24224,7 +24180,7 @@ function toComment(sourceMap) {
 
 
 /***/ }),
-/* 191 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /*
@@ -24280,7 +24236,7 @@ var singleton = null;
 var	singletonCounter = 0;
 var	stylesInsertedAtTop = [];
 
-var	fixUrls = __webpack_require__(192);
+var	fixUrls = __webpack_require__(194);
 
 module.exports = function(list, options) {
 	if (typeof DEBUG !== "undefined" && DEBUG) {
@@ -24596,7 +24552,7 @@ function updateLink (link, options, obj) {
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports) {
 
 
