@@ -18,18 +18,18 @@ class Calculator extends React.Component {
             suffix: '',
             languageGroupMultiplier: 100,
             chosenService: '',
-            chosenServiceDescripion: '',
+            chosenServiceDescription: '',
             chosenTimeMinMax: '',
             realisationTimeMin: 24,
             realisationTimeMax: 48,
             chosenServicePrice: 0,
             translationDirection: 1.2,
-            email: '',
-            company: '',
-            nip: '',
-            street: '',
-            number: 0,
-            locale: 0,
+            email: 'aa@ww.pl',
+            company: 'Firma Potrzebująca Tłumaczenia',
+            nip: 1234567890,
+            street: 'Językowa',
+            number: 123,
+            locale: 4,
             mailErrorMessage: '',
             companyErrorMessage: '',
             nipErrorMessage: '',
@@ -63,7 +63,8 @@ class Calculator extends React.Component {
                 ? 1
                 : Number((event.target.value.length / 1800).toFixed(1)),
             realisationTimeMin: (Math.ceil(this.state.textAreaPages / 6) * 24),
-            realisationTimeMax: (Math.ceil(this.state.textAreaPages / 6) * 24 + 24)
+            realisationTimeMax: (Math.ceil(this.state.textAreaPages / 6) * 24 + 24),
+            inVisible: 'not-visible'
         })
     }
 
@@ -148,14 +149,19 @@ class Calculator extends React.Component {
                 break;
             default:
         }
-        this.setState({chosenService: event.currentTarget.id, inVisible: '', chosenServicePrice: tempPrice, chosenTimeMinMax: tempMinTime, chosenServiceDescripion: tempServiceDescr});
+        this.setState({chosenService: event.currentTarget.id, 
+            inVisible: '', 
+            chosenServicePrice: tempPrice, 
+            chosenTimeMinMax: tempMinTime, 
+            chosenServiceDescription: tempServiceDescr
+        });
         return;
     }
 
     realisationTime = () => {
         this.setState({
             realisationTimeMin: (Math.ceil(this.state.textAreaPages / 6) * 24),
-            realisationTimeMax: (Math.ceil(this.state.textAreaPages / 6) * 24 + 24)
+            realisationTimeMax: (Math.ceil(this.state.textAreaPages / 6) * 48)
         })
     }
 
@@ -207,30 +213,92 @@ class Calculator extends React.Component {
             this.setState({localeErrorMessage: ""});
     }
     
-    textToPDF() {
+    textToPDF = (today, company, companyAddress, serviceTime, nip, chosenServiceDescription, textAreaPages, pagePrice, netPrice, grossPrice) => {
 
         var doc = new jsPDF();
 
-        doc.setFont("helvetica");
-        doc.setFontType("normal");
-        doc.setFontSize(12);
-        doc.text(10, 30, 'TransLingus Biuro Tłumaczeń');
-        doc.text(10, 40, 'ul. Tłumaczeniowa 23');
-        doc.text(10, 50, '12-345 Warszawa');
-        doc.text(10, 60, 'NIP: 234-45-56-123');
+        doc.setFontType("bold");
+        doc.setFontSize(10);
+        doc.text(20, 20, 'TransLingus Biuro Tlumaczen' );
+        doc.text(20, 25, 'ul. Tlumaczeniowa 23' );
+        doc.text(20, 30, '12-345 Warszawa ');
+        doc.text(20, 35, 'NIP: 234-45-56-123' );
 
-        doc.save('faktury-proforma_TransLingus.pdf');
+        doc.text(90, 20, 'Faktura pro-forma' );
+        
+        doc.setFontType("normal");
+        doc.text(90, 25, 'FV TL/2017/13456' );
+        doc.text(90, 30, 'wystawiona dnia:' );
+        doc.text(90, 35,  String(today) );
+
+        doc.text(20, 70, 'dla:');
+        doc.setFontType("bold");
+        doc.text(20, 75, String(company));
+        doc.text(20, 80, String(companyAddress));
+        doc.text(90, 85, String(serviceTime));
+        doc.text(20, 85, String(nip));
+        
+        doc.setFontType("normal");
+        doc.text(90, 70, 'usluga:');
+        doc.text(90, 80, 'termin wykonania uslugi:');
+        doc.text(22, 120, 'ilosc stron:');
+        doc.text(52, 120, 'cena za strone:');
+        doc.text(92, 120, 'cena netto:');
+        doc.text(132, 120, 'cena brutto:');
+        
+        doc.setFontType("bold");
+        doc.text(90, 75, String(chosenServiceDescription) );
+        doc.text(22, 130, String(textAreaPages) );
+        doc.text(52, 130, String(pagePrice) );
+        doc.text(92, 130, String(netPrice) );
+        doc.text(132, 130, String(grossPrice) );
+        
+        doc.setLineWidth(0.25);
+        doc.line(20, 115, 190, 115);
+        doc.line(20, 124, 190, 124);
+        doc.line(20, 134, 190, 134);
+
+        doc.line(20, 115, 20, 134);
+        doc.line(50, 115, 50, 134);
+        doc.line(90, 115, 90, 134);
+        doc.line(130, 115, 130, 134);
+        doc.line(190, 115, 190, 134);
+        
+        doc.line(50, 134, 150, 134);
+        doc.text(105, 275, 'TransLingus Biuro Tlumaczen', null, null, 'center');
+        doc.setFontType("italic");
+        doc.text(105, 280, 'ul. Tlumaczeniowa 23   |   12-345 Warszawa   |   NIP: 234-45-56-123', null, null, 'center');
+
+        doc.save('faktura-proforma_TransLingus.pdf');
     };
 
+    replaceDiacritics = (text) => {
+        return text.replace(/ą/g, 'a').replace(/Ą/g, 'A')
+        .replace(/ć/g, 'c').replace(/Ć/g, 'C')
+        .replace(/ę/g, 'e').replace(/Ę/g, 'E')
+        .replace(/ł/g, 'l').replace(/Ł/g, 'L')
+        .replace(/ń/g, 'n').replace(/Ń/g, 'N')
+        .replace(/ó/g, 'o').replace(/Ó/g, 'O')
+        .replace(/ś/g, 's').replace(/Ś/g, 'S')
+        .replace(/ż/g, 'z').replace(/Ż/g, 'Z')
+        .replace(/ź/g, 'z').replace(/Ź/g, 'Z');
+    }
 
     onSubmit = (e) => {
         e.preventDefault;
-        console.log(this.isEnabled);
+        this.setState({isEnabled : false});
         if (this.state.textArea === '') {
-            alert("nie wklejono tekstu do tłumaczenia");
+            alert("! nie wklejono tekstu do tłumaczenia !");
         } else if (this.state.mailErrorMessage === '' && this.state.companyErrorMessage === '' && this.state.nipErrorMessage === '' && this.state.streetErrorMessage === '' && this.state.numberErrorMessage === '' && this.state.localeErrorMessage === '') {
-            this.textToPDF();
-            alert("Dziękujemy, formularz został poprawnie wypełniony - prosimy o zapisanie faktury proforma.");
+            var today = `${this.currentDate.getDate()}.${this.currentDate.getMonth() + 1}.${this.currentDate.getFullYear()}`;
+            var companyAddress = this.state.street + ' ' + this.state.number + ' / ' + this.state.locale;
+            var serviceTime = this.state.chosenTimeMinMax + " godz.";
+            var nip = 'NIP: ' + this.state.nip;
+            var pagePrice = ((this.state.chosenServicePrice / this.state.textAreaPages).toFixed(2) + ' zl');
+            var netPrice = ((this.state.chosenServicePrice) + ' zl');
+            var grossPrice = (this.calculateVat(this.state.chosenServicePrice) + ' zl');
+            this.textToPDF(today, this.replaceDiacritics(this.state.company), this.replaceDiacritics(companyAddress), serviceTime, nip, this.replaceDiacritics(this.state.chosenServiceDescription), this.state.textAreaPages, pagePrice, netPrice, grossPrice);
+            alert("Dziękujemy, formularz został poprawnie wypełniony. Prosimy o zapisanie pliku PDF z fakturą proforma.");
         }
     }
 
@@ -289,8 +357,10 @@ class Calculator extends React.Component {
                                                         po zaokrągleniu&nbsp;{this.state.textAreaPages}
                                                         &nbsp;str.&nbsp;
                                                     </strong>
-                                                    <span className="minimum-text">
-                                                        (min. 1 str.)</span>
+                                                    <span className="minimum-text">{this.state.textAreaPages <= 1 
+                                                    ? "(min. 1 str.)" 
+                                                    : ""}
+                                                    </span>
                                                 </div>
                                             </div>
                                         </div>
@@ -353,23 +423,23 @@ class Calculator extends React.Component {
                                                 <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Zwykły<br/>
-                                                        <span className="realisation-time">{this.state.realisationTimeMin}
-                                                            - {this.state.realisationTimeMax + 24}
+                                                        <span className="realisation-time">{this.state.realisationTimeMin}&nbsp;
+                                                            - {this.state.realisationTimeMax + 24}&nbsp;
                                                             godz.</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Pilny<br/>
-                                                        <span className="realisation-time">{this.state.realisationTimeMin}
-                                                            - {this.state.realisationTimeMax}
+                                                        <span className="realisation-time">{this.state.realisationTimeMin}&nbsp;
+                                                            - {this.state.realisationTimeMax}&nbsp;
                                                             godz.</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="pricing-table-headers">
                                                         Ekspres<br/>
-                                                        <span className="realisation-time">maks. {this.state.realisationTimeMin}
+                                                        <span className="realisation-time">maks. {this.state.realisationTimeMin}&nbsp;
                                                             godz.
                                                         </span>
                                                     </div>
@@ -387,10 +457,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-transl-cell hover"
                                                         id="translBasic"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net" id="tr-1-net">{this.translationPrice}
+                                                        <span className="price-net" id="tr-1-net">{this.translationPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat" id="tr-1-br">{this.calculateVat(this.translationPrice)}
+                                                        <span className="price-with-vat" id="tr-1-br">{this.calculateVat(this.translationPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -399,10 +469,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-transl-cell hover"
                                                         id="translUrgent"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net" id="tr-2-net">{this.transUrgentPrice}
+                                                        <span className="price-net" id="tr-2-net">{this.transUrgentPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat" id="tr-2-br">{this.calculateVat(this.transUrgentPrice)}
+                                                        <span className="price-with-vat" id="tr-2-br">{this.calculateVat(this.transUrgentPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -411,10 +481,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-transl-cell hover"
                                                         id="translExpress"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.transExpressPrice}
+                                                        <span className="price-net">{this.transExpressPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.transExpressPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.transExpressPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -431,10 +501,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-redact-cell hover"
                                                         id="redactBasic"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.redactionPrice}
+                                                        <span className="price-net">{this.redactionPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.redactionPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.redactionPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -443,10 +513,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-redact-cell hover"
                                                         id="redactUrgent"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.redactUrgentPrice}
+                                                        <span className="price-net">{this.redactUrgentPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.redactUrgentPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.redactUrgentPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -455,10 +525,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-redact-cell hover"
                                                         id="redactExpress"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.redactExpressPrice}
+                                                        <span className="price-net">{this.redactExpressPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.redactExpressPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.redactExpressPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -475,10 +545,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-merit-cell hover"
                                                         id="meritBasic"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.meritoryPrice}
+                                                        <span className="price-net">{this.meritoryPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.meritoryPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.meritoryPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -488,10 +558,10 @@ class Calculator extends React.Component {
                                                         id="meritUrgent"
                                                         onClick={this.handleCellClick}
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.meritUrgentPrice}
+                                                        <span className="price-net">{this.meritUrgentPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.meritUrgentPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.meritUrgentPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -500,10 +570,10 @@ class Calculator extends React.Component {
                                                         className="pricing-table-merit-cell hover"
                                                         id="meritExpress"
                                                         onClick={this.handleCellClick}>
-                                                        <span className="price-net">{this.meritExpressPrice}
+                                                        <span className="price-net">{this.meritExpressPrice}&nbsp;
                                                             zł netto</span>
 
-                                                        <span className="price-with-vat">{this.calculateVat(this.meritExpressPrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.meritExpressPrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -522,22 +592,21 @@ class Calculator extends React.Component {
                                                 </div>
                                                 <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="chosen-service">
-                                                        <p className="medium-text">{this.state.chosenServiceDescripion}
+                                                        <p className="medium-text">{this.state.chosenServiceDescription}
                                                         </p>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3 col-md-3 col-sm-3">
                                                     <div className="chosen-time">
-                                                        {this.state.chosenTimeMinMax}
-                                                        godz.<br/>
-                                                        <span className="small-italic">czas realizacji</span>
+                                                        {this.state.chosenTimeMinMax}&nbsp;godz.<br/>
+                                                        <span className="small-italic">maksymalny czas realizacji</span>
                                                     </div>
                                                 </div>
                                                 <div className="col-lg-3 col-md-3 col-sm-3">
-                                                    <div className="chosen-price">{this.state.chosenServicePrice}
+                                                    <div className="chosen-price">{this.state.chosenServicePrice}&nbsp;
                                                         zł netto
                                                         <br/>
-                                                        <span className="price-with-vat">{this.calculateVat(this.state.chosenServicePrice)}
+                                                        <span className="price-with-vat">{this.calculateVat(this.state.chosenServicePrice)}&nbsp;
                                                             zł z VAT</span>
                                                     </div>
                                                 </div>
@@ -629,102 +698,11 @@ class Calculator extends React.Component {
                                                     ZAMAWIAM
                                                 </button>
                                             </form>
-                                            {/* <p className="invoice-info">
-                                                poniżej wzór faktury proforma do wysłania mailem
-                                            </p> */}
                                         </div>
                                     </div>
 
-                                    {/* <div className="invoice-page">
-                                        <div className="stretcher">
-                                            <div className="row">
-                                                <div className="col-lg-12 col-md-12 col-sm-12">
-                                                    <div className="invoice-header">
-                                                        <div className="margin">
-                                                            <div className="row">
-                                                                <div className="col-lg-4 col-md-4 col-sm-4">
-                                                                    <div className="company-data">
-                                                                        <b>TransLingus Biuro Tłumaczeń</b><br/>
-                                                                        ul. Tłumaczeniowa 23<br/>
-                                                                        12-345 Warszawa<br/>
-                                                                        NIP: 234-45-56-123<br/>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-lg-4 col-md-4 col-sm-4">
-                                                                    <div className="logo"></div>
-                                                                </div>
-                                                                <div className="col-lg-4 col-md-4 col-sm-4">
-                                                                    <div className="invoice">
-                                                                        <b>FAKTURA PROFORMA</b><br/>
-                                                                        FV TL/2017/13456<br/>
-                                                                        wystawiona: {this
-                                                                            .currentDate
-                                                                            .getDate()}.{this
-                                                                            .currentDate
-                                                                            .getMonth() + 1}.{this
-                                                                            .currentDate
-                                                                            .getFullYear()}
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div className="invoice-main">
-                                                        <div className="margin">
-                                                            <div className="row">
-                                                                <div className="col-lg-4 col-md-4 col-sm-4">
-                                                                    <div className="client-data">
-                                                                        dla:<br/>
-                                                                        <b>{this.state.company.length === 0
-                                                                                ? "...podaj nazwę firmy..."
-                                                                                : this.state.company}</b><br/>
-                                                                        <b>{this.state.street.length === 0
-                                                                                ? "...podaj nazwę ulicy..."
-                                                                                : this.state.street} {this.state.number}
-                                                                            lok. {this.state.locale}</b><br/>
-                                                                        <b>NIP: {this.state.nip.length !== 10
-                                                                                ? "...podaj NIP (10 cyfr)..."
-                                                                                : this.state.nip}</b>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-lg-4 col-md-4 col-sm-4">
-                                                                    <div className="service-data">
-                                                                        Usługa:<br/>
-                                                                        <b>{this.state.chosenServiceDescripion}</b><br/>
-                                                                        ilość stron:
-                                                                        <b>{this.state.textAreaPages}</b><br/>
-                                                                        cena za stronę:
-                                                                        <b>{this.state.pagePrice}
-                                                                            zł</b>
-                                                                    </div>
-                                                                </div>
-                                                                <div className="col-lg-4 col-md-4 col-sm-4">
-                                                                    <div className="service-prices">
-                                                                        Cena netto:<br/>
-                                                                        <b>{this.state.chosenServicePrice}
-                                                                            zł</b><br/>
-                                                                        Cena brutto:<br/>
-                                                                        <b>{this.calculateVat(this.state.chosenServicePrice)}
-                                                                            zł</b><br/>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
 
-                                                    <div className="invoice-footer">
-                                                        <div className="margin">
-                                                            <div className="row">
-                                                                <div className="col-lg-12 col-md-12 col-sm-12">
-                                                                    <b>TransLingus Biuro Tłumaczeń</b><br/>ul. Tłumaczeniowa | 23 12-345 Warszawa | NIP: 234-45-56-123
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */}
+                                   
                                 </div>
                             </div>
                         </div>
