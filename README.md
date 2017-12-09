@@ -2,41 +2,37 @@
 
 ### Opis funkcjonalności
 
-Strona stworzona w React.js udostępnia natychmiastową wycenę tłumaczenia w zależności od długości wklejonego tekstu, wybranego przez klienta zakresu usługi oraz terminu realizacji. 
+Strona stworzona w ReactJS z modułem wyceny on-line tłumaczenia wklejonego tekstu.
 
-Strona pełni także rolę wizytówki firmy, przedstawia najważniejsze informacje o niej i pozwala klientowi na łatwy kontakt z firmą. 
+Najważniejszą funkcjonalnością na stronie jest natychmiastowy kalkulator ceny.
+Ma on następujące funkcje:
+* oblicza długość wklejonego przez klienta tekstu,
+* pozwala na wybranie języka
+* oraz kierunku tłumaczenia,
+* pozwala na wybranie terminu realizacji
+* oraz dodatkowych usług redakcji tekstu.
 
-Najważniejszą funkcjonalnością na stronie jest natychmiastowy kalkulator, który na podstawie długości wklejonego przez klienta tekstu i wybranego przez niego języka oblicza ceny dla 3 zakresów usług i 3 możliwych terminów realizacji zlecenia.
+Jeszcze przed wybraniem konkretnej usługi klient widzi jej dokładną cenę. 
 
-Po wybraniu konkretnej ceny (zakresu usługi i terminu realizacji) klient może od razu wypełnienić formularz kontaktowy i otrzymać fakturę pro-forma, której opłacenie będzie oznaczało zamówienie usługi tłumaczenia wklejonego tekstu.  
-(projekt w fazie rozwoju)
+Po dokonaniu wyboru zakresu usługi i terminu realizacji klient przechodzi do formularza kontaktowego.
+Po jego prawidłowym wypełnieniu i zatwierdzeniu, przygotowywana jest wypełniona faktura pro-forma.
+
+(projekt nadal w fazie rozwoju - kolejną funkcjonalnością będzie wysyłanie przygotowanej faktury mailem do zamawiającego oraz do biura tłumaczeń, co będzie równoznaczne z zamówieniem przekładu wklejonego tekstu)
+
+Strona pełni także rolę wizytówki firmy, przedstawia najważniejsze informacje o niej i pozwala klientowi na kontakt z firmą. 
 
 ### Demo online
 
 https://marcinostaszewski.github.io/Kalkulator_tlumaczen/
 
 ### Uruchamianie lokalnie
+po pobraniu projektu i instalacji node modules:
 
 w konsoli:      nmp run start
 w przeglądarce: http://localhost:3002/
 
-
-
 ### TO DO 
 
-uzupełnić walidację okienek formularza
-
-uzupełnić walidację całego formularza przed wysłaniem
-
-dodać płynne przewijanie do początków sekcji po naciśnięciu linków
-
-dodać tworzenie faktury na podstawie danych dostarczonych przez klienta
-
-dodać możliwość pobrania lub wysyłania faktury emailem 
-
-funkcja onSubmit na formularzu: 
-    /sprawdza walidację okienek
-    /tworzy fakturę na podstawie danych
-    /wysyła fakturę na podany email
-
+* dodać płynne przewijanie do początków sekcji po naciśnięciu linków
+* dodać funkcję wysyłania faktury emailem 
 
