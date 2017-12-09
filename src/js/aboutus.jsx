@@ -16,7 +16,7 @@ class AboutUs extends React.Component {
                     <div className="row">
                         <div className="col-lg-12 col-md-12 col-sm-12">
                             <div className="row">
-                                <div className="col-lg-4 col-md-4 col-sm-12">
+                                <div className="col-lg-4 col-md-4 col-sm-4">
                                     <div className="section-about-us-header">
                                         <h2 className="section-about-us-header-text" ><a name="section-about-us"><h2>O NAS</h2></a></h2>
                                     </div>

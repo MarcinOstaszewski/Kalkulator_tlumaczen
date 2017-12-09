@@ -1,4 +1,5 @@
 /node_modules
+/git-ignore
 /mock_ups/src
 /mock_ups/
 ///src/sass/modules 

@@ -30,12 +30,16 @@ class Calculator extends React.Component {
             street: 'Językowa',
             number: 123,
             locale: 4,
+            postal: '00000',
+            city: 'Warszawa',
             mailErrorMessage: '',
             companyErrorMessage: '',
             nipErrorMessage: '',
             streetErrorMessage: '',
             numberErrorMessage: '',
             localeErrorMessage: '',
+            postalErrorMessage: '',
+            cityErrorMessage: '',
             displayMobileMenuList: 0
         }
     }
@@ -63,7 +67,7 @@ class Calculator extends React.Component {
                 ? 1
                 : Number((event.target.value.length / 1800).toFixed(1)),
             realisationTimeMin: (Math.ceil(this.state.textAreaPages / 6) * 24),
-            realisationTimeMax: (Math.ceil(this.state.textAreaPages / 6) * 24 + 24),
+            realisationTimeMax: (Math.ceil(this.state.textAreaPages / 6) * 48),
             inVisible: 'not-visible'
         })
     }
@@ -200,7 +204,7 @@ class Calculator extends React.Component {
     }
 
     validateNumber = () => {
-        if (this.state.number.length < 1 || this.state.number === 0) {
+        if (this.state.number.length < 1 || this.state.number == 0) {
             this.setState({numberErrorMessage: "Niepoprawny numer domu"});
         } else 
             this.setState({numberErrorMessage: ""});
@@ -212,8 +216,20 @@ class Calculator extends React.Component {
         } else 
             this.setState({localeErrorMessage: ""});
     }
-    
-    textToPDF = (today, company, companyAddress, serviceTime, nip, chosenServiceDescription, textAreaPages, pagePrice, netPrice, grossPrice) => {
+    validatePostal = () => {
+        if (this.state.postal.length !== 5) {
+            this.setState({postalErrorMessage: "Kod pocztowy musi mieć 5 cyfr (bez innych znaków)"})
+        } else 
+            this.setState({postalErrorMessage: ""});
+    }
+    validateCity = () => {
+        if (this.state.city.length < 3) {
+            this.setState({cityErrorMessage: "Nazwa miasta za krótka"})
+        } else 
+            this.setState({cityErrorMessage: ""});
+    }
+
+    textToPDF = (today, company, companyAddress, postalCity, serviceTime, nip, chosenServiceDescription, textAreaPages, pagePrice, netPrice, grossPrice) => {
 
         var doc = new jsPDF();
 
@@ -235,8 +251,9 @@ class Calculator extends React.Component {
         doc.setFontType("bold");
         doc.text(20, 75, String(company));
         doc.text(20, 80, String(companyAddress));
+        doc.text(20, 85, String(postalCity));
+        doc.text(20, 90, String(nip));
         doc.text(90, 85, String(serviceTime));
-        doc.text(20, 85, String(nip));
         
         doc.setFontType("normal");
         doc.text(90, 70, 'usluga:');
@@ -264,12 +281,12 @@ class Calculator extends React.Component {
         doc.line(130, 115, 130, 134);
         doc.line(190, 115, 190, 134);
         
-        doc.line(50, 134, 150, 134);
+        doc.line(50, 270, 160, 270);
         doc.text(105, 275, 'TransLingus Biuro Tlumaczen', null, null, 'center');
         doc.setFontType("italic");
         doc.text(105, 280, 'ul. Tlumaczeniowa 23   |   12-345 Warszawa   |   NIP: 234-45-56-123', null, null, 'center');
-
-        doc.save('faktura-proforma_TransLingus.pdf');
+        alert("Dziękujemy, formularz został poprawnie wypełniony. Prosimy o zapisanie pliku PDF z fakturą proforma.");
+        doc.save('TransLingus-faktura-proforma.pdf');
     };
 
     replaceDiacritics = (text) => {
@@ -286,19 +303,19 @@ class Calculator extends React.Component {
 
     onSubmit = (e) => {
         e.preventDefault;
-        this.setState({isEnabled : false});
+        // this.setState({isEnabled : false});
         if (this.state.textArea === '') {
             alert("! nie wklejono tekstu do tłumaczenia !");
-        } else if (this.state.mailErrorMessage === '' && this.state.companyErrorMessage === '' && this.state.nipErrorMessage === '' && this.state.streetErrorMessage === '' && this.state.numberErrorMessage === '' && this.state.localeErrorMessage === '') {
+        } else if (this.state.mailErrorMessage === '' && this.state.companyErrorMessage === '' && this.state.nipErrorMessage === '' && this.state.streetErrorMessage === '' && this.state.numberErrorMessage === '' && this.state.localeErrorMessage === '' && this.state.postalErrorMessage === '' && this.state.cityErrorMessage === '') {
             var today = `${this.currentDate.getDate()}.${this.currentDate.getMonth() + 1}.${this.currentDate.getFullYear()}`;
             var companyAddress = this.state.street + ' ' + this.state.number + ' / ' + this.state.locale;
+            var postalCity = this.state.postal + ' ' + this.state.city;
             var serviceTime = this.state.chosenTimeMinMax + " godz.";
             var nip = 'NIP: ' + this.state.nip;
             var pagePrice = ((this.state.chosenServicePrice / this.state.textAreaPages).toFixed(2) + ' zl');
             var netPrice = ((this.state.chosenServicePrice) + ' zl');
             var grossPrice = (this.calculateVat(this.state.chosenServicePrice) + ' zl');
-            this.textToPDF(today, this.replaceDiacritics(this.state.company), this.replaceDiacritics(companyAddress), serviceTime, nip, this.replaceDiacritics(this.state.chosenServiceDescription), this.state.textAreaPages, pagePrice, netPrice, grossPrice);
-            alert("Dziękujemy, formularz został poprawnie wypełniony. Prosimy o zapisanie pliku PDF z fakturą proforma.");
+            this.textToPDF(today, this.replaceDiacritics(this.state.company), this.replaceDiacritics(companyAddress), this.replaceDiacritics(postalCity), serviceTime, nip, this.replaceDiacritics(this.state.chosenServiceDescription), this.state.textAreaPages, pagePrice, netPrice, grossPrice);
         }
     }
 
@@ -616,8 +633,8 @@ class Calculator extends React.Component {
                                     <div className="row">
                                         <div className="col-lg-12 col-md-12 col-sm-12">
                                             <div className="text-explanation">
-                                                Wpisz swój adres email, podaj dane Twojej firmy i wciśnij ZAMAWIAM, <br/>aby otrzymać
-                                                maila z gotową fakturą pro-forma.
+                                                Wpisz swój adres email, podaj dane Twojej firmy i wciśnij ZAMAWIAM, <br/>
+                                                następnie zapisz plik z gotową fakturą pro-forma.
                                             </div>
                                         </div>
                                     </div>
@@ -684,17 +701,40 @@ class Calculator extends React.Component {
                                                     type="number"
                                                     onChange={this.handleChange}
                                                     value={this.state.locale}/>
+
+                                                <label className="company-data-label" htmlFor="postal">Podaj 5 cyfr kodu pocztowego</label>
+                                                <p className="error-message">{this.state.postalErrorMessage}</p>
+                                                <input
+                                                    onBlur={this.validatePostal}
+                                                    className="company-data-input"
+                                                    name="postal"
+                                                    type="text"
+                                                    onChange={this.handleChange}
+                                                    value={this.state.postal}/>
+
+                                                <label className="company-data-label" htmlFor="city">Podaj nazwę miasta</label>
+                                                <p className="error-message">{this.state.cityErrorMessage}</p>
+                                                <input
+                                                    onBlur={this.validateCity}
+                                                    className="company-data-input"
+                                                    name="city"
+                                                    type="text"
+                                                    onChange={this.handleChange}
+                                                    value={this.state.city}/>
+
+
                                                 <p className="order-disabled-explanation">
                                                     {this.state.textArea.length >= 100
                                                         ? ""
-                                                        : "Wklej tekst do tłumaczenia - min. 100 znaków."}<br/> {this.isEnabled
+                                                        : "Tekst do tłumaczenia ma mniej niż 100 znaków!"}<br/> 
+                                                    {this.isEnabled
                                                         ? ""
-                                                        : "Wypełnij poprawnie wszystkie pola formularza."}
+                                                        : "Proszę poprawnie wypełnić wszystkie pola formularza:"}
+                                                    
                                                 </p>
                                                 <button
                                                     className="order-button"
-                                                    disabled={!(this.isEnabled && this.state.textArea.length >= 100)}
-                                                    onClick={this.textToPDF}>
+                                                    disabled={!(this.isEnabled && this.state.textArea.length >= 100)}>
                                                     ZAMAWIAM
                                                 </button>
                                             </form>
