@@ -17,7 +17,7 @@ class Credentials extends React.Component {
                             <div className="row">
                                 <div className="col-lg-4 col-md-4 col-sm-4">
                                     <div className="section-credentials-header">
-                                        <h2 className="section-credentials-header-text">
+                                        <h2 className="section-credentials-header-text header-font">
                                             <a name="section-credentials"><h2>REFERENCJE</h2></a>
                                         </h2> 
                                     </div>

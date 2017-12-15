@@ -3,6 +3,11 @@ body {
     font-size: 16px;
     font-weight: 300;
     color: #fff;
+    .header-font {
+        font-family: 'Cormorant Garamond', serif;
+        font-weight: 300;
+        // font-style: italic;
+    }
 }
 /*---------------------------------------*/
 /*     MAIN SECTION                      */
@@ -36,10 +41,11 @@ body {
             background-color: $color1_opc70;
             color: $color6;
             .main-logo {
+                font-family: 'Cormorant Garamond', serif;
                 height: 75px;
                 display: flex;
                 flex-direction: row;
-                font-size: 2rem;
+                font-size: 2.25rem;
                 line-height: 1.5rem;
                 align-items: center;
             }
@@ -154,9 +160,10 @@ body {
                 text-align: right;
                 color: $color1_opc70;
                 font-size: 2.5rem;
+                padding-bottom: 1rem;
                 width: 100%;
                 border-bottom: 2px solid $color1_opc70;
-                margin-bottom: 1rem;
+                margin-bottom: 1rem;   // for narrow screens
             }
             .main-description {
                 .main-description-paragraph {
@@ -274,7 +281,6 @@ body {
                 margin-left: 10px;
             }
             .pricing-table-row-header {
-                // display: flex;
                 align-items: center;
                 height: 75px;
                 .pricing-table-headers {
@@ -508,15 +514,41 @@ body {
             margin: 20px 0px;
             font-size: 2rem;
             font-weight: 300;
+            line-height: 3rem;
             width: 100%;
             border-bottom: 1px solid $color6;
         }
     }
-    .section-about-us-main-text {
-        p {
-            font-size: 1.25rem;
-            font-weight: 300;
-            margin-bottom: 1rem;
+    .section-about-us-container {
+        padding: 1rem;
+        position: relative;
+        .section-about-us-frame {
+            border-bottom: 1px solid $color6;
+            border-right: 1px solid $color6;
+            .section-about-us-box {
+                border: 1px solid $color6;
+                padding: 0.5rem;
+                margin: -1rem 0.25rem 0.25rem -1rem;
+                height: 200px;
+                
+                .section-about-us-text {
+                    transition: all 0.4s;
+                    color: rgba(255, 255, 255, 0.25);
+                    &:hover {
+                        color: rgba(255, 255, 255, 0.95);
+                    
+                    }
+                    .section-about-us-title {
+                        color: rgba(255, 255, 255, 1);
+                        font-size: 1.25rem;
+                        margin-bottom: 0.5rem;
+                        font-size: 1rem;
+                        font-weight: 300;
+                        margin-bottom: 0.5rem;
+                        padding-top: 0.5rem;
+                    }
+                }
+            }
         }
     }
     
@@ -541,6 +573,7 @@ body {
             color: $color1;
             margin-bottom: 20px;
             font-size: 2rem;
+            line-height: 3rem;            
             font-weight: 300;
             width: 100%;
             border-bottom: 1px solid $color1;
@@ -574,6 +607,7 @@ body {
         .section-partners-header-text {
             margin: 20px 0px;
             font-size: 2rem;
+            line-height: 3rem;            
             font-weight: 300;
             width: 100%;
             border-bottom: 1px solid $color1;
@@ -606,6 +640,7 @@ body {
             color: $color6;
             margin-bottom: 20px;
             font-size: 2rem;
+            line-height: 3rem;            
             border-bottom: 1px solid $color6;
             width: 100%;
         }

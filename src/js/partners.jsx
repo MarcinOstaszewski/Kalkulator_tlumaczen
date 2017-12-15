@@ -17,7 +17,7 @@ class Partners extends React.Component {
                             <div className="row">
                                 <div className="col-lg-4 col-md-4 col-sm-4">
                                     <div className="section-partners-header">
-                                        <h2 className="section-partners-header-text">
+                                        <h2 className="section-partners-header-text header-font">
                                             <a name="section-partners"><h2>ZAUFALI NAM</h2></a>
                                         </h2> 
                                     </div> 

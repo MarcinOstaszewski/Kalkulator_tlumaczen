@@ -56,7 +56,7 @@ class Hero extends React.Component {
                         <div className="container">
                             <div className="row">
                                 <div className="col-lg-3 col-md-3 col-sm-5">
-                                    <div className="main-header">
+                                    <div className="main-header header-font">
                                         <h1>O NAS</h1>
                                     </div>
                                 </div>

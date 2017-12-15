@@ -17,7 +17,7 @@ class Contact extends React.Component {
                             <div className="row">
                                 <div className="col-lg-4 col-md-4 col-sm-4">
                                     <div className="section-contact-header">
-                                        <h2 className="section-contact-header-text">
+                                        <h2 className="section-contact-header-text header-font">
                                             <a name="section-contact"><h2>KONTAKT</h2></a>
                                         </h2> 
                                     </div> 
