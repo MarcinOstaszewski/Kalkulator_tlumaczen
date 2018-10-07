@@ -78,7 +78,9 @@ class Calculator extends React.Component {
             suffix: (this.state.translationDirection == 1)
                 ? ''
                 : 'ego'
-        }); // suffix jest ustawiany odwrotnie niż powinien, bo zmiana działa 'z opóźnieniem' ;)
+        }); // suffix jest ustawiany odwrotnie niż powinien, bo zmiana działa 'z opóźnieniem' ;) 
+        
+        // ===========> SPRÓBOWAĆ USTAWIAĆ WARTOŚĆ "suffix" jako zmiennej w render() i tą zmienną wyświetlać w return()
     }
 
     handleLanguageChange = (event) => {
